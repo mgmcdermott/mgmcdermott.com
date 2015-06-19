@@ -1,0 +1,9 @@
+{
+  "preset": "google",
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "validateLineBreaks": "LF",
+  "validateIndentation": 2,
+  "excludeFiles": ["dist/**", "node_modules/**"],
+  "esprima": "esprima-fb",
+  "fileExtensions": [".js", ".jsx"]
+}
