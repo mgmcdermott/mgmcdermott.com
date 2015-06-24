@@ -7,7 +7,6 @@
  * Created on 5/20/15.
  */
 
-//require('pmx').init();
 var express = require('express');
 var mongoose = require('mongoose');
 var cors = require('cors');
@@ -24,7 +23,6 @@ app.set('port', port);
 //var config = require('./config/base');
 //mongoose.connect(config.db);
 
-// Uncomment to view mongoose more verbose console logging
 mongoose.set('debug', true);
 
 app.use(cors());

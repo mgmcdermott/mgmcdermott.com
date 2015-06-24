@@ -54,7 +54,6 @@ module.exports =
    * Created on 5/20/15.
    */
   
-  //require('pmx').init();
   'use strict';
   
   var express = __webpack_require__(5);
@@ -73,7 +72,6 @@ module.exports =
   //var config = require('./config/base');
   //mongoose.connect(config.db);
   
-  // Uncomment to view mongoose more verbose console logging
   mongoose.set('debug', true);
   
   app.use(cors());

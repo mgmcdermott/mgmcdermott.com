@@ -12,7 +12,7 @@ var ComingSoon = React.createClass({
         <h1 className="banner">Coming Soon</h1>
         <ul className="social-icons">
           <li className="social-fb">
-            <a href="https://www.facebook.com/mgmcdermott">
+            <a href="https://www.facebook.com/mgmcdermott" target="_blank">
               <span className="icon icon-facebook">
                 <svg viewBox="0 0 266.893 266.895" width="25" height="25">
                   <path id="Blue_1_" fill="#828282" d="M248.082,262.307c7.854,0,14.223-6.369,14.223-14.225V18.812  c0-7.857-6.368-14.224-14.223-14.224H18.812c-7.857,0-14.224,6.367-14.224,14.224v229.27c0,7.855,6.366,14.225,14.224,14.225  H248.082z"/>
@@ -22,7 +22,7 @@ var ComingSoon = React.createClass({
             </a>
           </li>
           <li className="social-tw">
-            <a href="https://twitter.com/_MMcDermott">
+            <a href="https://twitter.com/_MMcDermott" target="_blank">
               <span className="icon icon-twitter">
                 <svg viewBox="0 0 16 16" width="25" height="25">
                   <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
@@ -32,7 +32,7 @@ var ComingSoon = React.createClass({
             </a>
           </li>
           <li className="social-gh">
-            <a href="https://github.com/mgmcdermott">
+            <a href="https://github.com/mgmcdermott" target="_blank">
               <span className="icon icon-github">
                 <svg viewBox="0 0 16 16" width="25" height="25">
                   <path fill="#828282"

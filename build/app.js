@@ -11398,7 +11398,7 @@
             { className: "social-fb" },
             React.createElement(
               "a",
-              { href: "https://www.facebook.com/mgmcdermott" },
+              { href: "https://www.facebook.com/mgmcdermott", target: "_blank" },
               React.createElement(
                 "span",
                 { className: "icon icon-facebook" },
@@ -11416,7 +11416,7 @@
             { className: "social-tw" },
             React.createElement(
               "a",
-              { href: "https://twitter.com/_MMcDermott" },
+              { href: "https://twitter.com/_MMcDermott", target: "_blank" },
               React.createElement(
                 "span",
                 { className: "icon icon-twitter" },
@@ -11433,7 +11433,7 @@
             { className: "social-gh" },
             React.createElement(
               "a",
-              { href: "https://github.com/mgmcdermott" },
+              { href: "https://github.com/mgmcdermott", target: "_blank" },
               React.createElement(
                 "span",
                 { className: "icon icon-github" },
