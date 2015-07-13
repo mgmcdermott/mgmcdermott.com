@@ -4,15 +4,15 @@
  */
 
 var React = require('react');
-var ComingSoon = require('../ComingSoon/ComingSoon');
+//var ComingSoon = require('../ComingSoon/ComingSoon');
+//var Resume = require('../Resume/Resume');
+var Mikebook = require('../Resumes/Mikebook/Mikebook');
 
 var App = React.createClass({
   render: function() {
     return (
       <div className="wrapper">
-        <div className="content">
-          <ComingSoon />
-        </div>
+          <Mikebook />
       </div>
     );
   }
