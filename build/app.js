@@ -51,8 +51,8 @@
   
   'use strict';
   
-  var React = __webpack_require__(57);
-  var App = __webpack_require__(81);
+  var React = __webpack_require__(59);
+  var App = __webpack_require__(83);
   
   React.render(React.createElement(App, null), document.getElementById('app'));
 
@@ -185,7 +185,7 @@
   
   'use strict';
   
-  var ReactContext = __webpack_require__(42);
+  var ReactContext = __webpack_require__(44);
   var ReactCurrentOwner = __webpack_require__(12);
   
   var assign = __webpack_require__(2);
@@ -217,7 +217,7 @@
       },
   
       set: function(value) {
-        (true ? warning(
+        ( true ? warning(
           false,
           'Don\'t set the %s property of the React element. Instead, ' +
           'specify the correct value when initially creating the element.',
@@ -684,15 +684,15 @@
   
   'use strict';
   
-  var ReactComponent = __webpack_require__(61);
+  var ReactComponent = __webpack_require__(63);
   var ReactCurrentOwner = __webpack_require__(12);
   var ReactElement = __webpack_require__(3);
-  var ReactErrorUtils = __webpack_require__(112);
+  var ReactErrorUtils = __webpack_require__(117);
   var ReactInstanceMap = __webpack_require__(20);
-  var ReactLifeCycle = __webpack_require__(45);
-  var ReactPropTypeLocations = __webpack_require__(46);
+  var ReactLifeCycle = __webpack_require__(47);
+  var ReactPropTypeLocations = __webpack_require__(48);
   var ReactPropTypeLocationNames = __webpack_require__(31);
-  var ReactUpdateQueue = __webpack_require__(47);
+  var ReactUpdateQueue = __webpack_require__(49);
   
   var assign = __webpack_require__(2);
   var invariant = __webpack_require__(1);
@@ -1065,7 +1065,7 @@
       if (typeDef.hasOwnProperty(propName)) {
         // use a warning instead of an invariant so components
         // don't show up in prod but not in __DEV__
-        (true ? warning(
+        ( true ? warning(
           typeof typeDef[propName] === 'function',
           '%s: %s type `%s` is invalid; it must be a function, usually from ' +
           'React.PropTypes.',
@@ -1084,7 +1084,7 @@
   
     // Disallow overriding of base class methods unless explicitly allowed.
     if (ReactClassMixin.hasOwnProperty(name)) {
-      (true ? invariant(
+      ( true ? invariant(
         specPolicy === SpecPolicy.OVERRIDE_BASE,
         'ReactClassInterface: You are attempting to override ' +
         '`%s` from your class specification. Ensure that your method names ' +
@@ -1095,7 +1095,7 @@
   
     // Disallow defining methods more than once unless explicitly allowed.
     if (proto.hasOwnProperty(name)) {
-      (true ? invariant(
+      ( true ? invariant(
         specPolicy === SpecPolicy.DEFINE_MANY ||
         specPolicy === SpecPolicy.DEFINE_MANY_MERGED,
         'ReactClassInterface: You are attempting to define ' +
@@ -1116,12 +1116,12 @@
       return;
     }
   
-    (true ? invariant(
+    ( true ? invariant(
       typeof spec !== 'function',
       'ReactClass: You\'re attempting to ' +
       'use a component class as a mixin. Instead, just use a regular object.'
     ) : invariant(typeof spec !== 'function'));
-    (true ? invariant(
+    ( true ? invariant(
       !ReactElement.isValidElement(spec),
       'ReactClass: You\'re attempting to ' +
       'use a component as a mixin. Instead, just use a regular object.'
@@ -1178,7 +1178,7 @@
             var specPolicy = ReactClassInterface[name];
   
             // These cases should already be caught by validateMethodOverride
-            (true ? invariant(
+            ( true ? invariant(
               isReactClassMethod && (
                 (specPolicy === SpecPolicy.DEFINE_MANY_MERGED || specPolicy === SpecPolicy.DEFINE_MANY)
               ),
@@ -1223,7 +1223,7 @@
       }
   
       var isReserved = name in RESERVED_SPEC_KEYS;
-      (true ? invariant(
+      ( true ? invariant(
         !isReserved,
         'ReactClass: You are attempting to define a reserved ' +
         'property, `%s`, that shouldn\'t be on the "statics" key. Define it ' +
@@ -1233,7 +1233,7 @@
       ) : invariant(!isReserved));
   
       var isInherited = name in Constructor;
-      (true ? invariant(
+      ( true ? invariant(
         !isInherited,
         'ReactClass: You are attempting to define ' +
         '`%s` on your component more than once. This conflict may be ' +
@@ -1252,14 +1252,14 @@
    * @return {object} one after it has been mutated to contain everything in two.
    */
   function mergeIntoWithNoDuplicateKeys(one, two) {
-    (true ? invariant(
+    ( true ? invariant(
       one && two && typeof one === 'object' && typeof two === 'object',
       'mergeIntoWithNoDuplicateKeys(): Cannot merge non-objects.'
     ) : invariant(one && two && typeof one === 'object' && typeof two === 'object'));
   
     for (var key in two) {
       if (two.hasOwnProperty(key)) {
-        (true ? invariant(
+        ( true ? invariant(
           one[key] === undefined,
           'mergeIntoWithNoDuplicateKeys(): ' +
           'Tried to merge two objects with the same key: `%s`. This conflict ' +
@@ -1334,14 +1334,14 @@
         // ignore the value of "this" that the user is trying to use, so
         // let's warn.
         if (newThis !== component && newThis !== null) {
-          (true ? warning(
+          ( true ? warning(
             false,
             'bind(): React component methods may only be bound to the ' +
             'component instance. See %s',
             componentName
           ) : null);
         } else if (!args.length) {
-          (true ? warning(
+          ( true ? warning(
             false,
             'bind(): You are binding a component method to the component. ' +
             'React does this for you automatically in a high-performance ' +
@@ -1385,7 +1385,7 @@
     enumerable: false,
     get: function() {
       var displayName = this.displayName || this.name || 'Component';
-      (true ? warning(
+      ( true ? warning(
         false,
         '%s.type is deprecated. Use %s directly to access the class.',
         displayName,
@@ -1425,7 +1425,7 @@
       if (true) {
         var owner = ReactCurrentOwner.current;
         if (owner !== null) {
-          (true ? warning(
+          ( true ? warning(
             owner._warnedAboutRefsInRender,
             '%s is accessing isMounted inside its render() function. ' +
             'render() should be a pure function of props and state. It should ' +
@@ -1504,7 +1504,7 @@
         // by mocks to assert on what gets mounted.
   
         if (true) {
-          (true ? warning(
+          ( true ? warning(
             this instanceof Constructor,
             'Something is calling a React component directly. Use a factory or ' +
             'JSX instead. See: https://fb.me/react-legacyfactory'
@@ -1533,7 +1533,7 @@
             initialState = null;
           }
         }
-        (true ? invariant(
+        ( true ? invariant(
           typeof initialState === 'object' && !Array.isArray(initialState),
           '%s.getInitialState(): must return an object or null',
           Constructor.displayName || 'ReactCompositeComponent'
@@ -1568,13 +1568,13 @@
         }
       }
   
-      (true ? invariant(
+      ( true ? invariant(
         Constructor.prototype.render,
         'createClass(...): Class specification must implement a `render` method.'
       ) : invariant(Constructor.prototype.render));
   
       if (true) {
-        (true ? warning(
+        ( true ? warning(
           !Constructor.prototype.componentShouldUpdate,
           '%s has a method called ' +
           'componentShouldUpdate(). Did you mean shouldComponentUpdate()? ' +
@@ -1637,22 +1637,22 @@
   var ReactCurrentOwner = __webpack_require__(12);
   var ReactElement = __webpack_require__(3);
   var ReactElementValidator = __webpack_require__(25);
-  var ReactEmptyComponent = __webpack_require__(44);
+  var ReactEmptyComponent = __webpack_require__(46);
   var ReactInstanceHandles = __webpack_require__(19);
   var ReactInstanceMap = __webpack_require__(20);
-  var ReactMarkupChecksum = __webpack_require__(65);
+  var ReactMarkupChecksum = __webpack_require__(67);
   var ReactPerf = __webpack_require__(13);
   var ReactReconciler = __webpack_require__(21);
-  var ReactUpdateQueue = __webpack_require__(47);
+  var ReactUpdateQueue = __webpack_require__(49);
   var ReactUpdates = __webpack_require__(9);
   
   var emptyObject = __webpack_require__(34);
-  var containsNode = __webpack_require__(71);
-  var getReactRootElementInContainer = __webpack_require__(144);
-  var instantiateReactComponent = __webpack_require__(53);
+  var containsNode = __webpack_require__(73);
+  var getReactRootElementInContainer = __webpack_require__(149);
+  var instantiateReactComponent = __webpack_require__(55);
   var invariant = __webpack_require__(1);
-  var setInnerHTML = __webpack_require__(55);
-  var shouldUpdateReactComponent = __webpack_require__(56);
+  var setInnerHTML = __webpack_require__(57);
+  var shouldUpdateReactComponent = __webpack_require__(58);
   var warning = __webpack_require__(4);
   
   var SEPARATOR = ReactInstanceHandles.SEPARATOR;
@@ -1718,7 +1718,7 @@
       if (nodeCache.hasOwnProperty(id)) {
         var cached = nodeCache[id];
         if (cached !== node) {
-          (true ? invariant(
+          ( true ? invariant(
             !isValid(cached, id),
             'ReactMount: Two valid but unequal nodes with the same `%s`: %s',
             ATTR_NAME, id
@@ -1800,7 +1800,7 @@
    */
   function isValid(node, id) {
     if (node) {
-      (true ? invariant(
+      ( true ? invariant(
         internalGetID(node) === id,
         'ReactMount: Unexpected modification of `%s`',
         ATTR_NAME
@@ -1973,7 +1973,7 @@
      * @return {string} reactRoot ID prefix
      */
     _registerComponent: function(nextComponent, container) {
-      (true ? invariant(
+      ( true ? invariant(
         container && (
           (container.nodeType === ELEMENT_NODE_TYPE || container.nodeType === DOC_NODE_TYPE)
         ),
@@ -2004,7 +2004,7 @@
       // Various parts of our code (such as ReactCompositeComponent's
       // _renderValidatedComponent) assume that calls to render aren't nested;
       // verify that that's the case.
-      (true ? warning(
+      ( true ? warning(
         ReactCurrentOwner.current == null,
         '_renderNewRootComponent(): Render methods should be a pure function ' +
         'of props and state; triggering nested component updates from ' +
@@ -2052,7 +2052,7 @@
      * @return {ReactComponent} Component instance rendered in `container`.
      */
     render: function(nextElement, container, callback) {
-      (true ? invariant(
+      ( true ? invariant(
         ReactElement.isValidElement(nextElement),
         'React.render(): Invalid component element.%s',
         (
@@ -2095,7 +2095,7 @@
           var rootElementSibling = reactRootElement;
           while (rootElementSibling) {
             if (ReactMount.isRenderedByReact(rootElementSibling)) {
-              (true ? warning(
+              ( true ? warning(
                 false,
                 'render(): Target node has markup rendered by React, but there ' +
                 'are unrelated nodes as well. This is most commonly caused by ' +
@@ -2147,7 +2147,7 @@
      */
     constructAndRenderComponentByID: function(constructor, props, id) {
       var domNode = document.getElementById(id);
-      (true ? invariant(
+      ( true ? invariant(
         domNode,
         'Tried to get element with id of "%s" but it is not present on the page.',
         id
@@ -2189,7 +2189,7 @@
       // _renderValidatedComponent) assume that calls to render aren't nested;
       // verify that that's the case. (Strictly speaking, unmounting won't cause a
       // render but we still don't expect to be in a render call here.)
-      (true ? warning(
+      ( true ? warning(
         ReactCurrentOwner.current == null,
         'unmountComponentAtNode(): Render methods should be a pure function of ' +
         'props and state; triggering nested component updates from render is ' +
@@ -2197,7 +2197,7 @@
         'componentDidUpdate.'
       ) : null);
   
-      (true ? invariant(
+      ( true ? invariant(
         container && (
           (container.nodeType === ELEMENT_NODE_TYPE || container.nodeType === DOC_NODE_TYPE)
         ),
@@ -2256,7 +2256,7 @@
       if (true) {
         var rootElement = rootElementsByReactRootID[reactRootID];
         if (rootElement && rootElement.parentNode !== container) {
-          (true ? invariant(
+          ( true ? invariant(
             // Call internalGetID here because getID calls isValid which calls
             // findReactContainerForID (this function).
             internalGetID(rootElement) === reactRootID,
@@ -2274,7 +2274,7 @@
             // warning is when the container is empty.
             rootElementsByReactRootID[reactRootID] = containerChild;
           } else {
-            (true ? warning(
+            ( true ? warning(
               false,
               'ReactMount: Root element has been removed from its original ' +
               'container. New container:', rootElement.parentNode
@@ -2398,7 +2398,7 @@
   
       firstChildren.length = 0;
   
-      (true ? invariant(
+      ( true ? invariant(
         false,
         'findComponentRoot(..., %s): Unable to find element. This probably ' +
         'means the DOM was unexpectedly mutated (e.g., by the browser), ' +
@@ -2412,7 +2412,7 @@
     },
   
     _mountImageIntoNode: function(markup, container, shouldReuseMarkup) {
-      (true ? invariant(
+      ( true ? invariant(
         container && (
           (container.nodeType === ELEMENT_NODE_TYPE || container.nodeType === DOC_NODE_TYPE)
         ),
@@ -2442,7 +2442,7 @@
             markup.substring(diffIndex - 20, diffIndex + 20) +
             '\n (server) ' + rootMarkup.substring(diffIndex - 20, diffIndex + 20);
   
-          (true ? invariant(
+          ( true ? invariant(
             container.nodeType !== DOC_NODE_TYPE,
             'You\'re trying to render a component to the document using ' +
             'server rendering but the checksum was invalid. This usually ' +
@@ -2456,7 +2456,7 @@
           ) : invariant(container.nodeType !== DOC_NODE_TYPE));
   
           if (true) {
-            (true ? warning(
+            ( true ? warning(
               false,
               'React attempted to reuse markup in a container but the ' +
               'checksum was invalid. This generally means that you are ' +
@@ -2472,7 +2472,7 @@
         }
       }
   
-      (true ? invariant(
+      ( true ? invariant(
         container.nodeType !== DOC_NODE_TYPE,
         'You\'re trying to render a component to the document but ' +
           'you didn\'t use server rendering. We can\'t do this ' +
@@ -2525,7 +2525,7 @@
   
   'use strict';
   
-  var CallbackQueue = __webpack_require__(36);
+  var CallbackQueue = __webpack_require__(38);
   var PooledClass = __webpack_require__(10);
   var ReactCurrentOwner = __webpack_require__(12);
   var ReactPerf = __webpack_require__(13);
@@ -2543,7 +2543,7 @@
   var batchingStrategy = null;
   
   function ensureInjected() {
-    (true ? invariant(
+    ( true ? invariant(
       ReactUpdates.ReactReconcileTransaction && batchingStrategy,
       'ReactUpdates: must inject a reconcile transaction class and batching ' +
       'strategy'
@@ -2637,7 +2637,7 @@
   
   function runBatchedUpdates(transaction) {
     var len = transaction.dirtyComponentsLength;
-    (true ? invariant(
+    ( true ? invariant(
       len === dirtyComponents.length,
       'Expected flush transaction\'s stored dirty-components length (%s) to ' +
       'match dirty-components array length (%s).',
@@ -2717,7 +2717,7 @@
     // verify that that's the case. (This is called by each top-level update
     // function, like setProps, setState, forceUpdate, etc.; creation and
     // destruction of top-level components is guarded in ReactMount.)
-    (true ? warning(
+    ( true ? warning(
       ReactCurrentOwner.current == null,
       'enqueueUpdate(): Render methods should be a pure function of props ' +
       'and state; triggering nested component updates from render is not ' +
@@ -2738,7 +2738,7 @@
    * if no updates are currently being performed.
    */
   function asap(callback, context) {
-    (true ? invariant(
+    ( true ? invariant(
       batchingStrategy.isBatchingUpdates,
       'ReactUpdates.asap: Can\'t enqueue an asap callback in a context where' +
       'updates are not being batched.'
@@ -2749,7 +2749,7 @@
   
   var ReactUpdatesInjection = {
     injectReconcileTransaction: function(ReconcileTransaction) {
-      (true ? invariant(
+      ( true ? invariant(
         ReconcileTransaction,
         'ReactUpdates: must provide a reconcile transaction class'
       ) : invariant(ReconcileTransaction));
@@ -2757,15 +2757,15 @@
     },
   
     injectBatchingStrategy: function(_batchingStrategy) {
-      (true ? invariant(
+      ( true ? invariant(
         _batchingStrategy,
         'ReactUpdates: must provide a batching strategy'
       ) : invariant(_batchingStrategy));
-      (true ? invariant(
+      ( true ? invariant(
         typeof _batchingStrategy.batchedUpdates === 'function',
         'ReactUpdates: must provide a batchedUpdates() function'
       ) : invariant(typeof _batchingStrategy.batchedUpdates === 'function'));
-      (true ? invariant(
+      ( true ? invariant(
         typeof _batchingStrategy.isBatchingUpdates === 'boolean',
         'ReactUpdates: must provide an isBatchingUpdates boolean attribute'
       ) : invariant(typeof _batchingStrategy.isBatchingUpdates === 'boolean'));
@@ -2864,7 +2864,7 @@
   
   var standardReleaser = function(instance) {
     var Klass = this;
-    (true ? invariant(
+    ( true ? invariant(
       instance instanceof Klass,
       'Trying to release an instance into a pool of a different type.'
     ) : invariant(instance instanceof Klass));
@@ -2927,7 +2927,7 @@
   
   'use strict';
   
-  var findDOMNode = __webpack_require__(72);
+  var findDOMNode = __webpack_require__(74);
   
   var ReactBrowserComponentMixin = {
     /**
@@ -3244,7 +3244,7 @@
       }
   
       for (var propName in Properties) {
-        (true ? invariant(
+        ( true ? invariant(
           !DOMProperty.isStandardName.hasOwnProperty(propName),
           'injectDOMPropertyConfig(...): You\'re trying to inject DOM property ' +
           '\'%s\' which has already been injected. You may be accidentally ' +
@@ -3293,21 +3293,21 @@
         DOMProperty.hasOverloadedBooleanValue[propName] =
           checkMask(propConfig, DOMPropertyInjection.HAS_OVERLOADED_BOOLEAN_VALUE);
   
-        (true ? invariant(
+        ( true ? invariant(
           !DOMProperty.mustUseAttribute[propName] ||
             !DOMProperty.mustUseProperty[propName],
           'DOMProperty: Cannot require using both attribute and property: %s',
           propName
         ) : invariant(!DOMProperty.mustUseAttribute[propName] ||
           !DOMProperty.mustUseProperty[propName]));
-        (true ? invariant(
+        ( true ? invariant(
           DOMProperty.mustUseProperty[propName] ||
             !DOMProperty.hasSideEffects[propName],
           'DOMProperty: Properties that have side effects must use property: %s',
           propName
         ) : invariant(DOMProperty.mustUseProperty[propName] ||
           !DOMProperty.hasSideEffects[propName]));
-        (true ? invariant(
+        ( true ? invariant(
           !!DOMProperty.hasBooleanValue[propName] +
             !!DOMProperty.hasNumericValue[propName] +
             !!DOMProperty.hasOverloadedBooleanValue[propName] <= 1,
@@ -3490,7 +3490,7 @@
   
   var assign = __webpack_require__(2);
   var emptyFunction = __webpack_require__(14);
-  var getEventTarget = __webpack_require__(52);
+  var getEventTarget = __webpack_require__(54);
   
   /**
    * @interface Event
@@ -3658,12 +3658,12 @@
   
   var EventConstants = __webpack_require__(6);
   var EventPluginHub = __webpack_require__(23);
-  var EventPluginRegistry = __webpack_require__(60);
-  var ReactEventEmitterMixin = __webpack_require__(113);
-  var ViewportMetrics = __webpack_require__(70);
+  var EventPluginRegistry = __webpack_require__(62);
+  var ReactEventEmitterMixin = __webpack_require__(118);
+  var ViewportMetrics = __webpack_require__(72);
   
   var assign = __webpack_require__(2);
-  var isEventSupported = __webpack_require__(54);
+  var isEventSupported = __webpack_require__(56);
   
   /**
    * Summary of `ReactBrowserEventEmitter` event handling:
@@ -4013,7 +4013,7 @@
   
   'use strict';
   
-  var ReactRootIndex = __webpack_require__(69);
+  var ReactRootIndex = __webpack_require__(71);
   
   var invariant = __webpack_require__(1);
   
@@ -4097,13 +4097,13 @@
    * @private
    */
   function getNextDescendantID(ancestorID, destinationID) {
-    (true ? invariant(
+    ( true ? invariant(
       isValidID(ancestorID) && isValidID(destinationID),
       'getNextDescendantID(%s, %s): Received an invalid React DOM ID.',
       ancestorID,
       destinationID
     ) : invariant(isValidID(ancestorID) && isValidID(destinationID)));
-    (true ? invariant(
+    ( true ? invariant(
       isAncestorIDOf(ancestorID, destinationID),
       'getNextDescendantID(...): React has made an invalid assumption about ' +
       'the DOM hierarchy. Expected `%s` to be an ancestor of `%s`.',
@@ -4151,7 +4151,7 @@
       }
     }
     var longestCommonID = oneID.substr(0, lastCommonMarkerIndex);
-    (true ? invariant(
+    ( true ? invariant(
       isValidID(longestCommonID),
       'getFirstCommonAncestorID(%s, %s): Expected a valid React DOM ID: %s',
       oneID,
@@ -4176,13 +4176,13 @@
   function traverseParentPath(start, stop, cb, arg, skipFirst, skipLast) {
     start = start || '';
     stop = stop || '';
-    (true ? invariant(
+    ( true ? invariant(
       start !== stop,
       'traverseParentPath(...): Cannot traverse from and to the same ID, `%s`.',
       start
     ) : invariant(start !== stop));
     var traverseUp = isAncestorIDOf(stop, start);
-    (true ? invariant(
+    ( true ? invariant(
       traverseUp || isAncestorIDOf(start, stop),
       'traverseParentPath(%s, %s, ...): Cannot traverse from two IDs that do ' +
       'not have a parent path.',
@@ -4201,7 +4201,7 @@
         // Only break //after// visiting `stop`.
         break;
       }
-      (true ? invariant(
+      ( true ? invariant(
         depth++ < MAX_TREE_DEPTH,
         'traverseParentPath(%s, %s, ...): Detected an infinite loop while ' +
         'traversing the React DOM ID tree. This may be due to malformed IDs: %s',
@@ -4403,7 +4403,7 @@
   
   'use strict';
   
-  var ReactRef = __webpack_require__(119);
+  var ReactRef = __webpack_require__(124);
   var ReactElementValidator = __webpack_require__(25);
   
   /**
@@ -4532,7 +4532,7 @@
   
   var DOMProperty = __webpack_require__(16);
   
-  var quoteAttributeValueForBrowser = __webpack_require__(154);
+  var quoteAttributeValueForBrowser = __webpack_require__(159);
   var warning = __webpack_require__(4);
   
   function shouldIgnoreValue(name, value) {
@@ -4572,7 +4572,7 @@
   
       // For now, only warn when we have a suggested correction. This prevents
       // logging too much when using transferPropsTo.
-      (true ? warning(
+      ( true ? warning(
         standardName == null,
         'Unknown DOM property %s. Did you mean %s?',
         name,
@@ -4723,11 +4723,11 @@
   
   'use strict';
   
-  var EventPluginRegistry = __webpack_require__(60);
-  var EventPluginUtils = __webpack_require__(37);
+  var EventPluginRegistry = __webpack_require__(62);
+  var EventPluginUtils = __webpack_require__(39);
   
-  var accumulateInto = __webpack_require__(48);
-  var forEachAccumulated = __webpack_require__(49);
+  var accumulateInto = __webpack_require__(50);
+  var forEachAccumulated = __webpack_require__(51);
   var invariant = __webpack_require__(1);
   
   /**
@@ -4774,7 +4774,7 @@
       InstanceHandle &&
       InstanceHandle.traverseTwoPhase &&
       InstanceHandle.traverseEnterLeave;
-    (true ? invariant(
+    ( true ? invariant(
       valid,
       'InstanceHandle not injected before use!'
     ) : invariant(valid));
@@ -4858,7 +4858,7 @@
      * @param {?function} listener The callback to store.
      */
     putListener: function(id, registrationName, listener) {
-      (true ? invariant(
+      ( true ? invariant(
         !listener || typeof listener === 'function',
         'Expected %s listener to be a function, instead got type %s',
         registrationName, typeof listener
@@ -4963,7 +4963,7 @@
       var processingEventQueue = eventQueue;
       eventQueue = null;
       forEachAccumulated(processingEventQueue, executeDispatchesAndRelease);
-      (true ? invariant(
+      ( true ? invariant(
         !eventQueue,
         'processEventQueue(): Additional events were enqueued while processing ' +
         'an event queue. Support for this has not yet been implemented.'
@@ -5006,8 +5006,8 @@
   var EventConstants = __webpack_require__(6);
   var EventPluginHub = __webpack_require__(23);
   
-  var accumulateInto = __webpack_require__(48);
-  var forEachAccumulated = __webpack_require__(49);
+  var accumulateInto = __webpack_require__(50);
+  var forEachAccumulated = __webpack_require__(51);
   
   var PropagationPhases = EventConstants.PropagationPhases;
   var getListener = EventPluginHub.getListener;
@@ -5156,12 +5156,12 @@
   
   var ReactElement = __webpack_require__(3);
   var ReactFragment = __webpack_require__(29);
-  var ReactPropTypeLocations = __webpack_require__(46);
+  var ReactPropTypeLocations = __webpack_require__(48);
   var ReactPropTypeLocationNames = __webpack_require__(31);
   var ReactCurrentOwner = __webpack_require__(12);
   var ReactNativeComponent = __webpack_require__(30);
   
-  var getIteratorFn = __webpack_require__(75);
+  var getIteratorFn = __webpack_require__(77);
   var invariant = __webpack_require__(1);
   var warning = __webpack_require__(4);
   
@@ -5300,7 +5300,7 @@
       childOwnerAddendum = (" It was passed a child from " + childOwnerName + ".");
     }
   
-    (true ? warning(
+    ( true ? warning(
       false,
       message + '%s%s See https://fb.me/react-warning-keys for more information.',
       parentOrOwnerAddendum,
@@ -5371,7 +5371,7 @@
         try {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
-          (true ? invariant(
+          ( true ? invariant(
             typeof propTypes[propName] === 'function',
             '%s: %s type `%s` is invalid; it must be a function, usually from ' +
             'React.PropTypes.',
@@ -5389,7 +5389,7 @@
           loggedTypeFailures[error.message] = true;
   
           var addendum = getDeclarationErrorAddendum(this);
-          (true ? warning(false, 'Failed propType: %s%s', error.message, addendum) : null);
+          ( true ? warning(false, 'Failed propType: %s%s', error.message, addendum) : null);
         }
       }
     }
@@ -5424,7 +5424,7 @@
       ownerInfo = ' The element was created by ' + ownerName + '.';
     }
   
-    (true ? warning(
+    ( true ? warning(
       false,
       'Don\'t set .props.%s of the React component%s. Instead, specify the ' +
       'correct value when initially creating the element or use ' +
@@ -5507,7 +5507,7 @@
       );
     }
     if (typeof componentClass.getDefaultProps === 'function') {
-      (true ? warning(
+      ( true ? warning(
         componentClass.getDefaultProps.isReactClassApproved,
         'getDefaultProps is only used on classic React.createClass ' +
         'definitions. Use a static property named `defaultProps` instead.'
@@ -5522,7 +5522,7 @@
     createElement: function(type, props, children) {
       // We warn in this case but don't throw. We expect the element creation to
       // succeed and there will likely be errors in render.
-      (true ? warning(
+      ( true ? warning(
         type != null,
         'React.createElement: type should not be null or undefined. It should ' +
           'be a string (for DOM elements) or a ReactClass (for composite ' +
@@ -5562,7 +5562,7 @@
             {
               enumerable: false,
               get: function() {
-                (true ? warning(
+                ( true ? warning(
                   false,
                   'Factory.type is deprecated. Access the class directly ' +
                   'before passing it to createFactory.'
@@ -5617,7 +5617,7 @@
   
   var SyntheticEvent = __webpack_require__(17);
   
-  var getEventTarget = __webpack_require__(52);
+  var getEventTarget = __webpack_require__(54);
   
   /**
    * @interface UIEvent
@@ -5704,7 +5704,7 @@
   var keyMirror = function(obj) {
     var ret = {};
     var key;
-    (true ? invariant(
+    ( true ? invariant(
       obj instanceof Object && !Array.isArray(obj),
       'keyMirror(...): Argument must be an object.'
     ) : invariant(obj instanceof Object && !Array.isArray(obj)));
@@ -5738,7 +5738,7 @@
   
   'use strict';
   
-  var focusNode = __webpack_require__(73);
+  var focusNode = __webpack_require__(75);
   
   var AutoFocusMixin = {
     componentDidMount: function() {
@@ -5812,7 +5812,7 @@
       Object.defineProperty(obj, key, {
         enumerable: true,
         get: function() {
-          (true ? warning(
+          ( true ? warning(
             this[didWarnKey],
             'A ReactFragment is an opaque type. Accessing any of its ' +
             'properties is deprecated. Pass it to one of the React.Children ' +
@@ -5822,7 +5822,7 @@
           return this[fragmentKey][key];
         },
         set: function(value) {
-          (true ? warning(
+          ( true ? warning(
             this[didWarnKey],
             'A ReactFragment is an immutable opaque type. Mutating its ' +
             'properties is deprecated.'
@@ -5854,7 +5854,7 @@
     create: function(object) {
       if (true) {
         if (typeof object !== 'object' || !object || Array.isArray(object)) {
-          (true ? warning(
+          ( true ? warning(
             false,
             'React.addons.createFragment only accepts a single object.',
             object
@@ -5862,7 +5862,7 @@
           return object;
         }
         if (ReactElement.isValidElement(object)) {
-          (true ? warning(
+          ( true ? warning(
             false,
             'React.addons.createFragment does not accept a ReactElement ' +
             'without a wrapper object.'
@@ -5895,7 +5895,7 @@
       if (true) {
         if (canWarnForReactFragment) {
           if (!fragment[fragmentKey]) {
-            (true ? warning(
+            ( true ? warning(
               didWarnForFragment(fragment),
               'Any use of a keyed object should be wrapped in ' +
               'React.addons.createFragment(object) before being passed as a ' +
@@ -6012,7 +6012,7 @@
    * @return {function} The internal class constructor function.
    */
   function createInternalComponent(element) {
-    (true ? invariant(
+    ( true ? invariant(
       genericComponentClass,
       'There is no registered component for the tag %s',
       element.type
@@ -6096,9 +6096,9 @@
   'use strict';
   
   var SyntheticUIEvent = __webpack_require__(26);
-  var ViewportMetrics = __webpack_require__(70);
+  var ViewportMetrics = __webpack_require__(72);
   
-  var getEventModifierState = __webpack_require__(51);
+  var getEventModifierState = __webpack_require__(53);
   
   /**
    * @interface MouseEvent
@@ -6284,7 +6284,7 @@
      * @return Return value from `method`.
      */
     perform: function(method, scope, a, b, c, d, e, f) {
-      (true ? invariant(
+      ( true ? invariant(
         !this.isInTransaction(),
         'Transaction.perform(...): Cannot initialize a transaction when there ' +
         'is already an outstanding transaction.'
@@ -6356,7 +6356,7 @@
      * invoked).
      */
     closeAll: function(startIndex) {
-      (true ? invariant(
+      ( true ? invariant(
         this.isInTransaction(),
         'Transaction.closeAll(): Cannot close transaction when none are open.'
       ) : invariant(this.isInTransaction()));
@@ -6479,6 +6479,2596 @@
 /* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
+  var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
+  /*
+  
+    The MIT License (MIT)
+  
+    Copyright (c) 2007-2013 Einar Lielmanis and contributors.
+  
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation files
+    (the "Software"), to deal in the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge,
+    publish, distribute, sublicense, and/or sell copies of the Software,
+    and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+  
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+  
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+    BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+  
+  
+   CSS Beautifier
+  ---------------
+  
+      Written by Harutyun Amirjanyan, (amirjanyan@gmail.com)
+  
+      Based on code initially developed by: Einar Lielmanis, <einar@jsbeautifier.org>
+          http://jsbeautifier.org/
+  
+      Usage:
+          css_beautify(source_text);
+          css_beautify(source_text, options);
+  
+      The options are (default in brackets):
+          indent_size (4)                   — indentation size,
+          indent_char (space)               — character to indent with,
+          selector_separator_newline (true) - separate selectors with newline or
+                                              not (e.g. "a,\nbr" or "a, br")
+          end_with_newline (false)          - end with a newline
+          newline_between_rules (true)      - add a new line after every css rule
+  
+      e.g
+  
+      css_beautify(css_source_text, {
+        'indent_size': 1,
+        'indent_char': '\t',
+        'selector_separator': ' ',
+        'end_with_newline': false,
+        'newline_between_rules': true
+      });
+  */
+  
+  // http://www.w3.org/TR/CSS21/syndata.html#tokenization
+  // http://www.w3.org/TR/css3-syntax/
+  
+  (function() {
+      function css_beautify(source_text, options) {
+          options = options || {};
+          source_text = source_text || '';
+          // HACK: newline parsing inconsistent. This brute force normalizes the input.
+          source_text = source_text.replace(/\r\n|[\r\u2028\u2029]/g, '\n')
+  
+          var indentSize = options.indent_size || 4;
+          var indentCharacter = options.indent_char || ' ';
+          var selectorSeparatorNewline = (options.selector_separator_newline === undefined) ? true : options.selector_separator_newline;
+          var end_with_newline = (options.end_with_newline === undefined) ? false : options.end_with_newline;
+          var newline_between_rules = (options.newline_between_rules === undefined) ? true : options.newline_between_rules;
+          var eol = options.eol ? options.eol : '\n';
+  
+          // compatibility
+          if (typeof indentSize === "string") {
+              indentSize = parseInt(indentSize, 10);
+          }
+  
+          if(options.indent_with_tabs){
+              indentCharacter = '\t';
+              indentSize = 1;
+          }
+  
+          eol = eol.replace(/\\r/, '\r').replace(/\\n/, '\n')
+  
+  
+          // tokenizer
+          var whiteRe = /^\s+$/;
+          var wordRe = /[\w$\-_]/;
+  
+          var pos = -1,
+              ch;
+          var parenLevel = 0;
+  
+          function next() {
+              ch = source_text.charAt(++pos);
+              return ch || '';
+          }
+  
+          function peek(skipWhitespace) {
+              var result = '';
+              var prev_pos = pos;
+              if (skipWhitespace) {
+                  eatWhitespace();
+              }
+              result = source_text.charAt(pos + 1) || '';
+              pos = prev_pos - 1;
+              next();
+              return result;
+          }
+  
+          function eatString(endChars) {
+              var start = pos;
+              while (next()) {
+                  if (ch === "\\") {
+                      next();
+                  } else if (endChars.indexOf(ch) !== -1) {
+                      break;
+                  } else if (ch === "\n") {
+                      break;
+                  }
+              }
+              return source_text.substring(start, pos + 1);
+          }
+  
+          function peekString(endChar) {
+              var prev_pos = pos;
+              var str = eatString(endChar);
+              pos = prev_pos - 1;
+              next();
+              return str;
+          }
+  
+          function eatWhitespace() {
+              var result = '';
+              while (whiteRe.test(peek())) {
+                  next();
+                  result += ch;
+              }
+              return result;
+          }
+  
+          function skipWhitespace() {
+              var result = '';
+              if (ch && whiteRe.test(ch)) {
+                  result = ch;
+              }
+              while (whiteRe.test(next())) {
+                  result += ch;
+              }
+              return result;
+          }
+  
+          function eatComment(singleLine) {
+              var start = pos;
+              singleLine = peek() === "/";
+              next();
+              while (next()) {
+                  if (!singleLine && ch === "*" && peek() === "/") {
+                      next();
+                      break;
+                  } else if (singleLine && ch === "\n") {
+                      return source_text.substring(start, pos);
+                  }
+              }
+  
+              return source_text.substring(start, pos) + ch;
+          }
+  
+  
+          function lookBack(str) {
+              return source_text.substring(pos - str.length, pos).toLowerCase() ===
+                  str;
+          }
+  
+          // Nested pseudo-class if we are insideRule
+          // and the next special character found opens
+          // a new block
+          function foundNestedPseudoClass() {
+              var openParen = 0;
+              for (var i = pos + 1; i < source_text.length; i++) {
+                  var ch = source_text.charAt(i);
+                  if (ch === "{") {
+                      return true;
+                  } else if (ch === '(') {
+                      // pseudoclasses can contain ()
+                      openParen += 1;
+                  } else if (ch === ')') {
+                      if (openParen == 0) {
+                          return false;
+                      }
+                      openParen -= 1;
+                  } else if (ch === ";" || ch === "}") {
+                      return false;
+                  }
+              }
+              return false;
+          }
+  
+          // printer
+          var basebaseIndentString = source_text.match(/^[\t ]*/)[0];
+          var singleIndent = new Array(indentSize + 1).join(indentCharacter);
+          var indentLevel = 0;
+          var nestedLevel = 0;
+  
+          function indent() {
+              indentLevel++;
+              basebaseIndentString += singleIndent;
+          }
+  
+          function outdent() {
+              indentLevel--;
+              basebaseIndentString = basebaseIndentString.slice(0, -indentSize);
+          }
+  
+          var print = {};
+          print["{"] = function(ch) {
+              print.singleSpace();
+              output.push(ch);
+              print.newLine();
+          };
+          print["}"] = function(ch) {
+              print.newLine();
+              output.push(ch);
+              print.newLine();
+          };
+  
+          print._lastCharWhitespace = function() {
+              return whiteRe.test(output[output.length - 1]);
+          };
+  
+          print.newLine = function(keepWhitespace) {
+              if (output.length) {
+                  if (!keepWhitespace && output[output.length - 1] !== '\n') {
+                      print.trim();
+                  }
+  
+                  output.push('\n');
+  
+                  if (basebaseIndentString) {
+                      output.push(basebaseIndentString);
+                  }
+              }
+          };
+          print.singleSpace = function() {
+              if (output.length && !print._lastCharWhitespace()) {
+                  output.push(' ');
+              }
+          };
+  
+          print.preserveSingleSpace = function() {
+              if (isAfterSpace) {
+                  print.singleSpace();
+              }
+          };
+  
+          print.trim = function() {
+              while (print._lastCharWhitespace()) {
+                  output.pop();
+              }
+          };
+  
+  
+          var output = [];
+          /*_____________________--------------------_____________________*/
+  
+          var insideRule = false;
+          var insidePropertyValue = false;
+          var enteringConditionalGroup = false;
+          var top_ch = '';
+          var last_top_ch = '';
+  
+          while (true) {
+              var whitespace = skipWhitespace();
+              var isAfterSpace = whitespace !== '';
+              var isAfterNewline = whitespace.indexOf('\n') !== -1;
+              last_top_ch = top_ch;
+              top_ch = ch;
+  
+              if (!ch) {
+                  break;
+              } else if (ch === '/' && peek() === '*') { /* css comment */
+                  var header = indentLevel === 0;
+  
+                  if (isAfterNewline || header) {
+                      print.newLine();
+                  }
+  
+                  output.push(eatComment());
+                  print.newLine();
+                  if (header) {
+                      print.newLine(true);
+                  }
+              } else if (ch === '/' && peek() === '/') { // single line comment
+                  if (!isAfterNewline && last_top_ch !== '{' ) {
+                      print.trim();
+                  }
+                  print.singleSpace();
+                  output.push(eatComment());
+                  print.newLine();
+              } else if (ch === '@') {
+                  print.preserveSingleSpace();
+                  output.push(ch);
+  
+                  // strip trailing space, if present, for hash property checks
+                  var variableOrRule = peekString(": ,;{}()[]/='\"");
+  
+                  if (variableOrRule.match(/[ :]$/)) {
+                      // we have a variable or pseudo-class, add it and insert one space before continuing
+                      next();
+                      variableOrRule = eatString(": ").replace(/\s$/, '');
+                      output.push(variableOrRule);
+                      print.singleSpace();
+                  }
+  
+                  variableOrRule = variableOrRule.replace(/\s$/, '')
+  
+                  // might be a nesting at-rule
+                  if (variableOrRule in css_beautify.NESTED_AT_RULE) {
+                      nestedLevel += 1;
+                      if (variableOrRule in css_beautify.CONDITIONAL_GROUP_RULE) {
+                          enteringConditionalGroup = true;
+                      }
+                  }
+              } else if (ch === '#' && peek() === '{') {
+                print.preserveSingleSpace();
+                output.push(eatString('}'));
+              } else if (ch === '{') {
+                  if (peek(true) === '}') {
+                      eatWhitespace();
+                      next();
+                      print.singleSpace();
+                      output.push("{}");
+                      print.newLine();
+                      if (newline_between_rules && indentLevel === 0) {
+                          print.newLine(true);
+                      }
+                  } else {
+                      indent();
+                      print["{"](ch);
+                      // when entering conditional groups, only rulesets are allowed
+                      if (enteringConditionalGroup) {
+                          enteringConditionalGroup = false;
+                          insideRule = (indentLevel > nestedLevel);
+                      } else {
+                          // otherwise, declarations are also allowed
+                          insideRule = (indentLevel >= nestedLevel);
+                      }
+                  }
+              } else if (ch === '}') {
+                  outdent();
+                  print["}"](ch);
+                  insideRule = false;
+                  insidePropertyValue = false;
+                  if (nestedLevel) {
+                      nestedLevel--;
+                  }
+                  if (newline_between_rules && indentLevel === 0) {
+                      print.newLine(true);
+                  }
+              } else if (ch === ":") {
+                  eatWhitespace();
+                  if ((insideRule || enteringConditionalGroup) &&
+                      !(lookBack("&") || foundNestedPseudoClass())) {
+                      // 'property: value' delimiter
+                      // which could be in a conditional group query
+                      insidePropertyValue = true;
+                      output.push(':');
+                      print.singleSpace();
+                  } else {
+                      // sass/less parent reference don't use a space
+                      // sass nested pseudo-class don't use a space
+                      if (peek() === ":") {
+                          // pseudo-element
+                          next();
+                          output.push("::");
+                      } else {
+                          // pseudo-class
+                          output.push(':');
+                      }
+                  }
+              } else if (ch === '"' || ch === '\'') {
+                  print.preserveSingleSpace();
+                  output.push(eatString(ch));
+              } else if (ch === ';') {
+                  insidePropertyValue = false;
+                  output.push(ch);
+                  print.newLine();
+              } else if (ch === '(') { // may be a url
+                  if (lookBack("url")) {
+                      output.push(ch);
+                      eatWhitespace();
+                      if (next()) {
+                          if (ch !== ')' && ch !== '"' && ch !== '\'') {
+                              output.push(eatString(')'));
+                          } else {
+                              pos--;
+                          }
+                      }
+                  } else {
+                      parenLevel++;
+                      print.preserveSingleSpace();
+                      output.push(ch);
+                      eatWhitespace();
+                  }
+              } else if (ch === ')') {
+                  output.push(ch);
+                  parenLevel--;
+              } else if (ch === ',') {
+                  output.push(ch);
+                  eatWhitespace();
+                  if (selectorSeparatorNewline && !insidePropertyValue && parenLevel < 1) {
+                      print.newLine();
+                  } else {
+                      print.singleSpace();
+                  }
+              } else if (ch === ']') {
+                  output.push(ch);
+              } else if (ch === '[') {
+                  print.preserveSingleSpace();
+                  output.push(ch);
+              } else if (ch === '=') { // no whitespace before or after
+                  eatWhitespace()
+                  ch = '=';
+                  output.push(ch);
+              } else {
+                  print.preserveSingleSpace();
+                  output.push(ch);
+              }
+          }
+  
+  
+          var sweetCode = '';
+          if (basebaseIndentString) {
+              sweetCode += basebaseIndentString;
+          }
+  
+          sweetCode += output.join('').replace(/[\r\n\t ]+$/, '');
+  
+          // establish end_with_newline
+          if (end_with_newline) {
+              sweetCode += '\n';
+          }
+  
+          if (eol != '\n') {
+              sweetCode = sweetCode.replace(/[\n]/g, eol);
+          }
+  
+          return sweetCode;
+      }
+  
+      // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
+      css_beautify.NESTED_AT_RULE = {
+          "@page": true,
+          "@font-face": true,
+          "@keyframes": true,
+          // also in CONDITIONAL_GROUP_RULE below
+          "@media": true,
+          "@supports": true,
+          "@document": true
+      };
+      css_beautify.CONDITIONAL_GROUP_RULE = {
+          "@media": true,
+          "@supports": true,
+          "@document": true
+      };
+  
+      /*global define */
+      if (true) {
+          // Add support for AMD ( https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property- )
+          !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+              return {
+                  css_beautify: css_beautify
+              };
+          }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+      } else if (typeof exports !== "undefined") {
+          // Add support for CommonJS. Just put this file somewhere on your require.paths
+          // and you will be able to `var html_beautify = require("beautify").html_beautify`.
+          exports.css_beautify = css_beautify;
+      } else if (typeof window !== "undefined") {
+          // If we're running a web page and don't have either of the above, add our one global
+          window.css_beautify = css_beautify;
+      } else if (typeof global !== "undefined") {
+          // If we don't even have window, try global.
+          global.css_beautify = css_beautify;
+      }
+  
+  }());
+
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+  var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
+  /*
+  
+    The MIT License (MIT)
+  
+    Copyright (c) 2007-2013 Einar Lielmanis and contributors.
+  
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation files
+    (the "Software"), to deal in the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge,
+    publish, distribute, sublicense, and/or sell copies of the Software,
+    and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+  
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+  
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+    BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+  
+   JS Beautifier
+  ---------------
+  
+  
+    Written by Einar Lielmanis, <einar@jsbeautifier.org>
+        http://jsbeautifier.org/
+  
+    Originally converted to javascript by Vital, <vital76@gmail.com>
+    "End braces on own line" added by Chris J. Shull, <chrisjshull@gmail.com>
+    Parsing improvements for brace-less statements by Liam Newman <bitwiseman@gmail.com>
+  
+  
+    Usage:
+      js_beautify(js_source_text);
+      js_beautify(js_source_text, options);
+  
+    The options are:
+      indent_size (default 4)          - indentation size,
+      indent_char (default space)      - character to indent with,
+      preserve_newlines (default true) - whether existing line breaks should be preserved,
+      max_preserve_newlines (default unlimited) - maximum number of line breaks to be preserved in one chunk,
+  
+      jslint_happy (default false) - if true, then jslint-stricter mode is enforced.
+  
+              jslint_happy        !jslint_happy
+              ---------------------------------
+              function ()         function()
+  
+              switch () {         switch() {
+              case 1:               case 1:
+                break;                break;
+              }                   }
+  
+      space_after_anon_function (default false) - should the space before an anonymous function's parens be added, "function()" vs "function ()",
+            NOTE: This option is overriden by jslint_happy (i.e. if jslint_happy is true, space_after_anon_function is true by design)
+  
+      brace_style (default "collapse") - "collapse" | "expand" | "end-expand" | "none"
+              put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or just put end braces on own line, or attempt to keep them where they are.
+  
+      space_before_conditional (default true) - should the space before conditional statement be added, "if(true)" vs "if (true)",
+  
+      unescape_strings (default false) - should printable characters in strings encoded in \xNN notation be unescaped, "example" vs "\x65\x78\x61\x6d\x70\x6c\x65"
+  
+      wrap_line_length (default unlimited) - lines should wrap at next opportunity after this number of characters.
+            NOTE: This is not a hard limit. Lines will continue until a point where a newline would
+                  be preserved if it were present.
+  
+      end_with_newline (default false)  - end output with a newline
+  
+  
+      e.g
+  
+      js_beautify(js_source_text, {
+        'indent_size': 1,
+        'indent_char': '\t'
+      });
+  
+  */
+  
+  (function() {
+  
+      var acorn = {};
+      (function (exports) {
+        // This section of code is taken from acorn.
+        //
+        // Acorn was written by Marijn Haverbeke and released under an MIT
+        // license. The Unicode regexps (for identifiers and whitespace) were
+        // taken from [Esprima](http://esprima.org) by Ariya Hidayat.
+        //
+        // Git repositories for Acorn are available at
+        //
+        //     http://marijnhaverbeke.nl/git/acorn
+        //     https://github.com/marijnh/acorn.git
+  
+        // ## Character categories
+  
+        // Big ugly regular expressions that match characters in the
+        // whitespace, identifier, and identifier-start categories. These
+        // are only applied when a character is found to actually have a
+        // code point above 128.
+  
+        var nonASCIIwhitespace = /[\u1680\u180e\u2000-\u200a\u202f\u205f\u3000\ufeff]/;
+        var nonASCIIidentifierStartChars = "\xaa\xb5\xba\xc0-\xd6\xd8-\xf6\xf8-\u02c1\u02c6-\u02d1\u02e0-\u02e4\u02ec\u02ee\u0370-\u0374\u0376\u0377\u037a-\u037d\u0386\u0388-\u038a\u038c\u038e-\u03a1\u03a3-\u03f5\u03f7-\u0481\u048a-\u0527\u0531-\u0556\u0559\u0561-\u0587\u05d0-\u05ea\u05f0-\u05f2\u0620-\u064a\u066e\u066f\u0671-\u06d3\u06d5\u06e5\u06e6\u06ee\u06ef\u06fa-\u06fc\u06ff\u0710\u0712-\u072f\u074d-\u07a5\u07b1\u07ca-\u07ea\u07f4\u07f5\u07fa\u0800-\u0815\u081a\u0824\u0828\u0840-\u0858\u08a0\u08a2-\u08ac\u0904-\u0939\u093d\u0950\u0958-\u0961\u0971-\u0977\u0979-\u097f\u0985-\u098c\u098f\u0990\u0993-\u09a8\u09aa-\u09b0\u09b2\u09b6-\u09b9\u09bd\u09ce\u09dc\u09dd\u09df-\u09e1\u09f0\u09f1\u0a05-\u0a0a\u0a0f\u0a10\u0a13-\u0a28\u0a2a-\u0a30\u0a32\u0a33\u0a35\u0a36\u0a38\u0a39\u0a59-\u0a5c\u0a5e\u0a72-\u0a74\u0a85-\u0a8d\u0a8f-\u0a91\u0a93-\u0aa8\u0aaa-\u0ab0\u0ab2\u0ab3\u0ab5-\u0ab9\u0abd\u0ad0\u0ae0\u0ae1\u0b05-\u0b0c\u0b0f\u0b10\u0b13-\u0b28\u0b2a-\u0b30\u0b32\u0b33\u0b35-\u0b39\u0b3d\u0b5c\u0b5d\u0b5f-\u0b61\u0b71\u0b83\u0b85-\u0b8a\u0b8e-\u0b90\u0b92-\u0b95\u0b99\u0b9a\u0b9c\u0b9e\u0b9f\u0ba3\u0ba4\u0ba8-\u0baa\u0bae-\u0bb9\u0bd0\u0c05-\u0c0c\u0c0e-\u0c10\u0c12-\u0c28\u0c2a-\u0c33\u0c35-\u0c39\u0c3d\u0c58\u0c59\u0c60\u0c61\u0c85-\u0c8c\u0c8e-\u0c90\u0c92-\u0ca8\u0caa-\u0cb3\u0cb5-\u0cb9\u0cbd\u0cde\u0ce0\u0ce1\u0cf1\u0cf2\u0d05-\u0d0c\u0d0e-\u0d10\u0d12-\u0d3a\u0d3d\u0d4e\u0d60\u0d61\u0d7a-\u0d7f\u0d85-\u0d96\u0d9a-\u0db1\u0db3-\u0dbb\u0dbd\u0dc0-\u0dc6\u0e01-\u0e30\u0e32\u0e33\u0e40-\u0e46\u0e81\u0e82\u0e84\u0e87\u0e88\u0e8a\u0e8d\u0e94-\u0e97\u0e99-\u0e9f\u0ea1-\u0ea3\u0ea5\u0ea7\u0eaa\u0eab\u0ead-\u0eb0\u0eb2\u0eb3\u0ebd\u0ec0-\u0ec4\u0ec6\u0edc-\u0edf\u0f00\u0f40-\u0f47\u0f49-\u0f6c\u0f88-\u0f8c\u1000-\u102a\u103f\u1050-\u1055\u105a-\u105d\u1061\u1065\u1066\u106e-\u1070\u1075-\u1081\u108e\u10a0-\u10c5\u10c7\u10cd\u10d0-\u10fa\u10fc-\u1248\u124a-\u124d\u1250-\u1256\u1258\u125a-\u125d\u1260-\u1288\u128a-\u128d\u1290-\u12b0\u12b2-\u12b5\u12b8-\u12be\u12c0\u12c2-\u12c5\u12c8-\u12d6\u12d8-\u1310\u1312-\u1315\u1318-\u135a\u1380-\u138f\u13a0-\u13f4\u1401-\u166c\u166f-\u167f\u1681-\u169a\u16a0-\u16ea\u16ee-\u16f0\u1700-\u170c\u170e-\u1711\u1720-\u1731\u1740-\u1751\u1760-\u176c\u176e-\u1770\u1780-\u17b3\u17d7\u17dc\u1820-\u1877\u1880-\u18a8\u18aa\u18b0-\u18f5\u1900-\u191c\u1950-\u196d\u1970-\u1974\u1980-\u19ab\u19c1-\u19c7\u1a00-\u1a16\u1a20-\u1a54\u1aa7\u1b05-\u1b33\u1b45-\u1b4b\u1b83-\u1ba0\u1bae\u1baf\u1bba-\u1be5\u1c00-\u1c23\u1c4d-\u1c4f\u1c5a-\u1c7d\u1ce9-\u1cec\u1cee-\u1cf1\u1cf5\u1cf6\u1d00-\u1dbf\u1e00-\u1f15\u1f18-\u1f1d\u1f20-\u1f45\u1f48-\u1f4d\u1f50-\u1f57\u1f59\u1f5b\u1f5d\u1f5f-\u1f7d\u1f80-\u1fb4\u1fb6-\u1fbc\u1fbe\u1fc2-\u1fc4\u1fc6-\u1fcc\u1fd0-\u1fd3\u1fd6-\u1fdb\u1fe0-\u1fec\u1ff2-\u1ff4\u1ff6-\u1ffc\u2071\u207f\u2090-\u209c\u2102\u2107\u210a-\u2113\u2115\u2119-\u211d\u2124\u2126\u2128\u212a-\u212d\u212f-\u2139\u213c-\u213f\u2145-\u2149\u214e\u2160-\u2188\u2c00-\u2c2e\u2c30-\u2c5e\u2c60-\u2ce4\u2ceb-\u2cee\u2cf2\u2cf3\u2d00-\u2d25\u2d27\u2d2d\u2d30-\u2d67\u2d6f\u2d80-\u2d96\u2da0-\u2da6\u2da8-\u2dae\u2db0-\u2db6\u2db8-\u2dbe\u2dc0-\u2dc6\u2dc8-\u2dce\u2dd0-\u2dd6\u2dd8-\u2dde\u2e2f\u3005-\u3007\u3021-\u3029\u3031-\u3035\u3038-\u303c\u3041-\u3096\u309d-\u309f\u30a1-\u30fa\u30fc-\u30ff\u3105-\u312d\u3131-\u318e\u31a0-\u31ba\u31f0-\u31ff\u3400-\u4db5\u4e00-\u9fcc\ua000-\ua48c\ua4d0-\ua4fd\ua500-\ua60c\ua610-\ua61f\ua62a\ua62b\ua640-\ua66e\ua67f-\ua697\ua6a0-\ua6ef\ua717-\ua71f\ua722-\ua788\ua78b-\ua78e\ua790-\ua793\ua7a0-\ua7aa\ua7f8-\ua801\ua803-\ua805\ua807-\ua80a\ua80c-\ua822\ua840-\ua873\ua882-\ua8b3\ua8f2-\ua8f7\ua8fb\ua90a-\ua925\ua930-\ua946\ua960-\ua97c\ua984-\ua9b2\ua9cf\uaa00-\uaa28\uaa40-\uaa42\uaa44-\uaa4b\uaa60-\uaa76\uaa7a\uaa80-\uaaaf\uaab1\uaab5\uaab6\uaab9-\uaabd\uaac0\uaac2\uaadb-\uaadd\uaae0-\uaaea\uaaf2-\uaaf4\uab01-\uab06\uab09-\uab0e\uab11-\uab16\uab20-\uab26\uab28-\uab2e\uabc0-\uabe2\uac00-\ud7a3\ud7b0-\ud7c6\ud7cb-\ud7fb\uf900-\ufa6d\ufa70-\ufad9\ufb00-\ufb06\ufb13-\ufb17\ufb1d\ufb1f-\ufb28\ufb2a-\ufb36\ufb38-\ufb3c\ufb3e\ufb40\ufb41\ufb43\ufb44\ufb46-\ufbb1\ufbd3-\ufd3d\ufd50-\ufd8f\ufd92-\ufdc7\ufdf0-\ufdfb\ufe70-\ufe74\ufe76-\ufefc\uff21-\uff3a\uff41-\uff5a\uff66-\uffbe\uffc2-\uffc7\uffca-\uffcf\uffd2-\uffd7\uffda-\uffdc";
+        var nonASCIIidentifierChars = "\u0300-\u036f\u0483-\u0487\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u0610-\u061a\u0620-\u0649\u0672-\u06d3\u06e7-\u06e8\u06fb-\u06fc\u0730-\u074a\u0800-\u0814\u081b-\u0823\u0825-\u0827\u0829-\u082d\u0840-\u0857\u08e4-\u08fe\u0900-\u0903\u093a-\u093c\u093e-\u094f\u0951-\u0957\u0962-\u0963\u0966-\u096f\u0981-\u0983\u09bc\u09be-\u09c4\u09c7\u09c8\u09d7\u09df-\u09e0\u0a01-\u0a03\u0a3c\u0a3e-\u0a42\u0a47\u0a48\u0a4b-\u0a4d\u0a51\u0a66-\u0a71\u0a75\u0a81-\u0a83\u0abc\u0abe-\u0ac5\u0ac7-\u0ac9\u0acb-\u0acd\u0ae2-\u0ae3\u0ae6-\u0aef\u0b01-\u0b03\u0b3c\u0b3e-\u0b44\u0b47\u0b48\u0b4b-\u0b4d\u0b56\u0b57\u0b5f-\u0b60\u0b66-\u0b6f\u0b82\u0bbe-\u0bc2\u0bc6-\u0bc8\u0bca-\u0bcd\u0bd7\u0be6-\u0bef\u0c01-\u0c03\u0c46-\u0c48\u0c4a-\u0c4d\u0c55\u0c56\u0c62-\u0c63\u0c66-\u0c6f\u0c82\u0c83\u0cbc\u0cbe-\u0cc4\u0cc6-\u0cc8\u0cca-\u0ccd\u0cd5\u0cd6\u0ce2-\u0ce3\u0ce6-\u0cef\u0d02\u0d03\u0d46-\u0d48\u0d57\u0d62-\u0d63\u0d66-\u0d6f\u0d82\u0d83\u0dca\u0dcf-\u0dd4\u0dd6\u0dd8-\u0ddf\u0df2\u0df3\u0e34-\u0e3a\u0e40-\u0e45\u0e50-\u0e59\u0eb4-\u0eb9\u0ec8-\u0ecd\u0ed0-\u0ed9\u0f18\u0f19\u0f20-\u0f29\u0f35\u0f37\u0f39\u0f41-\u0f47\u0f71-\u0f84\u0f86-\u0f87\u0f8d-\u0f97\u0f99-\u0fbc\u0fc6\u1000-\u1029\u1040-\u1049\u1067-\u106d\u1071-\u1074\u1082-\u108d\u108f-\u109d\u135d-\u135f\u170e-\u1710\u1720-\u1730\u1740-\u1750\u1772\u1773\u1780-\u17b2\u17dd\u17e0-\u17e9\u180b-\u180d\u1810-\u1819\u1920-\u192b\u1930-\u193b\u1951-\u196d\u19b0-\u19c0\u19c8-\u19c9\u19d0-\u19d9\u1a00-\u1a15\u1a20-\u1a53\u1a60-\u1a7c\u1a7f-\u1a89\u1a90-\u1a99\u1b46-\u1b4b\u1b50-\u1b59\u1b6b-\u1b73\u1bb0-\u1bb9\u1be6-\u1bf3\u1c00-\u1c22\u1c40-\u1c49\u1c5b-\u1c7d\u1cd0-\u1cd2\u1d00-\u1dbe\u1e01-\u1f15\u200c\u200d\u203f\u2040\u2054\u20d0-\u20dc\u20e1\u20e5-\u20f0\u2d81-\u2d96\u2de0-\u2dff\u3021-\u3028\u3099\u309a\ua640-\ua66d\ua674-\ua67d\ua69f\ua6f0-\ua6f1\ua7f8-\ua800\ua806\ua80b\ua823-\ua827\ua880-\ua881\ua8b4-\ua8c4\ua8d0-\ua8d9\ua8f3-\ua8f7\ua900-\ua909\ua926-\ua92d\ua930-\ua945\ua980-\ua983\ua9b3-\ua9c0\uaa00-\uaa27\uaa40-\uaa41\uaa4c-\uaa4d\uaa50-\uaa59\uaa7b\uaae0-\uaae9\uaaf2-\uaaf3\uabc0-\uabe1\uabec\uabed\uabf0-\uabf9\ufb20-\ufb28\ufe00-\ufe0f\ufe20-\ufe26\ufe33\ufe34\ufe4d-\ufe4f\uff10-\uff19\uff3f";
+        var nonASCIIidentifierStart = new RegExp("[" + nonASCIIidentifierStartChars + "]");
+        var nonASCIIidentifier = new RegExp("[" + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "]");
+  
+        // Whether a single character denotes a newline.
+  
+        var newline = exports.newline = /[\n\r\u2028\u2029]/;
+  
+        // Matches a whole line break (where CRLF is considered a single
+        // line break). Used to count lines.
+  
+        var lineBreak = exports.lineBreak = /\r\n|[\n\r\u2028\u2029]/g;
+  
+        // Test whether a given character code starts an identifier.
+  
+        var isIdentifierStart = exports.isIdentifierStart = function(code) {
+          if (code < 65) return code === 36;
+          if (code < 91) return true;
+          if (code < 97) return code === 95;
+          if (code < 123)return true;
+          return code >= 0xaa && nonASCIIidentifierStart.test(String.fromCharCode(code));
+        };
+  
+        // Test whether a given character is part of an identifier.
+  
+        var isIdentifierChar = exports.isIdentifierChar = function(code) {
+          if (code < 48) return code === 36;
+          if (code < 58) return true;
+          if (code < 65) return false;
+          if (code < 91) return true;
+          if (code < 97) return code === 95;
+          if (code < 123)return true;
+          return code >= 0xaa && nonASCIIidentifier.test(String.fromCharCode(code));
+        };
+      })(acorn);
+  
+      function in_array(what, arr) {
+          for (var i = 0; i < arr.length; i += 1) {
+              if (arr[i] === what) {
+                  return true;
+              }
+          }
+          return false;
+      }
+  
+      function trim(s) {
+          return s.replace(/^\s+|\s+$/g, '');
+      }
+  
+      function ltrim(s) {
+          return s.replace(/^\s+/g, '');
+      }
+  
+      function rtrim(s) {
+          return s.replace(/\s+$/g, '');
+      }
+  
+      function js_beautify(js_source_text, options) {
+          "use strict";
+          var beautifier = new Beautifier(js_source_text, options);
+          return beautifier.beautify();
+      }
+  
+      var MODE = {
+              BlockStatement: 'BlockStatement', // 'BLOCK'
+              Statement: 'Statement', // 'STATEMENT'
+              ObjectLiteral: 'ObjectLiteral', // 'OBJECT',
+              ArrayLiteral: 'ArrayLiteral', //'[EXPRESSION]',
+              ForInitializer: 'ForInitializer', //'(FOR-EXPRESSION)',
+              Conditional: 'Conditional', //'(COND-EXPRESSION)',
+              Expression: 'Expression' //'(EXPRESSION)'
+          };
+  
+      function Beautifier(js_source_text, options) {
+          "use strict";
+          var output
+          var tokens = [], token_pos;
+          var Tokenizer;
+          var current_token;
+          var last_type, last_last_text, indent_string;
+          var flags, previous_flags, flag_store;
+          var prefix;
+  
+          var handlers, opt;
+          var baseIndentString = '';
+  
+          handlers = {
+              'TK_START_EXPR': handle_start_expr,
+              'TK_END_EXPR': handle_end_expr,
+              'TK_START_BLOCK': handle_start_block,
+              'TK_END_BLOCK': handle_end_block,
+              'TK_WORD': handle_word,
+              'TK_RESERVED': handle_word,
+              'TK_SEMICOLON': handle_semicolon,
+              'TK_STRING': handle_string,
+              'TK_EQUALS': handle_equals,
+              'TK_OPERATOR': handle_operator,
+              'TK_COMMA': handle_comma,
+              'TK_BLOCK_COMMENT': handle_block_comment,
+              'TK_COMMENT': handle_comment,
+              'TK_DOT': handle_dot,
+              'TK_UNKNOWN': handle_unknown,
+              'TK_EOF': handle_eof
+          };
+  
+          function create_flags(flags_base, mode) {
+              var next_indent_level = 0;
+              if (flags_base) {
+                  next_indent_level = flags_base.indentation_level;
+                  if (!output.just_added_newline() &&
+                      flags_base.line_indent_level > next_indent_level) {
+                      next_indent_level = flags_base.line_indent_level;
+                  }
+              }
+  
+              var next_flags = {
+                  mode: mode,
+                  parent: flags_base,
+                  last_text: flags_base ? flags_base.last_text : '', // last token text
+                  last_word: flags_base ? flags_base.last_word : '', // last 'TK_WORD' passed
+                  declaration_statement: false,
+                  declaration_assignment: false,
+                  multiline_frame: false,
+                  if_block: false,
+                  else_block: false,
+                  do_block: false,
+                  do_while: false,
+                  in_case_statement: false, // switch(..){ INSIDE HERE }
+                  in_case: false, // we're on the exact line with "case 0:"
+                  case_body: false, // the indented case-action block
+                  indentation_level: next_indent_level,
+                  line_indent_level: flags_base ? flags_base.line_indent_level : next_indent_level,
+                  start_line_index: output.get_line_number(),
+                  ternary_depth: 0
+              };
+              return next_flags;
+          }
+  
+          // Some interpreters have unexpected results with foo = baz || bar;
+          options = options ? options : {};
+          opt = {};
+  
+          // compatibility
+          if (options.braces_on_own_line !== undefined) { //graceful handling of deprecated option
+              opt.brace_style = options.braces_on_own_line ? "expand" : "collapse";
+          }
+          opt.brace_style = options.brace_style ? options.brace_style : (opt.brace_style ? opt.brace_style : "collapse");
+  
+          // graceful handling of deprecated option
+          if (opt.brace_style === "expand-strict") {
+              opt.brace_style = "expand";
+          }
+  
+  
+          opt.indent_size = options.indent_size ? parseInt(options.indent_size, 10) : 4;
+          opt.indent_char = options.indent_char ? options.indent_char : ' ';
+          opt.eol = options.eol ? options.eol : '\n';
+          opt.preserve_newlines = (options.preserve_newlines === undefined) ? true : options.preserve_newlines;
+          opt.break_chained_methods = (options.break_chained_methods === undefined) ? false : options.break_chained_methods;
+          opt.max_preserve_newlines = (options.max_preserve_newlines === undefined) ? 0 : parseInt(options.max_preserve_newlines, 10);
+          opt.space_in_paren = (options.space_in_paren === undefined) ? false : options.space_in_paren;
+          opt.space_in_empty_paren = (options.space_in_empty_paren === undefined) ? false : options.space_in_empty_paren;
+          opt.jslint_happy = (options.jslint_happy === undefined) ? false : options.jslint_happy;
+          opt.space_after_anon_function = (options.space_after_anon_function === undefined) ? false : options.space_after_anon_function;
+          opt.keep_array_indentation = (options.keep_array_indentation === undefined) ? false : options.keep_array_indentation;
+          opt.space_before_conditional = (options.space_before_conditional === undefined) ? true : options.space_before_conditional;
+          opt.unescape_strings = (options.unescape_strings === undefined) ? false : options.unescape_strings;
+          opt.wrap_line_length = (options.wrap_line_length === undefined) ? 0 : parseInt(options.wrap_line_length, 10);
+          opt.e4x = (options.e4x === undefined) ? false : options.e4x;
+          opt.end_with_newline = (options.end_with_newline === undefined) ? false : options.end_with_newline;
+          opt.comma_first = (options.comma_first === undefined) ? false : options.comma_first;
+  
+          // For testing of beautify ignore:start directive
+          opt.test_output_raw = (options.test_output_raw === undefined) ? false : options.test_output_raw;
+  
+          // force opt.space_after_anon_function to true if opt.jslint_happy
+          if(opt.jslint_happy) {
+              opt.space_after_anon_function = true;
+          }
+  
+          if(options.indent_with_tabs){
+              opt.indent_char = '\t';
+              opt.indent_size = 1;
+          }
+  
+          opt.eol = opt.eol.replace(/\\r/, '\r').replace(/\\n/, '\n')
+  
+          //----------------------------------
+          indent_string = '';
+          while (opt.indent_size > 0) {
+              indent_string += opt.indent_char;
+              opt.indent_size -= 1;
+          }
+  
+          var preindent_index = 0;
+          if(js_source_text && js_source_text.length) {
+              while ( (js_source_text.charAt(preindent_index) === ' ' ||
+                      js_source_text.charAt(preindent_index) === '\t')) {
+                  baseIndentString += js_source_text.charAt(preindent_index);
+                  preindent_index += 1;
+              }
+              js_source_text = js_source_text.substring(preindent_index);
+          }
+  
+          last_type = 'TK_START_BLOCK'; // last token type
+          last_last_text = ''; // pre-last token text
+          output = new Output(indent_string, baseIndentString);
+  
+          // If testing the ignore directive, start with output disable set to true
+          output.raw = opt.test_output_raw;
+  
+  
+          // Stack of parsing/formatting states, including MODE.
+          // We tokenize, parse, and output in an almost purely a forward-only stream of token input
+          // and formatted output.  This makes the beautifier less accurate than full parsers
+          // but also far more tolerant of syntax errors.
+          //
+          // For example, the default mode is MODE.BlockStatement. If we see a '{' we push a new frame of type
+          // MODE.BlockStatement on the the stack, even though it could be object literal.  If we later
+          // encounter a ":", we'll switch to to MODE.ObjectLiteral.  If we then see a ";",
+          // most full parsers would die, but the beautifier gracefully falls back to
+          // MODE.BlockStatement and continues on.
+          flag_store = [];
+          set_mode(MODE.BlockStatement);
+  
+          this.beautify = function() {
+  
+              /*jshint onevar:true */
+              var local_token, sweet_code;
+              Tokenizer = new tokenizer(js_source_text, opt, indent_string);
+              tokens = Tokenizer.tokenize();
+              token_pos = 0;
+  
+              while (local_token = get_token()) {
+                  for(var i = 0; i < local_token.comments_before.length; i++) {
+                      // The cleanest handling of inline comments is to treat them as though they aren't there.
+                      // Just continue formatting and the behavior should be logical.
+                      // Also ignore unknown tokens.  Again, this should result in better behavior.
+                      handle_token(local_token.comments_before[i]);
+                  }
+                  handle_token(local_token);
+  
+                  last_last_text = flags.last_text;
+                  last_type = local_token.type;
+                  flags.last_text = local_token.text;
+  
+                  token_pos += 1;
+              }
+  
+              sweet_code = output.get_code();
+              if (opt.end_with_newline) {
+                  sweet_code += '\n';
+              }
+  
+              if (opt.eol != '\n') {
+                  sweet_code = sweet_code.replace(/[\n]/g, opt.eol);
+              }
+  
+              return sweet_code;
+          };
+  
+          function handle_token(local_token) {
+              var newlines = local_token.newlines;
+              var keep_whitespace = opt.keep_array_indentation && is_array(flags.mode);
+  
+              if (keep_whitespace) {
+                  for (i = 0; i < newlines; i += 1) {
+                      print_newline(i > 0);
+                  }
+              } else {
+                  if (opt.max_preserve_newlines && newlines > opt.max_preserve_newlines) {
+                      newlines = opt.max_preserve_newlines;
+                  }
+  
+                  if (opt.preserve_newlines) {
+                      if (local_token.newlines > 1) {
+                          print_newline();
+                          for (var i = 1; i < newlines; i += 1) {
+                              print_newline(true);
+                          }
+                      }
+                  }
+              }
+  
+              current_token = local_token;
+              handlers[current_token.type]();
+          }
+  
+          // we could use just string.split, but
+          // IE doesn't like returning empty strings
+          function split_newlines(s) {
+              //return s.split(/\x0d\x0a|\x0a/);
+  
+              s = s.replace(/\x0d/g, '');
+              var out = [],
+                  idx = s.indexOf("\n");
+              while (idx !== -1) {
+                  out.push(s.substring(0, idx));
+                  s = s.substring(idx + 1);
+                  idx = s.indexOf("\n");
+              }
+              if (s.length) {
+                  out.push(s);
+              }
+              return out;
+          }
+  
+          function allow_wrap_or_preserved_newline(force_linewrap) {
+              force_linewrap = (force_linewrap === undefined) ? false : force_linewrap;
+  
+              // Never wrap the first token on a line
+              if (output.just_added_newline()) {
+                  return
+              }
+  
+              if ((opt.preserve_newlines && current_token.wanted_newline) || force_linewrap) {
+                  print_newline(false, true);
+              } else if (opt.wrap_line_length) {
+                  var proposed_line_length = output.current_line.get_character_count() + current_token.text.length +
+                      (output.space_before_token ? 1 : 0);
+                  if (proposed_line_length >= opt.wrap_line_length) {
+                      print_newline(false, true);
+                  }
+              }
+          }
+  
+          function print_newline(force_newline, preserve_statement_flags) {
+              if (!preserve_statement_flags) {
+                  if (flags.last_text !== ';' && flags.last_text !== ',' && flags.last_text !== '=' && last_type !== 'TK_OPERATOR') {
+                      while (flags.mode === MODE.Statement && !flags.if_block && !flags.do_block) {
+                          restore_mode();
+                      }
+                  }
+              }
+  
+              if (output.add_new_line(force_newline)) {
+                  flags.multiline_frame = true;
+              }
+          }
+  
+          function print_token_line_indentation() {
+              if (output.just_added_newline()) {
+                  if (opt.keep_array_indentation && is_array(flags.mode) && current_token.wanted_newline) {
+                      output.current_line.push(current_token.whitespace_before);
+                      output.space_before_token = false;
+                  } else if (output.set_indent(flags.indentation_level)) {
+                      flags.line_indent_level = flags.indentation_level;
+                  }
+              }
+          }
+  
+          function print_token(printable_token) {
+              if (output.raw) {
+                  output.add_raw_token(current_token)
+                  return;
+              }
+  
+              if (opt.comma_first && last_type === 'TK_COMMA'
+                  && output.just_added_newline()) {
+                  if(output.previous_line.last() === ',') {
+                      output.previous_line.pop();
+                      print_token_line_indentation();
+                      output.add_token(',');
+                      output.space_before_token = true;
+                  }
+              }
+  
+              printable_token = printable_token || current_token.text;
+              print_token_line_indentation();
+              output.add_token(printable_token);
+          }
+  
+          function indent() {
+              flags.indentation_level += 1;
+          }
+  
+          function deindent() {
+              if (flags.indentation_level > 0 &&
+                  ((!flags.parent) || flags.indentation_level > flags.parent.indentation_level))
+                  flags.indentation_level -= 1;
+          }
+  
+          function set_mode(mode) {
+              if (flags) {
+                  flag_store.push(flags);
+                  previous_flags = flags;
+              } else {
+                  previous_flags = create_flags(null, mode);
+              }
+  
+              flags = create_flags(previous_flags, mode);
+          }
+  
+          function is_array(mode) {
+              return mode === MODE.ArrayLiteral;
+          }
+  
+          function is_expression(mode) {
+              return in_array(mode, [MODE.Expression, MODE.ForInitializer, MODE.Conditional]);
+          }
+  
+          function restore_mode() {
+              if (flag_store.length > 0) {
+                  previous_flags = flags;
+                  flags = flag_store.pop();
+                  if (previous_flags.mode === MODE.Statement) {
+                      output.remove_redundant_indentation(previous_flags);
+                  }
+              }
+          }
+  
+          function start_of_object_property() {
+              return flags.parent.mode === MODE.ObjectLiteral && flags.mode === MODE.Statement && (
+                  (flags.last_text === ':' && flags.ternary_depth === 0) || (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['get', 'set'])));
+          }
+  
+          function start_of_statement() {
+              if (
+                      (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['var', 'let', 'const']) && current_token.type === 'TK_WORD') ||
+                      (last_type === 'TK_RESERVED' && flags.last_text === 'do') ||
+                      (last_type === 'TK_RESERVED' && flags.last_text === 'return' && !current_token.wanted_newline) ||
+                      (last_type === 'TK_RESERVED' && flags.last_text === 'else' && !(current_token.type === 'TK_RESERVED' && current_token.text === 'if')) ||
+                      (last_type === 'TK_END_EXPR' && (previous_flags.mode === MODE.ForInitializer || previous_flags.mode === MODE.Conditional)) ||
+                      (last_type === 'TK_WORD' && flags.mode === MODE.BlockStatement
+                          && !flags.in_case
+                          && !(current_token.text === '--' || current_token.text === '++')
+                          && last_last_text !== 'function'
+                          && current_token.type !== 'TK_WORD' && current_token.type !== 'TK_RESERVED') ||
+                      (flags.mode === MODE.ObjectLiteral && (
+                          (flags.last_text === ':' && flags.ternary_depth === 0) || (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['get', 'set']))))
+                  ) {
+  
+                  set_mode(MODE.Statement);
+                  indent();
+  
+                  if (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['var', 'let', 'const']) && current_token.type === 'TK_WORD') {
+                      flags.declaration_statement = true;
+                  }
+  
+                  // Issue #276:
+                  // If starting a new statement with [if, for, while, do], push to a new line.
+                  // if (a) if (b) if(c) d(); else e(); else f();
+                  if (!start_of_object_property()) {
+                      allow_wrap_or_preserved_newline(
+                          current_token.type === 'TK_RESERVED' && in_array(current_token.text, ['do', 'for', 'if', 'while']));
+                  }
+  
+                  return true;
+              }
+              return false;
+          }
+  
+          function all_lines_start_with(lines, c) {
+              for (var i = 0; i < lines.length; i++) {
+                  var line = trim(lines[i]);
+                  if (line.charAt(0) !== c) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+  
+          function each_line_matches_indent(lines, indent) {
+              var i = 0,
+                  len = lines.length,
+                  line;
+              for (; i < len; i++) {
+                  line = lines[i];
+                  // allow empty lines to pass through
+                  if (line && line.indexOf(indent) !== 0) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+  
+          function is_special_word(word) {
+              return in_array(word, ['case', 'return', 'do', 'if', 'throw', 'else']);
+          }
+  
+          function get_token(offset) {
+              var index = token_pos + (offset || 0);
+              return (index < 0 || index >= tokens.length) ? null : tokens[index];
+          }
+  
+          function handle_start_expr() {
+              if (start_of_statement()) {
+                  // The conditional starts the statement if appropriate.
+              }
+  
+              var next_mode = MODE.Expression;
+              if (current_token.text === '[') {
+  
+                  if (last_type === 'TK_WORD' || flags.last_text === ')') {
+                      // this is array index specifier, break immediately
+                      // a[x], fn()[x]
+                      if (last_type === 'TK_RESERVED' && in_array(flags.last_text, Tokenizer.line_starters)) {
+                          output.space_before_token = true;
+                      }
+                      set_mode(next_mode);
+                      print_token();
+                      indent();
+                      if (opt.space_in_paren) {
+                          output.space_before_token = true;
+                      }
+                      return;
+                  }
+  
+                  next_mode = MODE.ArrayLiteral;
+                  if (is_array(flags.mode)) {
+                      if (flags.last_text === '[' ||
+                          (flags.last_text === ',' && (last_last_text === ']' || last_last_text === '}'))) {
+                          // ], [ goes to new line
+                          // }, [ goes to new line
+                          if (!opt.keep_array_indentation) {
+                              print_newline();
+                          }
+                      }
+                  }
+  
+              } else {
+                  if (last_type === 'TK_RESERVED' && flags.last_text === 'for') {
+                      next_mode = MODE.ForInitializer;
+                  } else if (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['if', 'while'])) {
+                      next_mode = MODE.Conditional;
+                  } else {
+                      // next_mode = MODE.Expression;
+                  }
+              }
+  
+              if (flags.last_text === ';' || last_type === 'TK_START_BLOCK') {
+                  print_newline();
+              } else if (last_type === 'TK_END_EXPR' || last_type === 'TK_START_EXPR' || last_type === 'TK_END_BLOCK' || flags.last_text === '.') {
+                  // TODO: Consider whether forcing this is required.  Review failing tests when removed.
+                  allow_wrap_or_preserved_newline(current_token.wanted_newline);
+                  // do nothing on (( and )( and ][ and ]( and .(
+              } else if (!(last_type === 'TK_RESERVED' && current_token.text === '(') && last_type !== 'TK_WORD' && last_type !== 'TK_OPERATOR') {
+                  output.space_before_token = true;
+              } else if ((last_type === 'TK_RESERVED' && (flags.last_word === 'function' || flags.last_word === 'typeof')) ||
+                  (flags.last_text === '*' && last_last_text === 'function')) {
+                  // function() vs function ()
+                  if (opt.space_after_anon_function) {
+                      output.space_before_token = true;
+                  }
+              } else if (last_type === 'TK_RESERVED' && (in_array(flags.last_text, Tokenizer.line_starters) || flags.last_text === 'catch')) {
+                  if (opt.space_before_conditional) {
+                      output.space_before_token = true;
+                  }
+              }
+  
+              // Should be a space between await and an IIFE
+              if(current_token.text === '(' && last_type === 'TK_RESERVED' && flags.last_word === 'await'){
+                  output.space_before_token = true;
+              }
+  
+              // Support of this kind of newline preservation.
+              // a = (b &&
+              //     (c || d));
+              if (current_token.text === '(') {
+                  if (last_type === 'TK_EQUALS' || last_type === 'TK_OPERATOR') {
+                      if (!start_of_object_property()) {
+                          allow_wrap_or_preserved_newline();
+                      }
+                  }
+              }
+  
+              set_mode(next_mode);
+              print_token();
+              if (opt.space_in_paren) {
+                  output.space_before_token = true;
+              }
+  
+              // In all cases, if we newline while inside an expression it should be indented.
+              indent();
+          }
+  
+          function handle_end_expr() {
+              // statements inside expressions are not valid syntax, but...
+              // statements must all be closed when their container closes
+              while (flags.mode === MODE.Statement) {
+                  restore_mode();
+              }
+  
+              if (flags.multiline_frame) {
+                  allow_wrap_or_preserved_newline(current_token.text === ']' && is_array(flags.mode) && !opt.keep_array_indentation);
+              }
+  
+              if (opt.space_in_paren) {
+                  if (last_type === 'TK_START_EXPR' && ! opt.space_in_empty_paren) {
+                      // () [] no inner space in empty parens like these, ever, ref #320
+                      output.trim();
+                      output.space_before_token = false;
+                  } else {
+                      output.space_before_token = true;
+                  }
+              }
+              if (current_token.text === ']' && opt.keep_array_indentation) {
+                  print_token();
+                  restore_mode();
+              } else {
+                  restore_mode();
+                  print_token();
+              }
+              output.remove_redundant_indentation(previous_flags);
+  
+              // do {} while () // no statement required after
+              if (flags.do_while && previous_flags.mode === MODE.Conditional) {
+                  previous_flags.mode = MODE.Expression;
+                  flags.do_block = false;
+                  flags.do_while = false;
+  
+              }
+          }
+  
+          function handle_start_block() {
+              // Check if this is should be treated as a ObjectLiteral
+              var next_token = get_token(1)
+              var second_token = get_token(2)
+              if (second_token && (
+                      (second_token.text === ':' && in_array(next_token.type, ['TK_STRING', 'TK_WORD', 'TK_RESERVED']))
+                      || (in_array(next_token.text, ['get', 'set']) && in_array(second_token.type, ['TK_WORD', 'TK_RESERVED']))
+                  )) {
+                  // We don't support TypeScript,but we didn't break it for a very long time.
+                  // We'll try to keep not breaking it.
+                  if (!in_array(last_last_text, ['class','interface'])) {
+                      set_mode(MODE.ObjectLiteral);
+                  } else {
+                      set_mode(MODE.BlockStatement);
+                  }
+              } else {
+                  set_mode(MODE.BlockStatement);
+              }
+  
+              var empty_braces = !next_token.comments_before.length &&  next_token.text === '}';
+              var empty_anonymous_function = empty_braces && flags.last_word === 'function' &&
+                  last_type === 'TK_END_EXPR';
+  
+              if (opt.brace_style === "expand" ||
+                  (opt.brace_style === "none" && current_token.wanted_newline)) {
+                  if (last_type !== 'TK_OPERATOR' &&
+                      (empty_anonymous_function ||
+                          last_type === 'TK_EQUALS' ||
+                          (last_type === 'TK_RESERVED' && is_special_word(flags.last_text) && flags.last_text !== 'else'))) {
+                      output.space_before_token = true;
+                  } else {
+                      print_newline(false, true);
+                  }
+              } else { // collapse
+                  if (last_type !== 'TK_OPERATOR' && last_type !== 'TK_START_EXPR') {
+                      if (last_type === 'TK_START_BLOCK') {
+                          print_newline();
+                      } else {
+                          output.space_before_token = true;
+                      }
+                  } else {
+                      // if TK_OPERATOR or TK_START_EXPR
+                      if (is_array(previous_flags.mode) && flags.last_text === ',') {
+                          if (last_last_text === '}') {
+                              // }, { in array context
+                              output.space_before_token = true;
+                          } else {
+                              print_newline(); // [a, b, c, {
+                          }
+                      }
+                  }
+              }
+              print_token();
+              indent();
+          }
+  
+          function handle_end_block() {
+              // statements must all be closed when their container closes
+              while (flags.mode === MODE.Statement) {
+                  restore_mode();
+              }
+              var empty_braces = last_type === 'TK_START_BLOCK';
+  
+              if (opt.brace_style === "expand") {
+                  if (!empty_braces) {
+                      print_newline();
+                  }
+              } else {
+                  // skip {}
+                  if (!empty_braces) {
+                      if (is_array(flags.mode) && opt.keep_array_indentation) {
+                          // we REALLY need a newline here, but newliner would skip that
+                          opt.keep_array_indentation = false;
+                          print_newline();
+                          opt.keep_array_indentation = true;
+  
+                      } else {
+                          print_newline();
+                      }
+                  }
+              }
+              restore_mode();
+              print_token();
+          }
+  
+          function handle_word() {
+              if (current_token.type === 'TK_RESERVED' && flags.mode !== MODE.ObjectLiteral &&
+                  in_array(current_token.text, ['set', 'get'])) {
+                  current_token.type = 'TK_WORD';
+              }
+  
+              if (current_token.type === 'TK_RESERVED' && flags.mode === MODE.ObjectLiteral) {
+                  var next_token = get_token(1);
+                  if (next_token.text == ':') {
+                      current_token.type = 'TK_WORD';
+                  }
+              }
+  
+              if (start_of_statement()) {
+                  // The conditional starts the statement if appropriate.
+              } else if (current_token.wanted_newline && !is_expression(flags.mode) &&
+                  (last_type !== 'TK_OPERATOR' || (flags.last_text === '--' || flags.last_text === '++')) &&
+                  last_type !== 'TK_EQUALS' &&
+                  (opt.preserve_newlines || !(last_type === 'TK_RESERVED' && in_array(flags.last_text, ['var', 'let', 'const', 'set', 'get'])))) {
+  
+                  print_newline();
+              }
+  
+              if (flags.do_block && !flags.do_while) {
+                  if (current_token.type === 'TK_RESERVED' && current_token.text === 'while') {
+                      // do {} ## while ()
+                      output.space_before_token = true;
+                      print_token();
+                      output.space_before_token = true;
+                      flags.do_while = true;
+                      return;
+                  } else {
+                      // do {} should always have while as the next word.
+                      // if we don't see the expected while, recover
+                      print_newline();
+                      flags.do_block = false;
+                  }
+              }
+  
+              // if may be followed by else, or not
+              // Bare/inline ifs are tricky
+              // Need to unwind the modes correctly: if (a) if (b) c(); else d(); else e();
+              if (flags.if_block) {
+                  if (!flags.else_block && (current_token.type === 'TK_RESERVED' && current_token.text === 'else')) {
+                      flags.else_block = true;
+                  } else {
+                      while (flags.mode === MODE.Statement) {
+                          restore_mode();
+                      }
+                      flags.if_block = false;
+                      flags.else_block = false;
+                  }
+              }
+  
+              if (current_token.type === 'TK_RESERVED' && (current_token.text === 'case' || (current_token.text === 'default' && flags.in_case_statement))) {
+                  print_newline();
+                  if (flags.case_body || opt.jslint_happy) {
+                      // switch cases following one another
+                      deindent();
+                      flags.case_body = false;
+                  }
+                  print_token();
+                  flags.in_case = true;
+                  flags.in_case_statement = true;
+                  return;
+              }
+  
+              if (current_token.type === 'TK_RESERVED' && current_token.text === 'function') {
+                  if (in_array(flags.last_text, ['}', ';']) || (output.just_added_newline() && ! in_array(flags.last_text, ['[', '{', ':', '=', ',']))) {
+                      // make sure there is a nice clean space of at least one blank line
+                      // before a new function definition
+                      if ( !output.just_added_blankline() && !current_token.comments_before.length) {
+                          print_newline();
+                          print_newline(true);
+                      }
+                  }
+                  if (last_type === 'TK_RESERVED' || last_type === 'TK_WORD') {
+                      if (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['get', 'set', 'new', 'return', 'export', 'async'])) {
+                          output.space_before_token = true;
+                      } else if (last_type === 'TK_RESERVED' && flags.last_text === 'default' && last_last_text === 'export') {
+                          output.space_before_token = true;
+                      } else {
+                          print_newline();
+                      }
+                  } else if (last_type === 'TK_OPERATOR' || flags.last_text === '=') {
+                      // foo = function
+                      output.space_before_token = true;
+                  } else if (!flags.multiline_frame && (is_expression(flags.mode) || is_array(flags.mode))) {
+                      // (function
+                  } else {
+                      print_newline();
+                  }
+              }
+  
+              if (last_type === 'TK_COMMA' || last_type === 'TK_START_EXPR' || last_type === 'TK_EQUALS' || last_type === 'TK_OPERATOR') {
+                  if (!start_of_object_property()) {
+                      allow_wrap_or_preserved_newline();
+                  }
+              }
+  
+              if (current_token.type === 'TK_RESERVED' &&  in_array(current_token.text, ['function', 'get', 'set'])) {
+                  print_token();
+                  flags.last_word = current_token.text;
+                  return;
+              }
+  
+              prefix = 'NONE';
+  
+              if (last_type === 'TK_END_BLOCK') {
+                  if (!(current_token.type === 'TK_RESERVED' && in_array(current_token.text, ['else', 'catch', 'finally']))) {
+                      prefix = 'NEWLINE';
+                  } else {
+                      if (opt.brace_style === "expand" ||
+                          opt.brace_style === "end-expand" ||
+                          (opt.brace_style === "none" && current_token.wanted_newline)) {
+                          prefix = 'NEWLINE';
+                      } else {
+                          prefix = 'SPACE';
+                          output.space_before_token = true;
+                      }
+                  }
+              } else if (last_type === 'TK_SEMICOLON' && flags.mode === MODE.BlockStatement) {
+                  // TODO: Should this be for STATEMENT as well?
+                  prefix = 'NEWLINE';
+              } else if (last_type === 'TK_SEMICOLON' && is_expression(flags.mode)) {
+                  prefix = 'SPACE';
+              } else if (last_type === 'TK_STRING') {
+                  prefix = 'NEWLINE';
+              } else if (last_type === 'TK_RESERVED' || last_type === 'TK_WORD' ||
+                  (flags.last_text === '*' && last_last_text === 'function')) {
+                  prefix = 'SPACE';
+              } else if (last_type === 'TK_START_BLOCK') {
+                  prefix = 'NEWLINE';
+              } else if (last_type === 'TK_END_EXPR') {
+                  output.space_before_token = true;
+                  prefix = 'NEWLINE';
+              }
+  
+              if (current_token.type === 'TK_RESERVED' && in_array(current_token.text, Tokenizer.line_starters) && flags.last_text !== ')') {
+                  if (flags.last_text === 'else' || flags.last_text === 'export') {
+                      prefix = 'SPACE';
+                  } else {
+                      prefix = 'NEWLINE';
+                  }
+  
+              }
+  
+              if (current_token.type === 'TK_RESERVED' && in_array(current_token.text, ['else', 'catch', 'finally'])) {
+                  if (last_type !== 'TK_END_BLOCK' ||
+                      opt.brace_style === "expand" ||
+                      opt.brace_style === "end-expand" ||
+                      (opt.brace_style === "none" && current_token.wanted_newline)) {
+                      print_newline();
+                  } else {
+                      output.trim(true);
+                      var line = output.current_line;
+                      // If we trimmed and there's something other than a close block before us
+                      // put a newline back in.  Handles '} // comment' scenario.
+                      if (line.last() !== '}') {
+                          print_newline();
+                      }
+                      output.space_before_token = true;
+                  }
+              } else if (prefix === 'NEWLINE') {
+                  if (last_type === 'TK_RESERVED' && is_special_word(flags.last_text)) {
+                      // no newline between 'return nnn'
+                      output.space_before_token = true;
+                  } else if (last_type !== 'TK_END_EXPR') {
+                      if ((last_type !== 'TK_START_EXPR' || !(current_token.type === 'TK_RESERVED' && in_array(current_token.text, ['var', 'let', 'const']))) && flags.last_text !== ':') {
+                          // no need to force newline on 'var': for (var x = 0...)
+                          if (current_token.type === 'TK_RESERVED' && current_token.text === 'if' && flags.last_text === 'else') {
+                              // no newline for } else if {
+                              output.space_before_token = true;
+                          } else {
+                              print_newline();
+                          }
+                      }
+                  } else if (current_token.type === 'TK_RESERVED' && in_array(current_token.text, Tokenizer.line_starters) && flags.last_text !== ')') {
+                      print_newline();
+                  }
+              } else if (flags.multiline_frame && is_array(flags.mode) && flags.last_text === ',' && last_last_text === '}') {
+                  print_newline(); // }, in lists get a newline treatment
+              } else if (prefix === 'SPACE') {
+                  output.space_before_token = true;
+              }
+              print_token();
+              flags.last_word = current_token.text;
+  
+              if (current_token.type === 'TK_RESERVED' && current_token.text === 'do') {
+                  flags.do_block = true;
+              }
+  
+              if (current_token.type === 'TK_RESERVED' && current_token.text === 'if') {
+                  flags.if_block = true;
+              }
+          }
+  
+          function handle_semicolon() {
+              if (start_of_statement()) {
+                  // The conditional starts the statement if appropriate.
+                  // Semicolon can be the start (and end) of a statement
+                  output.space_before_token = false;
+              }
+              while (flags.mode === MODE.Statement && !flags.if_block && !flags.do_block) {
+                  restore_mode();
+              }
+              print_token();
+          }
+  
+          function handle_string() {
+              if (start_of_statement()) {
+                  // The conditional starts the statement if appropriate.
+                  // One difference - strings want at least a space before
+                  output.space_before_token = true;
+              } else if (last_type === 'TK_RESERVED' || last_type === 'TK_WORD') {
+                  output.space_before_token = true;
+              } else if (last_type === 'TK_COMMA' || last_type === 'TK_START_EXPR' || last_type === 'TK_EQUALS' || last_type === 'TK_OPERATOR') {
+                  if (!start_of_object_property()) {
+                      allow_wrap_or_preserved_newline();
+                  }
+              } else {
+                  print_newline();
+              }
+              print_token();
+          }
+  
+          function handle_equals() {
+              if (start_of_statement()) {
+                  // The conditional starts the statement if appropriate.
+              }
+  
+              if (flags.declaration_statement) {
+                  // just got an '=' in a var-line, different formatting/line-breaking, etc will now be done
+                  flags.declaration_assignment = true;
+              }
+              output.space_before_token = true;
+              print_token();
+              output.space_before_token = true;
+          }
+  
+          function handle_comma() {
+              if (flags.declaration_statement) {
+                  if (is_expression(flags.parent.mode)) {
+                      // do not break on comma, for(var a = 1, b = 2)
+                      flags.declaration_assignment = false;
+                  }
+  
+                  print_token();
+  
+                  if (flags.declaration_assignment) {
+                      flags.declaration_assignment = false;
+                      print_newline(false, true);
+                  } else {
+                      output.space_before_token = true;
+                      // for comma-first, we want to allow a newline before the comma
+                      // to turn into a newline after the comma, which we will fixup later
+                      if (opt.comma_first) {
+                          allow_wrap_or_preserved_newline();
+                      }
+                  }
+                  return;
+              }
+  
+              print_token();
+              if (flags.mode === MODE.ObjectLiteral ||
+                  (flags.mode === MODE.Statement && flags.parent.mode === MODE.ObjectLiteral)) {
+                  if (flags.mode === MODE.Statement) {
+                      restore_mode();
+                  }
+                  print_newline();
+              } else {
+                  // EXPR or DO_BLOCK
+                  output.space_before_token = true;
+                  // for comma-first, we want to allow a newline before the comma
+                  // to turn into a newline after the comma, which we will fixup later
+                  if (opt.comma_first) {
+                      allow_wrap_or_preserved_newline();
+                  }
+              }
+  
+          }
+  
+          function handle_operator() {
+              if (start_of_statement()) {
+                  // The conditional starts the statement if appropriate.
+              }
+  
+              if (last_type === 'TK_RESERVED' && is_special_word(flags.last_text)) {
+                  // "return" had a special handling in TK_WORD. Now we need to return the favor
+                  output.space_before_token = true;
+                  print_token();
+                  return;
+              }
+  
+              // hack for actionscript's import .*;
+              if (current_token.text === '*' && last_type === 'TK_DOT') {
+                  print_token();
+                  return;
+              }
+  
+              if (current_token.text === ':' && flags.in_case) {
+                  flags.case_body = true;
+                  indent();
+                  print_token();
+                  print_newline();
+                  flags.in_case = false;
+                  return;
+              }
+  
+              if (current_token.text === '::') {
+                  // no spaces around exotic namespacing syntax operator
+                  print_token();
+                  return;
+              }
+  
+              // Allow line wrapping between operators
+              if (last_type === 'TK_OPERATOR') {
+                  allow_wrap_or_preserved_newline();
+              }
+  
+              var space_before = true;
+              var space_after = true;
+  
+              if (in_array(current_token.text, ['--', '++', '!', '~']) || (in_array(current_token.text, ['-', '+']) && (in_array(last_type, ['TK_START_BLOCK', 'TK_START_EXPR', 'TK_EQUALS', 'TK_OPERATOR']) || in_array(flags.last_text, Tokenizer.line_starters) || flags.last_text === ','))) {
+                  // unary operators (and binary +/- pretending to be unary) special cases
+  
+                  space_before = false;
+                  space_after = false;
+  
+                  // http://www.ecma-international.org/ecma-262/5.1/#sec-7.9.1
+                  // if there is a newline between -- or ++ and anything else we should preserve it.
+                  if (current_token.wanted_newline && (current_token.text === '--' || current_token.text === '++')) {
+                      print_newline(false, true);
+                  }
+  
+                  if (flags.last_text === ';' && is_expression(flags.mode)) {
+                      // for (;; ++i)
+                      //        ^^^
+                      space_before = true;
+                  }
+  
+                  if (last_type === 'TK_RESERVED') {
+                      space_before = true;
+                  } else if (last_type === 'TK_END_EXPR') {
+                      space_before = !(flags.last_text === ']' && (current_token.text === '--' || current_token.text === '++'));
+                  } else if (last_type === 'TK_OPERATOR') {
+                      // a++ + ++b;
+                      // a - -b
+                      space_before = in_array(current_token.text, ['--', '-', '++', '+']) && in_array(flags.last_text, ['--', '-', '++', '+']);
+                      // + and - are not unary when preceeded by -- or ++ operator
+                      // a-- + b
+                      // a * +b
+                      // a - -b
+                      if (in_array(current_token.text, ['+', '-']) && in_array(flags.last_text, ['--', '++'])) {
+                          space_after = true;
+                      }
+                  }
+  
+                  if ((flags.mode === MODE.BlockStatement || flags.mode === MODE.Statement) && (flags.last_text === '{' || flags.last_text === ';')) {
+                      // { foo; --i }
+                      // foo(); --bar;
+                      print_newline();
+                  }
+              } else if (current_token.text === ':') {
+                  if (flags.ternary_depth === 0) {
+                      // Colon is invalid javascript outside of ternary and object, but do our best to guess what was meant.
+                      space_before = false;
+                  } else {
+                      flags.ternary_depth -= 1;
+                  }
+              } else if (current_token.text === '?') {
+                  flags.ternary_depth += 1;
+              } else if (current_token.text === '*' && last_type === 'TK_RESERVED' && flags.last_text === 'function') {
+                  space_before = false;
+                  space_after = false;
+              }
+              output.space_before_token = output.space_before_token || space_before;
+              print_token();
+              output.space_before_token = space_after;
+          }
+  
+          function handle_block_comment() {
+              if (output.raw) {
+                  output.add_raw_token(current_token)
+                  if (current_token.directives && current_token.directives['preserve'] === 'end') {
+                      // If we're testing the raw output behavior, do not allow a directive to turn it off.
+                      if (!opt.test_output_raw) {
+                          output.raw = false;
+                      }
+                  }
+                  return;
+              }
+  
+              if (current_token.directives) {
+                  print_newline(false, true);
+                  print_token();
+                  if (current_token.directives['preserve'] === 'start') {
+                      output.raw = true;
+                  }
+                  print_newline(false, true);
+                  return;
+              }
+  
+              // inline block
+              if (!acorn.newline.test(current_token.text) && !current_token.wanted_newline) {
+                  output.space_before_token = true;
+                  print_token();
+                  output.space_before_token = true;
+                  return;
+              }
+  
+              var lines = split_newlines(current_token.text);
+              var j; // iterator for this case
+              var javadoc = false;
+              var starless = false;
+              var lastIndent = current_token.whitespace_before;
+              var lastIndentLength = lastIndent.length;
+  
+              // block comment starts with a new line
+              print_newline(false, true);
+              if (lines.length > 1) {
+                  if (all_lines_start_with(lines.slice(1), '*')) {
+                      javadoc = true;
+                  }
+                  else if (each_line_matches_indent(lines.slice(1), lastIndent)) {
+                      starless = true;
+                  }
+              }
+  
+              // first line always indented
+              print_token(lines[0]);
+              for (j = 1; j < lines.length; j++) {
+                  print_newline(false, true);
+                  if (javadoc) {
+                      // javadoc: reformat and re-indent
+                      print_token(' ' + ltrim(lines[j]));
+                  } else if (starless && lines[j].length > lastIndentLength) {
+                      // starless: re-indent non-empty content, avoiding trim
+                      print_token(lines[j].substring(lastIndentLength));
+                  } else {
+                      // normal comments output raw
+                      output.add_token(lines[j]);
+                  }
+              }
+  
+              // for comments of more than one line, make sure there's a new line after
+              print_newline(false, true);
+          }
+  
+          function handle_comment() {
+              if (current_token.wanted_newline) {
+                  print_newline(false, true);
+              } else {
+                  output.trim(true);
+              }
+  
+              output.space_before_token = true;
+              print_token();
+              print_newline(false, true);
+          }
+  
+          function handle_dot() {
+              if (start_of_statement()) {
+                  // The conditional starts the statement if appropriate.
+              }
+  
+              if (last_type === 'TK_RESERVED' && is_special_word(flags.last_text)) {
+                  output.space_before_token = true;
+              } else {
+                  // allow preserved newlines before dots in general
+                  // force newlines on dots after close paren when break_chained - for bar().baz()
+                  allow_wrap_or_preserved_newline(flags.last_text === ')' && opt.break_chained_methods);
+              }
+  
+              print_token();
+          }
+  
+          function handle_unknown() {
+              print_token();
+  
+              if (current_token.text[current_token.text.length - 1] === '\n') {
+                  print_newline();
+              }
+          }
+  
+          function handle_eof() {
+              // Unwind any open statements
+              while (flags.mode === MODE.Statement) {
+                  restore_mode();
+              }
+          }
+      }
+  
+  
+      function OutputLine(parent) {
+          var _character_count = 0;
+          // use indent_count as a marker for lines that have preserved indentation
+          var _indent_count = -1;
+  
+          var _items = [];
+          var _empty = true;
+  
+          this.set_indent = function(level) {
+              _character_count = parent.baseIndentLength + level * parent.indent_length
+              _indent_count = level;
+          }
+  
+          this.get_character_count = function() {
+              return _character_count;
+          }
+  
+          this.is_empty = function() {
+              return _empty;
+          }
+  
+          this.last = function() {
+              if (!this._empty) {
+                return _items[_items.length - 1];
+              } else {
+                return null;
+              }
+          }
+  
+          this.push = function(input) {
+              _items.push(input);
+              _character_count += input.length;
+              _empty = false;
+          }
+  
+          this.pop = function() {
+              var item = null;
+              if (!_empty) {
+                  item = _items.pop();
+                  _character_count -= item.length;
+                  _empty = _items.length === 0;
+              }
+              return item;
+          }
+  
+          this.remove_indent = function() {
+              if (_indent_count > 0) {
+                  _indent_count -= 1;
+                  _character_count -= parent.indent_length
+              }
+          }
+  
+          this.trim = function() {
+              while (this.last() === ' ') {
+                  var item = _items.pop();
+                  _character_count -= 1;
+              }
+              _empty = _items.length === 0;
+          }
+  
+          this.toString = function() {
+              var result = '';
+              if (!this._empty) {
+                  if (_indent_count >= 0) {
+                      result = parent.indent_cache[_indent_count];
+                  }
+                  result += _items.join('')
+              }
+              return result;
+          }
+      }
+  
+      function Output(indent_string, baseIndentString) {
+          baseIndentString = baseIndentString || '';
+          this.indent_cache = [ baseIndentString ];
+          this.baseIndentLength = baseIndentString.length;
+          this.indent_length = indent_string.length;
+          this.raw = false;
+  
+          var lines =[];
+          this.baseIndentString = baseIndentString;
+          this.indent_string = indent_string;
+          this.previous_line = null;
+          this.current_line = null;
+          this.space_before_token = false;
+  
+          this.add_outputline = function() {
+              this.previous_line = this.current_line;
+              this.current_line = new OutputLine(this);
+              lines.push(this.current_line);
+          }
+  
+          // initialize
+          this.add_outputline();
+  
+  
+          this.get_line_number = function() {
+              return lines.length;
+          }
+  
+          // Using object instead of string to allow for later expansion of info about each line
+          this.add_new_line = function(force_newline) {
+              if (this.get_line_number() === 1 && this.just_added_newline()) {
+                  return false; // no newline on start of file
+              }
+  
+              if (force_newline || !this.just_added_newline()) {
+                  if (!this.raw) {
+                      this.add_outputline();
+                  }
+                  return true;
+              }
+  
+              return false;
+          }
+  
+          this.get_code = function() {
+              var sweet_code = lines.join('\n').replace(/[\r\n\t ]+$/, '');
+              return sweet_code;
+          }
+  
+          this.set_indent = function(level) {
+              // Never indent your first output indent at the start of the file
+              if (lines.length > 1) {
+                  while(level >= this.indent_cache.length) {
+                      this.indent_cache.push(this.indent_cache[this.indent_cache.length - 1] + this.indent_string);
+                  }
+  
+                  this.current_line.set_indent(level);
+                  return true;
+              }
+              this.current_line.set_indent(0);
+              return false;
+          }
+  
+          this.add_raw_token = function(token) {
+              for (var x = 0; x < token.newlines; x++) {
+                  this.add_outputline();
+              }
+              this.current_line.push(token.whitespace_before);
+              this.current_line.push(token.text);
+              this.space_before_token = false;
+          }
+  
+          this.add_token = function(printable_token) {
+              this.add_space_before_token();
+              this.current_line.push(printable_token);
+          }
+  
+          this.add_space_before_token = function() {
+              if (this.space_before_token && !this.just_added_newline()) {
+                  this.current_line.push(' ');
+              }
+              this.space_before_token = false;
+          }
+  
+          this.remove_redundant_indentation = function (frame) {
+              // This implementation is effective but has some issues:
+              //     - can cause line wrap to happen too soon due to indent removal
+              //           after wrap points are calculated
+              // These issues are minor compared to ugly indentation.
+  
+              if (frame.multiline_frame ||
+                  frame.mode === MODE.ForInitializer ||
+                  frame.mode === MODE.Conditional) {
+                  return;
+              }
+  
+              // remove one indent from each line inside this section
+              var index = frame.start_line_index;
+              var line;
+  
+              var output_length = lines.length;
+              while (index < output_length) {
+                  lines[index].remove_indent();
+                  index++;
+              }
+          }
+  
+          this.trim = function(eat_newlines) {
+              eat_newlines = (eat_newlines === undefined) ? false : eat_newlines;
+  
+              this.current_line.trim(indent_string, baseIndentString);
+  
+              while (eat_newlines && lines.length > 1 &&
+                  this.current_line.is_empty()) {
+                  lines.pop();
+                  this.current_line = lines[lines.length - 1]
+                  this.current_line.trim();
+              }
+  
+              this.previous_line = lines.length > 1 ? lines[lines.length - 2] : null;
+          }
+  
+          this.just_added_newline = function() {
+              return this.current_line.is_empty();
+          }
+  
+          this.just_added_blankline = function() {
+              if (this.just_added_newline()) {
+                  if (lines.length === 1) {
+                      return true; // start of the file and newline = blank
+                  }
+  
+                  var line = lines[lines.length - 2];
+                  return line.is_empty();
+              }
+              return false;
+          }
+      }
+  
+  
+      var Token = function(type, text, newlines, whitespace_before, mode, parent) {
+          this.type = type;
+          this.text = text;
+          this.comments_before = [];
+          this.newlines = newlines || 0;
+          this.wanted_newline = newlines > 0;
+          this.whitespace_before = whitespace_before || '';
+          this.parent = null;
+          this.directives = null;
+      }
+  
+      function tokenizer(input, opts, indent_string) {
+  
+          var whitespace = "\n\r\t ".split('');
+          var digit = /[0-9]/;
+          var digit_hex = /[0123456789abcdefABCDEF]/;
+  
+          var punct = ('+ - * / % & ++ -- = += -= *= /= %= == === != !== > < >= <= >> << >>> >>>= >>= <<= && &= | || ! ~ , : ? ^ ^= |= :: =>'
+                  +' <%= <% %> <?= <? ?>').split(' '); // try to be a good boy and try not to break the markup language identifiers
+  
+          // words which should always start on new line.
+          this.line_starters = 'continue,try,throw,return,var,let,const,if,switch,case,default,for,while,break,function,import,export'.split(',');
+          var reserved_words = this.line_starters.concat(['do', 'in', 'else', 'get', 'set', 'new', 'catch', 'finally', 'typeof', 'yield', 'async', 'await']);
+  
+          //  /* ... */ comment ends with nearest */ or end of file
+          var block_comment_pattern = /([\s\S]*?)((?:\*\/)|$)/g;
+  
+          // comment ends just before nearest linefeed or end of file
+          var comment_pattern = /([^\n\r\u2028\u2029]*)/g;
+  
+          var directives_block_pattern = /\/\* beautify( \w+[:]\w+)+ \*\//g;
+          var directive_pattern = / (\w+)[:](\w+)/g;
+          var directives_end_ignore_pattern = /([\s\S]*?)((?:\/\*\sbeautify\signore:end\s\*\/)|$)/g;
+  
+          var template_pattern = /((<\?php|<\?=)[\s\S]*?\?>)|(<%[\s\S]*?%>)/g
+  
+          var n_newlines, whitespace_before_token, in_html_comment, tokens, parser_pos;
+          var input_length;
+  
+          this.tokenize = function() {
+              // cache the source's length.
+              input_length = input.length
+              parser_pos = 0;
+              in_html_comment = false
+              tokens = [];
+  
+              var next, last;
+              var token_values;
+              var open = null;
+              var open_stack = [];
+              var comments = [];
+  
+              while (!(last && last.type === 'TK_EOF')) {
+                  token_values = tokenize_next();
+                  next = new Token(token_values[1], token_values[0], n_newlines, whitespace_before_token);
+                  while(next.type === 'TK_COMMENT' || next.type === 'TK_BLOCK_COMMENT' || next.type === 'TK_UNKNOWN') {
+                      if (next.type === 'TK_BLOCK_COMMENT') {
+                          next.directives = token_values[2];
+                      }
+                      comments.push(next);
+                      token_values = tokenize_next();
+                      next = new Token(token_values[1], token_values[0], n_newlines, whitespace_before_token);
+                  }
+  
+                  if (comments.length) {
+                      next.comments_before = comments;
+                      comments = [];
+                  }
+  
+                  if (next.type === 'TK_START_BLOCK' || next.type === 'TK_START_EXPR') {
+                      next.parent = last;
+                      open_stack.push(open);
+                      open = next;
+                  }  else if ((next.type === 'TK_END_BLOCK' || next.type === 'TK_END_EXPR') &&
+                      (open && (
+                          (next.text === ']' && open.text === '[') ||
+                          (next.text === ')' && open.text === '(') ||
+                          (next.text === '}' && open.text === '{')))) {
+                      next.parent = open.parent;
+                      open = open_stack.pop();
+                  }
+  
+                  tokens.push(next);
+                  last = next;
+              }
+  
+              return tokens;
+          }
+  
+          function get_directives (text) {
+              if (!text.match(directives_block_pattern)) {
+                  return null;
+              }
+  
+              var directives = {};
+              directive_pattern.lastIndex = 0;
+              var directive_match = directive_pattern.exec(text);
+  
+              while (directive_match) {
+                  directives[directive_match[1]] = directive_match[2];
+                  directive_match = directive_pattern.exec(text);
+              }
+  
+              return directives;
+          }
+  
+          function tokenize_next() {
+              var i, resulting_string;
+              var whitespace_on_this_line = [];
+  
+              n_newlines = 0;
+              whitespace_before_token = '';
+  
+              if (parser_pos >= input_length) {
+                  return ['', 'TK_EOF'];
+              }
+  
+              var last_token;
+              if (tokens.length) {
+                  last_token = tokens[tokens.length-1];
+              } else {
+                  // For the sake of tokenizing we can pretend that there was on open brace to start
+                  last_token = new Token('TK_START_BLOCK', '{');
+              }
+  
+  
+              var c = input.charAt(parser_pos);
+              parser_pos += 1;
+  
+              while (in_array(c, whitespace)) {
+  
+                  if (acorn.newline.test(c)) {
+                      if (!(c === '\n' && input.charAt(parser_pos-2) === '\r')) {
+                          n_newlines += 1;
+                          whitespace_on_this_line = [];
+                      }
+                  } else {
+                      whitespace_on_this_line.push(c);
+                  }
+  
+                  if (parser_pos >= input_length) {
+                      return ['', 'TK_EOF'];
+                  }
+  
+                  c = input.charAt(parser_pos);
+                  parser_pos += 1;
+              }
+  
+              if(whitespace_on_this_line.length) {
+                  whitespace_before_token = whitespace_on_this_line.join('');
+              }
+  
+              if (digit.test(c)) {
+                  var allow_decimal = true;
+                  var allow_e = true;
+                  var local_digit = digit;
+  
+                  if (c === '0' && parser_pos < input_length && /[Xx]/.test(input.charAt(parser_pos))) {
+                      // switch to hex number, no decimal or e, just hex digits
+                      allow_decimal = false;
+                      allow_e = false;
+                      c += input.charAt(parser_pos);
+                      parser_pos += 1;
+                      local_digit = digit_hex
+                  } else {
+                      // we know this first loop will run.  It keeps the logic simpler.
+                      c = '';
+                      parser_pos -= 1
+                  }
+  
+                  // Add the digits
+                  while (parser_pos < input_length && local_digit.test(input.charAt(parser_pos))) {
+                      c += input.charAt(parser_pos);
+                      parser_pos += 1;
+  
+                      if (allow_decimal && parser_pos < input_length && input.charAt(parser_pos) === '.') {
+                          c += input.charAt(parser_pos);
+                          parser_pos += 1;
+                          allow_decimal = false;
+                      }
+  
+                      if (allow_e && parser_pos < input_length && /[Ee]/.test(input.charAt(parser_pos))) {
+                          c += input.charAt(parser_pos);
+                          parser_pos += 1;
+  
+                          if (parser_pos < input_length && /[+-]/.test(input.charAt(parser_pos))) {
+                              c += input.charAt(parser_pos);
+                              parser_pos += 1;
+                          }
+  
+                          allow_e = false;
+                          allow_decimal = false;
+                      }
+                  }
+  
+                  return [c, 'TK_WORD'];
+              }
+  
+              if (acorn.isIdentifierStart(input.charCodeAt(parser_pos-1))) {
+                  if (parser_pos < input_length) {
+                      while (acorn.isIdentifierChar(input.charCodeAt(parser_pos))) {
+                          c += input.charAt(parser_pos);
+                          parser_pos += 1;
+                          if (parser_pos === input_length) {
+                              break;
+                          }
+                      }
+                  }
+  
+                  if (!(last_token.type === 'TK_DOT' ||
+                          (last_token.type === 'TK_RESERVED' && in_array(last_token.text, ['set', 'get'])))
+                      && in_array(c, reserved_words)) {
+                      if (c === 'in') { // hack for 'in' operator
+                          return [c, 'TK_OPERATOR'];
+                      }
+                      return [c, 'TK_RESERVED'];
+                  }
+  
+                  return [c, 'TK_WORD'];
+              }
+  
+              if (c === '(' || c === '[') {
+                  return [c, 'TK_START_EXPR'];
+              }
+  
+              if (c === ')' || c === ']') {
+                  return [c, 'TK_END_EXPR'];
+              }
+  
+              if (c === '{') {
+                  return [c, 'TK_START_BLOCK'];
+              }
+  
+              if (c === '}') {
+                  return [c, 'TK_END_BLOCK'];
+              }
+  
+              if (c === ';') {
+                  return [c, 'TK_SEMICOLON'];
+              }
+  
+              if (c === '/') {
+                  var comment = '';
+                  // peek for comment /* ... */
+                  if (input.charAt(parser_pos) === '*') {
+                      parser_pos += 1;
+                      block_comment_pattern.lastIndex = parser_pos;
+                      var comment_match = block_comment_pattern.exec(input);
+                      comment = '/*' + comment_match[0];
+                      parser_pos += comment_match[0].length;
+                      var directives = get_directives(comment);
+                      if (directives && directives['ignore'] === 'start') {
+                          directives_end_ignore_pattern.lastIndex = parser_pos;
+                          comment_match = directives_end_ignore_pattern.exec(input)
+                          comment += comment_match[0];
+                          parser_pos += comment_match[0].length;
+                      }
+                      comment = comment.replace(acorn.lineBreak, '\n');
+                      return [comment, 'TK_BLOCK_COMMENT', directives];
+                  }
+                  // peek for comment // ...
+                  if (input.charAt(parser_pos) === '/') {
+                      parser_pos += 1;
+                      comment_pattern.lastIndex = parser_pos;
+                      var comment_match = comment_pattern.exec(input);
+                      comment = '//' + comment_match[0];
+                      parser_pos += comment_match[0].length;
+                      return [comment, 'TK_COMMENT'];
+                  }
+  
+              }
+  
+              if (c === '`' || c === "'" || c === '"' || // string
+                  (
+                      (c === '/') || // regexp
+                      (opts.e4x && c === "<" && input.slice(parser_pos - 1).match(/^<([-a-zA-Z:0-9_.]+|{[^{}]*}|!\[CDATA\[[\s\S]*?\]\])(\s+[-a-zA-Z:0-9_.]+\s*=\s*('[^']*'|"[^"]*"|{.*?}))*\s*(\/?)\s*>/)) // xml
+                  ) && ( // regex and xml can only appear in specific locations during parsing
+                      (last_token.type === 'TK_RESERVED' && in_array(last_token.text , ['return', 'case', 'throw', 'else', 'do', 'typeof', 'yield'])) ||
+                      (last_token.type === 'TK_END_EXPR' && last_token.text === ')' &&
+                          last_token.parent && last_token.parent.type === 'TK_RESERVED' && in_array(last_token.parent.text, ['if', 'while', 'for'])) ||
+                      (in_array(last_token.type, ['TK_COMMENT', 'TK_START_EXPR', 'TK_START_BLOCK',
+                          'TK_END_BLOCK', 'TK_OPERATOR', 'TK_EQUALS', 'TK_EOF', 'TK_SEMICOLON', 'TK_COMMA'
+                      ]))
+                  )) {
+  
+                  var sep = c,
+                      esc = false,
+                      has_char_escapes = false;
+  
+                  resulting_string = c;
+  
+                  if (sep === '/') {
+                      //
+                      // handle regexp
+                      //
+                      var in_char_class = false;
+                      while (parser_pos < input_length &&
+                              ((esc || in_char_class || input.charAt(parser_pos) !== sep) &&
+                              !acorn.newline.test(input.charAt(parser_pos)))) {
+                          resulting_string += input.charAt(parser_pos);
+                          if (!esc) {
+                              esc = input.charAt(parser_pos) === '\\';
+                              if (input.charAt(parser_pos) === '[') {
+                                  in_char_class = true;
+                              } else if (input.charAt(parser_pos) === ']') {
+                                  in_char_class = false;
+                              }
+                          } else {
+                              esc = false;
+                          }
+                          parser_pos += 1;
+                      }
+                  } else if (opts.e4x && sep === '<') {
+                      //
+                      // handle e4x xml literals
+                      //
+                      var xmlRegExp = /<(\/?)([-a-zA-Z:0-9_.]+|{[^{}]*}|!\[CDATA\[[\s\S]*?\]\])(\s+[-a-zA-Z:0-9_.]+\s*=\s*('[^']*'|"[^"]*"|{.*?}))*\s*(\/?)\s*>/g;
+                      var xmlStr = input.slice(parser_pos - 1);
+                      var match = xmlRegExp.exec(xmlStr);
+                      if (match && match.index === 0) {
+                          var rootTag = match[2];
+                          var depth = 0;
+                          while (match) {
+                              var isEndTag = !! match[1];
+                              var tagName = match[2];
+                              var isSingletonTag = ( !! match[match.length - 1]) || (tagName.slice(0, 8) === "![CDATA[");
+                              if (tagName === rootTag && !isSingletonTag) {
+                                  if (isEndTag) {
+                                      --depth;
+                                  } else {
+                                      ++depth;
+                                  }
+                              }
+                              if (depth <= 0) {
+                                  break;
+                              }
+                              match = xmlRegExp.exec(xmlStr);
+                          }
+                          var xmlLength = match ? match.index + match[0].length : xmlStr.length;
+                          xmlStr = xmlStr.slice(0, xmlLength);
+                          parser_pos += xmlLength - 1;
+                          xmlStr = xmlStr.replace(acorn.lineBreak, '\n');
+                          return [xmlStr, "TK_STRING"];
+                      }
+                  } else {
+                      //
+                      // handle string
+                      //
+                      // Template strings can travers lines without escape characters.
+                      // Other strings cannot
+                      while (parser_pos < input_length &&
+                              (esc || (input.charAt(parser_pos) !== sep &&
+                              (sep === '`' || !acorn.newline.test(input.charAt(parser_pos)))))) {
+                          // Handle \r\n linebreaks after escapes or in template strings
+                          if ((esc || sep === '`') && acorn.newline.test(input.charAt(parser_pos))) {
+                              if (input.charAt(parser_pos) === '\r' && input.charAt(parser_pos + 1) === '\n') {
+                                  parser_pos += 1;
+                              }
+                              resulting_string += '\n';
+                          } else {
+                              resulting_string += input.charAt(parser_pos);
+                          }
+                          if (esc) {
+                              if (input.charAt(parser_pos) === 'x' || input.charAt(parser_pos) === 'u') {
+                                  has_char_escapes = true;
+                              }
+                              esc = false;
+                          } else {
+                              esc = input.charAt(parser_pos) === '\\';
+                          }
+                          parser_pos += 1;
+                      }
+  
+                  }
+  
+                  if (has_char_escapes && opts.unescape_strings) {
+                      resulting_string = unescape_string(resulting_string);
+                  }
+  
+                  if (parser_pos < input_length && input.charAt(parser_pos) === sep) {
+                      resulting_string += sep;
+                      parser_pos += 1;
+  
+                      if (sep === '/') {
+                          // regexps may have modifiers /regexp/MOD , so fetch those, too
+                          // Only [gim] are valid, but if the user puts in garbage, do what we can to take it.
+                          while (parser_pos < input_length && acorn.isIdentifierStart(input.charCodeAt(parser_pos))) {
+                              resulting_string += input.charAt(parser_pos);
+                              parser_pos += 1;
+                          }
+                      }
+                  }
+                  return [resulting_string, 'TK_STRING'];
+              }
+  
+              if (c === '#') {
+  
+                  if (tokens.length === 0 && input.charAt(parser_pos) === '!') {
+                      // shebang
+                      resulting_string = c;
+                      while (parser_pos < input_length && c !== '\n') {
+                          c = input.charAt(parser_pos);
+                          resulting_string += c;
+                          parser_pos += 1;
+                      }
+                      return [trim(resulting_string) + '\n', 'TK_UNKNOWN'];
+                  }
+  
+  
+  
+                  // Spidermonkey-specific sharp variables for circular references
+                  // https://developer.mozilla.org/En/Sharp_variables_in_JavaScript
+                  // http://mxr.mozilla.org/mozilla-central/source/js/src/jsscan.cpp around line 1935
+                  var sharp = '#';
+                  if (parser_pos < input_length && digit.test(input.charAt(parser_pos))) {
+                      do {
+                          c = input.charAt(parser_pos);
+                          sharp += c;
+                          parser_pos += 1;
+                      } while (parser_pos < input_length && c !== '#' && c !== '=');
+                      if (c === '#') {
+                          //
+                      } else if (input.charAt(parser_pos) === '[' && input.charAt(parser_pos + 1) === ']') {
+                          sharp += '[]';
+                          parser_pos += 2;
+                      } else if (input.charAt(parser_pos) === '{' && input.charAt(parser_pos + 1) === '}') {
+                          sharp += '{}';
+                          parser_pos += 2;
+                      }
+                      return [sharp, 'TK_WORD'];
+                  }
+              }
+  
+              if (c === '<' && (input.charAt(parser_pos) === '?' || input.charAt(parser_pos) === '%')) {
+                  template_pattern.lastIndex = parser_pos - 1;
+                  var template_match = template_pattern.exec(input);
+                  if(template_match) {
+                      c = template_match[0];
+                      parser_pos += c.length - 1;
+                      c = c.replace(acorn.lineBreak, '\n');
+                      return [c, 'TK_STRING'];
+                  }
+              }
+  
+              if (c === '<' && input.substring(parser_pos - 1, parser_pos + 3) === '<!--') {
+                  parser_pos += 3;
+                  c = '<!--';
+                  while (!acorn.newline.test(input.charAt(parser_pos)) && parser_pos < input_length) {
+                      c += input.charAt(parser_pos);
+                      parser_pos++;
+                  }
+                  in_html_comment = true;
+                  return [c, 'TK_COMMENT'];
+              }
+  
+              if (c === '-' && in_html_comment && input.substring(parser_pos - 1, parser_pos + 2) === '-->') {
+                  in_html_comment = false;
+                  parser_pos += 2;
+                  return ['-->', 'TK_COMMENT'];
+              }
+  
+              if (c === '.') {
+                  return [c, 'TK_DOT'];
+              }
+  
+              if (in_array(c, punct)) {
+                  while (parser_pos < input_length && in_array(c + input.charAt(parser_pos), punct)) {
+                      c += input.charAt(parser_pos);
+                      parser_pos += 1;
+                      if (parser_pos >= input_length) {
+                          break;
+                      }
+                  }
+  
+                  if (c === ',') {
+                      return [c, 'TK_COMMA'];
+                  } else if (c === '=') {
+                      return [c, 'TK_EQUALS'];
+                  } else {
+                      return [c, 'TK_OPERATOR'];
+                  }
+              }
+  
+              return [c, 'TK_UNKNOWN'];
+          }
+  
+  
+          function unescape_string(s) {
+              var esc = false,
+                  out = '',
+                  pos = 0,
+                  s_hex = '',
+                  escaped = 0,
+                  c;
+  
+              while (esc || pos < s.length) {
+  
+                  c = s.charAt(pos);
+                  pos++;
+  
+                  if (esc) {
+                      esc = false;
+                      if (c === 'x') {
+                          // simple hex-escape \x24
+                          s_hex = s.substr(pos, 2);
+                          pos += 2;
+                      } else if (c === 'u') {
+                          // unicode-escape, \u2134
+                          s_hex = s.substr(pos, 4);
+                          pos += 4;
+                      } else {
+                          // some common escape, e.g \n
+                          out += '\\' + c;
+                          continue;
+                      }
+                      if (!s_hex.match(/^[0123456789abcdefABCDEF]+$/)) {
+                          // some weird escaping, bail out,
+                          // leaving whole string intact
+                          return s;
+                      }
+  
+                      escaped = parseInt(s_hex, 16);
+  
+                      if (escaped >= 0x00 && escaped < 0x20) {
+                          // leave 0x00...0x1f escaped
+                          if (c === 'x') {
+                              out += '\\x' + s_hex;
+                          } else {
+                              out += '\\u' + s_hex;
+                          }
+                          continue;
+                      } else if (escaped === 0x22 || escaped === 0x27 || escaped === 0x5c) {
+                          // single-quote, apostrophe, backslash - escape these
+                          out += '\\' + String.fromCharCode(escaped);
+                      } else if (c === 'x' && escaped > 0x7e && escaped <= 0xff) {
+                          // we bail out on \x7f..\xff,
+                          // leaving whole string escaped,
+                          // as it's probably completely binary
+                          return s;
+                      } else {
+                          out += String.fromCharCode(escaped);
+                      }
+                  } else if (c === '\\') {
+                      esc = true;
+                  } else {
+                      out += c;
+                  }
+              }
+              return out;
+          }
+  
+      }
+  
+  
+      if (true) {
+          // Add support for AMD ( https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property- )
+          !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+              return { js_beautify: js_beautify };
+          }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+      } else if (typeof exports !== "undefined") {
+          // Add support for CommonJS. Just put this file somewhere on your require.paths
+          // and you will be able to `var js_beautify = require("beautify").js_beautify`.
+          exports.js_beautify = js_beautify;
+      } else if (typeof window !== "undefined") {
+          // If we're running a web page and don't have either of the above, add our one global
+          window.js_beautify = js_beautify;
+      } else if (typeof global !== "undefined") {
+          // If we don't even have window, try global.
+          global.js_beautify = js_beautify;
+      }
+  
+  }());
+
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
   /**
    * Copyright 2013-2015, Facebook, Inc.
    * All rights reserved.
@@ -6539,7 +9129,7 @@
       var callbacks = this._callbacks;
       var contexts = this._contexts;
       if (callbacks) {
-        (true ? invariant(
+        ( true ? invariant(
           callbacks.length === contexts.length,
           'Mismatched list of contexts in callback queue'
         ) : invariant(callbacks.length === contexts.length));
@@ -6578,7 +9168,7 @@
 
 
 /***/ },
-/* 37 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -6611,7 +9201,7 @@
     injectMount: function(InjectedMount) {
       injection.Mount = InjectedMount;
       if (true) {
-        (true ? invariant(
+        ( true ? invariant(
           InjectedMount && InjectedMount.getNode,
           'EventPluginUtils.injection.injectMount(...): Injected Mount module ' +
           'is missing getNode.'
@@ -6651,7 +9241,7 @@
         dispatchListeners.length :
         dispatchListeners ? 1 : 0;
   
-      (true ? invariant(
+      ( true ? invariant(
         idsIsArr === listenersIsArr && IDsLen === listenersLen,
         'EventPluginUtils: Invalid `event`.'
       ) : invariant(idsIsArr === listenersIsArr && IDsLen === listenersLen));
@@ -6760,7 +9350,7 @@
     }
     var dispatchListener = event._dispatchListeners;
     var dispatchID = event._dispatchIDs;
-    (true ? invariant(
+    ( true ? invariant(
       !Array.isArray(dispatchListener),
       'executeDirectDispatch(...): Invalid `event`.'
     ) : invariant(!Array.isArray(dispatchListener)));
@@ -6801,7 +9391,7 @@
 
 
 /***/ },
-/* 38 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -6818,7 +9408,7 @@
   
   'use strict';
   
-  var ReactPropTypes = __webpack_require__(67);
+  var ReactPropTypes = __webpack_require__(69);
   
   var invariant = __webpack_require__(1);
   
@@ -6833,7 +9423,7 @@
   };
   
   function _assertSingleLink(input) {
-    (true ? invariant(
+    ( true ? invariant(
       input.props.checkedLink == null || input.props.valueLink == null,
       'Cannot provide a checkedLink and a valueLink. If you want to use ' +
       'checkedLink, you probably don\'t want to use valueLink and vice versa.'
@@ -6841,7 +9431,7 @@
   }
   function _assertValueLink(input) {
     _assertSingleLink(input);
-    (true ? invariant(
+    ( true ? invariant(
       input.props.value == null && input.props.onChange == null,
       'Cannot provide a valueLink and a value or onChange event. If you want ' +
       'to use value or onChange, you probably don\'t want to use valueLink.'
@@ -6850,7 +9440,7 @@
   
   function _assertCheckedLink(input) {
     _assertSingleLink(input);
-    (true ? invariant(
+    ( true ? invariant(
       input.props.checked == null && input.props.onChange == null,
       'Cannot provide a checkedLink and a checked property or onChange event. ' +
       'If you want to use checked or onChange, you probably don\'t want to ' +
@@ -6959,7 +9549,7 @@
 
 
 /***/ },
-/* 39 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -6977,8 +9567,8 @@
   
   var ReactBrowserEventEmitter = __webpack_require__(18);
   
-  var accumulateInto = __webpack_require__(48);
-  var forEachAccumulated = __webpack_require__(49);
+  var accumulateInto = __webpack_require__(50);
+  var forEachAccumulated = __webpack_require__(51);
   var invariant = __webpack_require__(1);
   
   function remove(event) {
@@ -6987,11 +9577,11 @@
   
   var LocalEventTrapMixin = {
     trapBubbledEvent:function(topLevelType, handlerBaseName) {
-      (true ? invariant(this.isMounted(), 'Must be mounted to trap events') : invariant(this.isMounted()));
+      ( true ? invariant(this.isMounted(), 'Must be mounted to trap events') : invariant(this.isMounted()));
       // If a component renders to null or if another component fatals and causes
       // the state of the tree to be corrupted, `node` here can be null.
       var node = this.getDOMNode();
-      (true ? invariant(
+      ( true ? invariant(
         node,
         'LocalEventTrapMixin.trapBubbledEvent(...): Requires node to be rendered.'
       ) : invariant(node));
@@ -7018,7 +9608,7 @@
 
 
 /***/ },
-/* 40 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7036,7 +9626,7 @@
   
   'use strict';
   
-  var ReactDOMIDOperations = __webpack_require__(62);
+  var ReactDOMIDOperations = __webpack_require__(64);
   var ReactMount = __webpack_require__(8);
   
   /**
@@ -7069,7 +9659,7 @@
 
 
 /***/ },
-/* 41 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7112,7 +9702,7 @@
   
     injection: {
       injectEnvironment: function(environment) {
-        (true ? invariant(
+        ( true ? invariant(
           !injected,
           'ReactCompositeComponent: injectEnvironment() can only be called once.'
         ) : invariant(!injected));
@@ -7132,7 +9722,7 @@
 
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7186,7 +9776,7 @@
      */
     withContext: function(newContext, scopedCallback) {
       if (true) {
-        (true ? warning(
+        ( true ? warning(
           didWarn,
           'withContext is deprecated and will be removed in a future version. ' +
           'Use a wrapper component with getChildContext instead.'
@@ -7212,7 +9802,7 @@
 
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7231,20 +9821,20 @@
   
   'use strict';
   
-  var CSSPropertyOperations = __webpack_require__(59);
+  var CSSPropertyOperations = __webpack_require__(61);
   var DOMProperty = __webpack_require__(16);
   var DOMPropertyOperations = __webpack_require__(22);
   var ReactBrowserEventEmitter = __webpack_require__(18);
   var ReactComponentBrowserEnvironment =
-    __webpack_require__(40);
+    __webpack_require__(42);
   var ReactMount = __webpack_require__(8);
-  var ReactMultiChild = __webpack_require__(116);
+  var ReactMultiChild = __webpack_require__(121);
   var ReactPerf = __webpack_require__(13);
   
   var assign = __webpack_require__(2);
   var escapeTextContentForBrowser = __webpack_require__(35);
   var invariant = __webpack_require__(1);
-  var isEventSupported = __webpack_require__(54);
+  var isEventSupported = __webpack_require__(56);
   var keyOf = __webpack_require__(15);
   var warning = __webpack_require__(4);
   
@@ -7273,11 +9863,11 @@
     }
     // Note the use of `==` which checks for null or undefined.
     if (props.dangerouslySetInnerHTML != null) {
-      (true ? invariant(
+      ( true ? invariant(
         props.children == null,
         'Can only set one of `children` or `props.dangerouslySetInnerHTML`.'
       ) : invariant(props.children == null));
-      (true ? invariant(
+      ( true ? invariant(
         typeof props.dangerouslySetInnerHTML === 'object' &&
         '__html' in props.dangerouslySetInnerHTML,
         '`props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. ' +
@@ -7287,12 +9877,12 @@
       '__html' in props.dangerouslySetInnerHTML));
     }
     if (true) {
-      (true ? warning(
+      ( true ? warning(
         props.innerHTML == null,
         'Directly setting property `innerHTML` is not permitted. ' +
         'For more information, lookup documentation on `dangerouslySetInnerHTML`.'
       ) : null);
-      (true ? warning(
+      ( true ? warning(
         !props.contentEditable || props.children == null,
         'A component is `contentEditable` and contains `children` managed by ' +
         'React. It is now your responsibility to guarantee that none of ' +
@@ -7300,7 +9890,7 @@
         'probably not intentional.'
       ) : null);
     }
-    (true ? invariant(
+    ( true ? invariant(
       props.style == null || typeof props.style === 'object',
       'The `style` prop expects a mapping from style properties to values, ' +
       'not a string. For example, style={{marginRight: spacing + \'em\'}} when ' +
@@ -7312,7 +9902,7 @@
     if (true) {
       // IE8 has no API for event capturing and the `onScroll` event doesn't
       // bubble.
-      (true ? warning(
+      ( true ? warning(
         registrationName !== 'onScroll' || isEventSupported('scroll', true),
         'This browser doesn\'t support the `onScroll` event'
       ) : null);
@@ -7363,7 +9953,7 @@
   
   function validateDangerousTag(tag) {
     if (!hasOwnProperty.call(validatedTagCache, tag)) {
-      (true ? invariant(VALID_TAG_REGEX.test(tag), 'Invalid tag: %s', tag) : invariant(VALID_TAG_REGEX.test(tag)));
+      ( true ? invariant(VALID_TAG_REGEX.test(tag), 'Invalid tag: %s', tag) : invariant(VALID_TAG_REGEX.test(tag)));
       validatedTagCache[tag] = true;
     }
   }
@@ -7724,7 +10314,7 @@
 
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7777,7 +10367,7 @@
     deregisterNullComponentID(internalInstance._rootNodeID);
   };
   ReactEmptyComponentType.prototype.render = function() {
-    (true ? invariant(
+    ( true ? invariant(
       component,
       'Trying to return null from a render, but no null placeholder component ' +
       'was injected.'
@@ -7821,7 +10411,7 @@
 
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports) {
 
   /**
@@ -7862,7 +10452,7 @@
 
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7890,7 +10480,7 @@
 
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7906,7 +10496,7 @@
   
   'use strict';
   
-  var ReactLifeCycle = __webpack_require__(45);
+  var ReactLifeCycle = __webpack_require__(47);
   var ReactCurrentOwner = __webpack_require__(12);
   var ReactElement = __webpack_require__(3);
   var ReactInstanceMap = __webpack_require__(20);
@@ -7927,7 +10517,7 @@
   }
   
   function getInternalInstanceReadyForUpdate(publicInstance, callerName) {
-    (true ? invariant(
+    ( true ? invariant(
       ReactCurrentOwner.current == null,
       '%s(...): Cannot update during an existing state transition ' +
       '(such as within `render`). Render methods should be a pure function ' +
@@ -7941,7 +10531,7 @@
         // Only warn when we have a callerName. Otherwise we should be silent.
         // We're probably calling from enqueueCallback. We don't want to warn
         // there because we already warned for the corresponding lifecycle method.
-        (true ? warning(
+        ( true ? warning(
           !callerName,
           '%s(...): Can only update a mounted or mounting component. ' +
           'This usually means you called %s() on an unmounted ' +
@@ -7975,7 +10565,7 @@
      * @internal
      */
     enqueueCallback: function(publicInstance, callback) {
-      (true ? invariant(
+      ( true ? invariant(
         typeof callback === 'function',
         'enqueueCallback(...): You called `setProps`, `replaceProps`, ' +
         '`setState`, `replaceState`, or `forceUpdate` with a callback that ' +
@@ -8006,7 +10596,7 @@
     },
   
     enqueueCallbackInternal: function(internalInstance, callback) {
-      (true ? invariant(
+      ( true ? invariant(
         typeof callback === 'function',
         'enqueueCallback(...): You called `setProps`, `replaceProps`, ' +
         '`setState`, `replaceState`, or `forceUpdate` with a callback that ' +
@@ -8120,7 +10710,7 @@
         return;
       }
   
-      (true ? invariant(
+      ( true ? invariant(
         internalInstance._isTopLevel,
         'setProps(...): You called `setProps` on a ' +
         'component with a parent. This is an anti-pattern since props will ' +
@@ -8159,7 +10749,7 @@
         return;
       }
   
-      (true ? invariant(
+      ( true ? invariant(
         internalInstance._isTopLevel,
         'replaceProps(...): You called `replaceProps` on a ' +
         'component with a parent. This is an anti-pattern since props will ' +
@@ -8191,7 +10781,7 @@
 
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -8224,7 +10814,7 @@
    */
   
   function accumulateInto(current, next) {
-    (true ? invariant(
+    ( true ? invariant(
       next != null,
       'accumulateInto(...): Accumulated items must not be null or undefined.'
     ) : invariant(next != null));
@@ -8259,7 +10849,7 @@
 
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports) {
 
   /**
@@ -8294,7 +10884,7 @@
 
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports) {
 
   /**
@@ -8350,7 +10940,7 @@
 
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports) {
 
   /**
@@ -8401,7 +10991,7 @@
 
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports) {
 
   /**
@@ -8436,7 +11026,7 @@
 
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -8453,8 +11043,8 @@
   
   'use strict';
   
-  var ReactCompositeComponent = __webpack_require__(97);
-  var ReactEmptyComponent = __webpack_require__(44);
+  var ReactCompositeComponent = __webpack_require__(102);
+  var ReactEmptyComponent = __webpack_require__(46);
   var ReactNativeComponent = __webpack_require__(30);
   
   var assign = __webpack_require__(2);
@@ -8505,7 +11095,7 @@
     if (typeof node === 'object') {
       var element = node;
       if (true) {
-        (true ? warning(
+        ( true ? warning(
           element && (typeof element.type === 'function' ||
                       typeof element.type === 'string'),
           'Only functions or strings can be mounted as React components.'
@@ -8530,7 +11120,7 @@
     } else if (typeof node === 'string' || typeof node === 'number') {
       instance = ReactNativeComponent.createInstanceForText(node);
     } else {
-      (true ? invariant(
+      ( true ? invariant(
         false,
         'Encountered invalid React node of type %s',
         typeof node
@@ -8538,7 +11128,7 @@
     }
   
     if (true) {
-      (true ? warning(
+      ( true ? warning(
         typeof instance.construct === 'function' &&
         typeof instance.mountComponent === 'function' &&
         typeof instance.receiveComponent === 'function' &&
@@ -8576,7 +11166,7 @@
 
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -8645,7 +11235,7 @@
 
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -8738,7 +11328,7 @@
 
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -8816,7 +11406,7 @@
                   if (nextElement._owner != null) {
                     nextElement._owner._isOwnerNecessary = true;
                   }
-                  (true ? warning(
+                  ( true ? warning(
                     false,
                     '<%s /> is being rendered by both %s and %s using the same ' +
                     'key (%s) in the same place. Currently, this means that ' +
@@ -8844,14 +11434,14 @@
 
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__(94);
+  module.exports = __webpack_require__(99);
 
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports) {
 
   /**
@@ -8980,7 +11570,7 @@
 
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -8997,13 +11587,13 @@
   
   'use strict';
   
-  var CSSProperty = __webpack_require__(58);
+  var CSSProperty = __webpack_require__(60);
   var ExecutionEnvironment = __webpack_require__(5);
   
-  var camelizeStyleName = __webpack_require__(136);
-  var dangerousStyleValue = __webpack_require__(140);
-  var hyphenateStyleName = __webpack_require__(147);
-  var memoizeStringOnly = __webpack_require__(150);
+  var camelizeStyleName = __webpack_require__(141);
+  var dangerousStyleValue = __webpack_require__(145);
+  var hyphenateStyleName = __webpack_require__(152);
+  var memoizeStringOnly = __webpack_require__(155);
   var warning = __webpack_require__(4);
   
   var processStyleName = memoizeStringOnly(function(styleName) {
@@ -9034,7 +11624,7 @@
       }
   
       warnedStyleNames[name] = true;
-      (true ? warning(
+      ( true ? warning(
         false,
         'Unsupported style property %s. Did you mean %s?',
         name,
@@ -9048,7 +11638,7 @@
       }
   
       warnedStyleNames[name] = true;
-      (true ? warning(
+      ( true ? warning(
         false,
         'Unsupported vendor-prefixed style property %s. Did you mean %s?',
         name,
@@ -9062,7 +11652,7 @@
       }
   
       warnedStyleValues[value] = true;
-      (true ? warning(
+      ( true ? warning(
         false,
         'Style property values shouldn\'t contain a semicolon. ' +
         'Try "%s: %s" instead.',
@@ -9164,7 +11754,7 @@
 
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -9206,7 +11796,7 @@
     for (var pluginName in namesToPlugins) {
       var PluginModule = namesToPlugins[pluginName];
       var pluginIndex = EventPluginOrder.indexOf(pluginName);
-      (true ? invariant(
+      ( true ? invariant(
         pluginIndex > -1,
         'EventPluginRegistry: Cannot inject event plugins that do not exist in ' +
         'the plugin ordering, `%s`.',
@@ -9215,7 +11805,7 @@
       if (EventPluginRegistry.plugins[pluginIndex]) {
         continue;
       }
-      (true ? invariant(
+      ( true ? invariant(
         PluginModule.extractEvents,
         'EventPluginRegistry: Event plugins must implement an `extractEvents` ' +
         'method, but `%s` does not.',
@@ -9224,7 +11814,7 @@
       EventPluginRegistry.plugins[pluginIndex] = PluginModule;
       var publishedEvents = PluginModule.eventTypes;
       for (var eventName in publishedEvents) {
-        (true ? invariant(
+        ( true ? invariant(
           publishEventForPlugin(
             publishedEvents[eventName],
             PluginModule,
@@ -9251,7 +11841,7 @@
    * @private
    */
   function publishEventForPlugin(dispatchConfig, PluginModule, eventName) {
-    (true ? invariant(
+    ( true ? invariant(
       !EventPluginRegistry.eventNameDispatchConfigs.hasOwnProperty(eventName),
       'EventPluginHub: More than one plugin attempted to publish the same ' +
       'event name, `%s`.',
@@ -9292,7 +11882,7 @@
    * @private
    */
   function publishRegistrationName(registrationName, PluginModule, eventName) {
-    (true ? invariant(
+    ( true ? invariant(
       !EventPluginRegistry.registrationNameModules[registrationName],
       'EventPluginHub: More than one plugin attempted to publish the same ' +
       'registration name, `%s`.',
@@ -9340,7 +11930,7 @@
      * @see {EventPluginHub.injection.injectEventPluginOrder}
      */
     injectEventPluginOrder: function(InjectedEventPluginOrder) {
-      (true ? invariant(
+      ( true ? invariant(
         !EventPluginOrder,
         'EventPluginRegistry: Cannot inject event plugin ordering more than ' +
         'once. You are likely trying to load more than one copy of React.'
@@ -9369,7 +11959,7 @@
         var PluginModule = injectedNamesToPlugins[pluginName];
         if (!namesToPlugins.hasOwnProperty(pluginName) ||
             namesToPlugins[pluginName] !== PluginModule) {
-          (true ? invariant(
+          ( true ? invariant(
             !namesToPlugins[pluginName],
             'EventPluginRegistry: Cannot inject two different event plugins ' +
             'using the same name, `%s`.',
@@ -9446,7 +12036,7 @@
 
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -9462,7 +12052,7 @@
   
   'use strict';
   
-  var ReactUpdateQueue = __webpack_require__(47);
+  var ReactUpdateQueue = __webpack_require__(49);
   
   var invariant = __webpack_require__(1);
   var warning = __webpack_require__(4);
@@ -9501,7 +12091,7 @@
    * @protected
    */
   ReactComponent.prototype.setState = function(partialState, callback) {
-    (true ? invariant(
+    ( true ? invariant(
       typeof partialState === 'object' ||
       typeof partialState === 'function' ||
       partialState == null,
@@ -9511,7 +12101,7 @@
     typeof partialState === 'function' ||
     partialState == null));
     if (true) {
-      (true ? warning(
+      ( true ? warning(
         partialState != null,
         'setState(...): You passed an undefined or null state object; ' +
         'instead, use forceUpdate().'
@@ -9578,7 +12168,7 @@
       try {
         Object.defineProperty(ReactComponent.prototype, methodName, {
           get: function() {
-            (true ? warning(
+            ( true ? warning(
               false,
               '%s(...) is deprecated in plain JavaScript React classes. %s',
               info[0],
@@ -9602,7 +12192,7 @@
 
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -9621,14 +12211,14 @@
   
   'use strict';
   
-  var CSSPropertyOperations = __webpack_require__(59);
-  var DOMChildrenOperations = __webpack_require__(86);
+  var CSSPropertyOperations = __webpack_require__(61);
+  var DOMChildrenOperations = __webpack_require__(91);
   var DOMPropertyOperations = __webpack_require__(22);
   var ReactMount = __webpack_require__(8);
   var ReactPerf = __webpack_require__(13);
   
   var invariant = __webpack_require__(1);
-  var setInnerHTML = __webpack_require__(55);
+  var setInnerHTML = __webpack_require__(57);
   
   /**
    * Errors for properties that should not be updated with `updatePropertyById()`.
@@ -9659,7 +12249,7 @@
      */
     updatePropertyByID: function(id, name, value) {
       var node = ReactMount.getNode(id);
-      (true ? invariant(
+      ( true ? invariant(
         !INVALID_PROPERTY_ERRORS.hasOwnProperty(name),
         'updatePropertyByID(...): %s',
         INVALID_PROPERTY_ERRORS[name]
@@ -9685,7 +12275,7 @@
      */
     deletePropertyByID: function(id, name, value) {
       var node = ReactMount.getNode(id);
-      (true ? invariant(
+      ( true ? invariant(
         !INVALID_PROPERTY_ERRORS.hasOwnProperty(name),
         'updatePropertyByID(...): %s',
         INVALID_PROPERTY_ERRORS[name]
@@ -9772,7 +12362,7 @@
 
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -9791,8 +12381,8 @@
   
   var DOMPropertyOperations = __webpack_require__(22);
   var ReactComponentBrowserEnvironment =
-    __webpack_require__(40);
-  var ReactDOMComponent = __webpack_require__(43);
+    __webpack_require__(42);
+  var ReactDOMComponent = __webpack_require__(45);
   
   var assign = __webpack_require__(2);
   var escapeTextContentForBrowser = __webpack_require__(35);
@@ -9893,7 +12483,7 @@
 
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -9909,11 +12499,11 @@
   
   'use strict';
   
-  var ReactDOMSelection = __webpack_require__(106);
+  var ReactDOMSelection = __webpack_require__(111);
   
-  var containsNode = __webpack_require__(71);
-  var focusNode = __webpack_require__(73);
-  var getActiveElement = __webpack_require__(74);
+  var containsNode = __webpack_require__(73);
+  var focusNode = __webpack_require__(75);
+  var getActiveElement = __webpack_require__(76);
   
   function isInDocument(node) {
     return containsNode(document.documentElement, node);
@@ -10032,7 +12622,7 @@
 
 
 /***/ },
-/* 65 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -10048,7 +12638,7 @@
   
   'use strict';
   
-  var adler32 = __webpack_require__(134);
+  var adler32 = __webpack_require__(139);
   
   var ReactMarkupChecksum = {
     CHECKSUM_ATTR_NAME: 'data-react-checksum',
@@ -10084,7 +12674,7 @@
 
 
 /***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -10121,7 +12711,7 @@
 
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -10474,7 +13064,7 @@
 
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -10534,7 +13124,7 @@
 
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports) {
 
   /**
@@ -10569,7 +13159,7 @@
 
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports) {
 
   /**
@@ -10602,7 +13192,7 @@
 
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -10617,7 +13207,7 @@
    * @typechecks
    */
   
-  var isTextNode = __webpack_require__(148);
+  var isTextNode = __webpack_require__(153);
   
   /*jslint bitwise:true */
   
@@ -10650,7 +13240,7 @@
 
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -10672,7 +13262,7 @@
   var ReactMount = __webpack_require__(8);
   
   var invariant = __webpack_require__(1);
-  var isNode = __webpack_require__(78);
+  var isNode = __webpack_require__(80);
   var warning = __webpack_require__(4);
   
   /**
@@ -10685,7 +13275,7 @@
     if (true) {
       var owner = ReactCurrentOwner.current;
       if (owner !== null) {
-        (true ? warning(
+        ( true ? warning(
           owner._warnedAboutRefsInRender,
           '%s is accessing getDOMNode or findDOMNode inside its render(). ' +
           'render() should be a pure function of props and state. It should ' +
@@ -10706,7 +13296,7 @@
     if (ReactInstanceMap.has(componentOrElement)) {
       return ReactMount.getNodeFromInstance(componentOrElement);
     }
-    (true ? invariant(
+    ( true ? invariant(
       componentOrElement.render == null ||
       typeof componentOrElement.render !== 'function',
       'Component (with keys: %s) contains `render` method ' +
@@ -10714,7 +13304,7 @@
       Object.keys(componentOrElement)
     ) : invariant(componentOrElement.render == null ||
     typeof componentOrElement.render !== 'function'));
-    (true ? invariant(
+    ( true ? invariant(
       false,
       'Element appears to be neither ReactComponent nor DOMNode (keys: %s)',
       Object.keys(componentOrElement)
@@ -10725,7 +13315,7 @@
 
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports) {
 
   /**
@@ -10758,7 +13348,7 @@
 
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports) {
 
   /**
@@ -10791,7 +13381,7 @@
 
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports) {
 
   /**
@@ -10839,7 +13429,7 @@
 
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -10940,7 +13530,7 @@
    * @return {?array} Markup wrap configuration, if applicable.
    */
   function getMarkupWrap(nodeName) {
-    (true ? invariant(!!dummyNode, 'Markup wrapping node not initialized') : invariant(!!dummyNode));
+    ( true ? invariant(!!dummyNode, 'Markup wrapping node not initialized') : invariant(!!dummyNode));
     if (!markupWrap.hasOwnProperty(nodeName)) {
       nodeName = '*';
     }
@@ -10960,7 +13550,7 @@
 
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -11001,7 +13591,7 @@
 
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports) {
 
   /**
@@ -11032,7 +13622,7 @@
 
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports) {
 
   /**
@@ -11079,7 +13669,7 @@
 
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -11099,7 +13689,7 @@
   var ReactFragment = __webpack_require__(29);
   var ReactInstanceHandles = __webpack_require__(19);
   
-  var getIteratorFn = __webpack_require__(75);
+  var getIteratorFn = __webpack_require__(77);
   var invariant = __webpack_require__(1);
   var warning = __webpack_require__(4);
   
@@ -11246,7 +13836,7 @@
           }
         } else {
           if (true) {
-            (true ? warning(
+            ( true ? warning(
               didWarnAboutMaps,
               'Using Maps as children is not yet fully supported. It is an ' +
               'experimental feature that might be removed. Convert it to a ' +
@@ -11276,7 +13866,7 @@
           }
         }
       } else if (type === 'object') {
-        (true ? invariant(
+        ( true ? invariant(
           children.nodeType !== 1,
           'traverseAllChildren(...): Encountered an invalid child; DOM ' +
           'elements are not valid children of React components.'
@@ -11334,7 +13924,7 @@
 
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -11344,10 +13934,10 @@
   
   'use strict';
   
-  var React = __webpack_require__(57);
+  var React = __webpack_require__(59);
   //var ComingSoon = require('../ComingSoon/ComingSoon');
-  //var Resume = require('../Resume/Resume');
-  var Mikebook = __webpack_require__(82);
+  var Resume = __webpack_require__(84);
+  // var Mikebook = require('../Resumes/Mikebook/Mikebook');
   
   var App = React.createClass({
     displayName: 'App',
@@ -11355,8 +13945,8 @@
     render: function render() {
       return React.createElement(
         'div',
-        { className: 'wrapper' },
-        React.createElement(Mikebook, null)
+        { className: "wrapper" },
+        React.createElement(Resume, null)
       );
     }
   });
@@ -11364,7 +13954,7 @@
   module.exports = App;
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -11372,100 +13962,1291 @@
    * Created on 7/13/15.
    */
   
-  "use strict";
+  'use strict';
   
-  var React = __webpack_require__(57);
+  var React = __webpack_require__(59);
+  var jsCode = __webpack_require__(164);
+  var feCode = __webpack_require__(163);
   
-  var MenuBar = React.createClass({
-    displayName: "MenuBar",
+  var Resume = React.createClass({
+    displayName: 'Resume',
   
     render: function render() {
       return React.createElement(
-        "header",
-        { className: "mb-header" },
+        'div',
+        { className: "resume" },
         React.createElement(
-          "h1",
-          { className: "title" },
+          'div',
+          { className: "mgm-container center name" },
           React.createElement(
-            "a",
-            { href: "http://www.mgmcdermott.com/mikebook" },
-            React.createElement("img", { src: "../../../images/mikebook-logo.png", alt: "Mikebook",
-              width: "170", height: "33" })
+            'h1',
+            null,
+            'Michael McDermott'
+          ),
+          React.createElement(
+            'ul',
+            null,
+            React.createElement(
+              'li',
+              null,
+              'New York, NY'
+            ),
+            React.createElement(
+              'li',
+              null,
+              '1 (617) 304–2573'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'resume@mgmcdermott.com'
+            )
           )
-        )
-      );
-    }
-  });
-  
-  var LeftNav = React.createClass({
-    displayName: "LeftNav",
-  
-    render: function render() {
-      return React.createElement(
-        "aside",
-        { className: "aside left-nav" },
-        "Aside 1"
-      );
-    }
-  });
-  
-  var RightTrending = React.createClass({
-    displayName: "RightTrending",
-  
-    render: function render() {
-      return React.createElement(
-        "aside",
-        { className: "aside right-trending" },
-        "Aside 2"
-      );
-    }
-  });
-  
-  // Icon, Poster, Time, Content
-  
-  var PostBox = React.createClass({
-    displayName: "PostBox",
-  
-    render: function render() {
-      return React.createElement("div", { className: "post-box" });
-    }
-  });
-  
-  var Main = React.createClass({
-    displayName: "Main",
-  
-    render: function render() {
-      return React.createElement(
-        "div",
-        { className: "mb-main" },
-        React.createElement(PostBox, null)
-      );
-    }
-  });
-  
-  var Mikebook = React.createClass({
-    displayName: "Mikebook",
-  
-    render: function render() {
-      return React.createElement(
-        "div",
-        { className: "wrapper mb-wrapper" },
-        React.createElement(MenuBar, null),
+        ),
         React.createElement(
-          "div",
-          { className: "mb-content" },
-          React.createElement(Main, null),
-          React.createElement(LeftNav, null),
-          React.createElement(RightTrending, null)
+          'div',
+          { className: "mgm-container center about" },
+          React.createElement(
+            'h2',
+            { className: "mgm-header" },
+            'About'
+          ),
+          React.createElement(
+            'div',
+            { className: "mgm-inner about-inner center" },
+            React.createElement(
+              'div',
+              { className: "mgm-headshot" },
+              'Headshot Container'
+            ),
+            React.createElement(
+              'div',
+              { className: "about-info" },
+              React.createElement(
+                'p',
+                null,
+                'I am a passionate web developer with exposure to some of the hottest frameworks on the client and server, including React, AngularJS, and NodeJS.'
+              ),
+              React.createElement(
+                'p',
+                null,
+                'Combined with my knowledge of HTML and CSS, I’ve built web applications from the ground up with dynamic front-ends communicating with extensive REST APIs on the server. I’m a firm believer that javascript is the future of the web and I spend every day trying to prepare for it.'
+              ),
+              React.createElement(
+                'p',
+                null,
+                'In my spare time, I host websites for myself, friends, and family on my personal servers running Ubuntu, nginx, and PM2. I also enjoy contributing to open source javascript and giving back on Stack Overflow.'
+              )
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: "mgm-container skill" },
+          React.createElement(
+            'h2',
+            { className: "mgm-header" },
+            'Skills'
+          ),
+          React.createElement(
+            'div',
+            { className: "mgm-inner skill-inner" },
+            React.createElement(
+              'pre',
+              { className: "default prettyprint", style: { border: 0 } },
+              React.createElement(
+                'code',
+                null,
+                jsCode
+              )
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: "mgm-container skill" },
+          React.createElement(
+            'div',
+            { className: "mgm-inner skill-inner" },
+            React.createElement(
+              'pre',
+              { className: "default prettyprint", style: { border: 0 } },
+              React.createElement(
+                'code',
+                null,
+                feCode
+              )
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: "databases" },
+          React.createElement(
+            'h4',
+            null,
+            'Databases'
+          ),
+          React.createElement(
+            'p',
+            null,
+            'While familiar with the benefits and uses of other database types, the scale and needs of my projects have not called for anything other than MongoDB or MySQL (have also used SQLite)'
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: "cluster-comp" },
+          React.createElement(
+            'h4',
+            null,
+            'Cluster Computing'
+          ),
+          React.createElement(
+            'p',
+            null,
+            'At work, I have set up a cluster containing 3 masters and 12 slaves running Ubuntu. Resources shared amongst these servers and the relationships between masters and slaves are managed using the Apache Mesos kernel. Applications are deployed in docker containers and run on Mesosphere’s Marathon. Large-scale data-processing jobs are run on the cluster through Apache Spark.'
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: "other" },
+          React.createElement(
+            'h4',
+            null,
+            'Other Skills'
+          ),
+          React.createElement(
+            'p',
+            null,
+            'Build processes (Gulp/Grunt), module bundlers (Webpack/Browserify), JSX, Python, Java, nginx, HAProxy, Apache2, Linux (Ubuntu), openSUSE, Bash scripts, Git/SVN, jQuery, PhantomJS'
+          )
+        ),
+        React.createElement(
+          'section',
+          null,
+          React.createElement(
+            'h2',
+            { className: "mgm-header" },
+            'Projects'
+          ),
+          React.createElement(
+            'ul',
+            null,
+            React.createElement(
+              'li',
+              null,
+              'LINCS Data Registry - ',
+              React.createElement(
+                'a',
+                { href: "http://amp.pharm.mssm.edu/LDR/" },
+                'http://amp.pharm.mssm.edu/LDR/'
+              )
+            ),
+            React.createElement(
+              'ul',
+              null,
+              React.createElement(
+                'li',
+                null,
+                'The LINCS Data Registry is a web application created to allow the LINCS Data Signature Generation Centers to submit their data release instances in a consistent and controlled format. Written in AngularJS, Bootstrap, and Node.js, the code for this project can be found on ',
+                React.createElement(
+                  'a',
+                  { href: "https://github.com/MaayanLab/LDR" },
+                  'https://github.com/MaayanLab/LDR'
+                ),
+                '. It is built with Gulp, compiled into a docker container, and run on Marathon. Karma, mocha, chai, and sinon are used to mock modules, test the API, and general front-end unit testing.'
+              )
+            ),
+            React.createElement(
+              'li',
+              null,
+              'KevinandKevin.com'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Personal website - ',
+              React.createElement(
+                'a',
+                { href: "http://www.mgmcdermott.com" },
+                'http://www.mgmcdermott.com'
+              )
+            )
+          )
+        ),
+        React.createElement(
+          'section',
+          null,
+          React.createElement(
+            'h2',
+            { className: "mgm-header" },
+            'Work'
+          ),
+          React.createElement(
+            'p',
+            null,
+            'Icahn School of Medicine at Mount Sinai - Ma’ayan Lab November 2014 - Present Researcher Programmer/Analyst - In charge of developing and maintaining several web applications including the ',
+            React.createElement(
+              'a',
+              {
+                href: "http://amp.pharm.mssm.edu/LDR/" },
+              'LINCS Data Registry'
+            ),
+            ', ',
+            React.createElement(
+              'a',
+              {
+                href: "http://amp.pharm.mssm.edu/milestones/" },
+              'LINCS Milestones'
+            ),
+            ', and ',
+            React.createElement(
+              'a',
+              {
+                href: "http://www.lincsproject.org" },
+              'lincsproject.org'
+            ),
+            '.'
+          )
+        ),
+        React.createElement(
+          'h3',
+          null,
+          'Education'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'University of Connecticut, Storrs, CT Bachelor of Science in Biomedical Engineering, May 2014 Track: Bioinformatics (Computer Science) GPA: 3.12'
         )
       );
     }
   });
   
-  module.exports = Mikebook;
+  module.exports = Resume;
 
 /***/ },
-/* 83 */
+/* 85 */,
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+  var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+  The following batches are equivalent:
+  
+  var beautify_js = require('js-beautify');
+  var beautify_js = require('js-beautify').js;
+  var beautify_js = require('js-beautify').js_beautify;
+  
+  var beautify_css = require('js-beautify').css;
+  var beautify_css = require('js-beautify').css_beautify;
+  
+  var beautify_html = require('js-beautify').html;
+  var beautify_html = require('js-beautify').html_beautify;
+  
+  All methods returned accept two arguments, the source string and an options object.
+  **/
+  
+  function get_beautify(js_beautify, css_beautify, html_beautify) {
+      // the default is js
+      var beautify = function (src, config) {
+          return js_beautify.js_beautify(src, config);
+      };
+  
+      // short aliases
+      beautify.js   = js_beautify.js_beautify;
+      beautify.css  = css_beautify.css_beautify;
+      beautify.html = html_beautify.html_beautify;
+  
+      // legacy aliases
+      beautify.js_beautify   = js_beautify.js_beautify;
+      beautify.css_beautify  = css_beautify.css_beautify;
+      beautify.html_beautify = html_beautify.html_beautify;
+  
+      return beautify;
+  }
+  
+  if (true) {
+      // Add support for AMD ( https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property- )
+      !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+          __webpack_require__(37),
+          __webpack_require__(36),
+          __webpack_require__(87)
+      ], __WEBPACK_AMD_DEFINE_RESULT__ = function(js_beautify, css_beautify, html_beautify) {
+          return get_beautify(js_beautify, css_beautify, html_beautify);
+      }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+      (function(mod) {
+          var js_beautify = require('./lib/beautify');
+          var css_beautify = require('./lib/beautify-css');
+          var html_beautify = require('./lib/beautify-html');
+  
+          mod.exports = get_beautify(js_beautify, css_beautify, html_beautify);
+  
+      })(module);
+  }
+  
+
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+  var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
+  /*
+  
+    The MIT License (MIT)
+  
+    Copyright (c) 2007-2013 Einar Lielmanis and contributors.
+  
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation files
+    (the "Software"), to deal in the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge,
+    publish, distribute, sublicense, and/or sell copies of the Software,
+    and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+  
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+  
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+    BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+  
+  
+   Style HTML
+  ---------------
+  
+    Written by Nochum Sossonko, (nsossonko@hotmail.com)
+  
+    Based on code initially developed by: Einar Lielmanis, <einar@jsbeautifier.org>
+      http://jsbeautifier.org/
+  
+    Usage:
+      style_html(html_source);
+  
+      style_html(html_source, options);
+  
+    The options are:
+      indent_inner_html (default false)  — indent <head> and <body> sections,
+      indent_size (default 4)          — indentation size,
+      indent_char (default space)      — character to indent with,
+      wrap_line_length (default 250)            -  maximum amount of characters per line (0 = disable)
+      brace_style (default "collapse") - "collapse" | "expand" | "end-expand" | "none"
+              put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or just put end braces on own line, or attempt to keep them where they are.
+      unformatted (defaults to inline tags) - list of tags, that shouldn't be reformatted
+      indent_scripts (default normal)  - "keep"|"separate"|"normal"
+      preserve_newlines (default true) - whether existing line breaks before elements should be preserved
+                                          Only works before elements, not inside tags or for text.
+      max_preserve_newlines (default unlimited) - maximum number of line breaks to be preserved in one chunk
+      indent_handlebars (default false) - format and indent {{#foo}} and {{/foo}}
+      end_with_newline (false)          - end with a newline
+      extra_liners (default [head,body,/html]) -List of tags that should have an extra newline before them.
+  
+      e.g.
+  
+      style_html(html_source, {
+        'indent_inner_html': false,
+        'indent_size': 2,
+        'indent_char': ' ',
+        'wrap_line_length': 78,
+        'brace_style': 'expand',
+        'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u'],
+        'preserve_newlines': true,
+        'max_preserve_newlines': 5,
+        'indent_handlebars': false,
+        'extra_liners': ['/html']
+      });
+  */
+  
+  (function() {
+  
+      function trim(s) {
+          return s.replace(/^\s+|\s+$/g, '');
+      }
+  
+      function ltrim(s) {
+          return s.replace(/^\s+/g, '');
+      }
+  
+      function rtrim(s) {
+          return s.replace(/\s+$/g,'');
+      }
+  
+      function style_html(html_source, options, js_beautify, css_beautify) {
+          //Wrapper function to invoke all the necessary constructors and deal with the output.
+  
+          var multi_parser,
+              indent_inner_html,
+              indent_size,
+              indent_character,
+              wrap_line_length,
+              brace_style,
+              unformatted,
+              preserve_newlines,
+              max_preserve_newlines,
+              indent_handlebars,
+              wrap_attributes,
+              wrap_attributes_indent_size,
+              end_with_newline,
+              extra_liners,
+              eol;
+  
+          options = options || {};
+  
+          // backwards compatibility to 1.3.4
+          if ((options.wrap_line_length === undefined || parseInt(options.wrap_line_length, 10) === 0) &&
+                  (options.max_char !== undefined && parseInt(options.max_char, 10) !== 0)) {
+              options.wrap_line_length = options.max_char;
+          }
+  
+          indent_inner_html = (options.indent_inner_html === undefined) ? false : options.indent_inner_html;
+          indent_size = (options.indent_size === undefined) ? 4 : parseInt(options.indent_size, 10);
+          indent_character = (options.indent_char === undefined) ? ' ' : options.indent_char;
+          brace_style = (options.brace_style === undefined) ? 'collapse' : options.brace_style;
+          wrap_line_length =  parseInt(options.wrap_line_length, 10) === 0 ? 32786 : parseInt(options.wrap_line_length || 250, 10);
+          unformatted = options.unformatted || ['a', 'span', 'img', 'bdo', 'em', 'strong', 'dfn', 'code', 'samp', 'kbd',
+              'var', 'cite', 'abbr', 'acronym', 'q', 'sub', 'sup', 'tt', 'i', 'b', 'big', 'small', 'u', 's', 'strike',
+              'font', 'ins', 'del', 'pre', 'address', 'dt', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+          preserve_newlines = (options.preserve_newlines === undefined) ? true : options.preserve_newlines;
+          max_preserve_newlines = preserve_newlines ?
+              (isNaN(parseInt(options.max_preserve_newlines, 10)) ? 32786 : parseInt(options.max_preserve_newlines, 10))
+              : 0;
+          indent_handlebars = (options.indent_handlebars === undefined) ? false : options.indent_handlebars;
+          wrap_attributes = (options.wrap_attributes === undefined) ? 'auto' : options.wrap_attributes;
+          wrap_attributes_indent_size = (options.wrap_attributes_indent_size === undefined) ? indent_size : parseInt(options.wrap_attributes_indent_size, 10) || indent_size;
+          end_with_newline = (options.end_with_newline === undefined) ? false : options.end_with_newline;
+          extra_liners = (typeof options.extra_liners == 'object') && options.extra_liners ?
+              options.extra_liners.concat() : (typeof options.extra_liners === 'string') ?
+              options.extra_liners.split(',') : 'head,body,/html'.split(',');
+          eol = options.eol ? options.eol : '\n';
+  
+          if(options.indent_with_tabs){
+              indent_character = '\t';
+              indent_size = 1;
+          }
+  
+          eol = eol.replace(/\\r/, '\r').replace(/\\n/, '\n')
+  
+          function Parser() {
+  
+              this.pos = 0; //Parser position
+              this.token = '';
+              this.current_mode = 'CONTENT'; //reflects the current Parser mode: TAG/CONTENT
+              this.tags = { //An object to hold tags, their position, and their parent-tags, initiated with default values
+                  parent: 'parent1',
+                  parentcount: 1,
+                  parent1: ''
+              };
+              this.tag_type = '';
+              this.token_text = this.last_token = this.last_text = this.token_type = '';
+              this.newlines = 0;
+              this.indent_content = indent_inner_html;
+  
+              this.Utils = { //Uilities made available to the various functions
+                  whitespace: "\n\r\t ".split(''),
+                  single_token: 'br,input,link,meta,source,!doctype,basefont,base,area,hr,wbr,param,img,isindex,embed'.split(','), //all the single tags for HTML
+                  extra_liners: extra_liners, //for tags that need a line of whitespace before them
+                  in_array: function(what, arr) {
+                      for (var i = 0; i < arr.length; i++) {
+                          if (what === arr[i]) {
+                              return true;
+                          }
+                      }
+                      return false;
+                  }
+              };
+  
+              // Return true if the given text is composed entirely of whitespace.
+              this.is_whitespace = function(text) {
+                  for (var n = 0; n < text.length; text++) {
+                      if (!this.Utils.in_array(text.charAt(n), this.Utils.whitespace)) {
+                          return false;
+                      }
+                  }
+                  return true;
+              };
+  
+              this.traverse_whitespace = function() {
+                  var input_char = '';
+  
+                  input_char = this.input.charAt(this.pos);
+                  if (this.Utils.in_array(input_char, this.Utils.whitespace)) {
+                      this.newlines = 0;
+                      while (this.Utils.in_array(input_char, this.Utils.whitespace)) {
+                          if (preserve_newlines && input_char === '\n' && this.newlines <= max_preserve_newlines) {
+                              this.newlines += 1;
+                          }
+  
+                          this.pos++;
+                          input_char = this.input.charAt(this.pos);
+                      }
+                      return true;
+                  }
+                  return false;
+              };
+  
+              // Append a space to the given content (string array) or, if we are
+              // at the wrap_line_length, append a newline/indentation.
+              this.space_or_wrap = function(content) {
+                  if (this.line_char_count >= this.wrap_line_length) { //insert a line when the wrap_line_length is reached
+                      this.print_newline(false, content);
+                      this.print_indentation(content);
+                  } else {
+                      this.line_char_count++;
+                      content.push(' ');
+                  }
+              };
+  
+              this.get_content = function() { //function to capture regular content between tags
+                  var input_char = '',
+                      content = [],
+                      space = false; //if a space is needed
+  
+                  while (this.input.charAt(this.pos) !== '<') {
+                      if (this.pos >= this.input.length) {
+                          return content.length ? content.join('') : ['', 'TK_EOF'];
+                      }
+  
+                      if (this.traverse_whitespace()) {
+                          this.space_or_wrap(content);
+                          continue;
+                      }
+  
+                      if (indent_handlebars) {
+                          // Handlebars parsing is complicated.
+                          // {{#foo}} and {{/foo}} are formatted tags.
+                          // {{something}} should get treated as content, except:
+                          // {{else}} specifically behaves like {{#if}} and {{/if}}
+                          var peek3 = this.input.substr(this.pos, 3);
+                          if (peek3 === '{{#' || peek3 === '{{/') {
+                              // These are tags and not content.
+                              break;
+                          } else if (peek3 === '{{!') {
+                              return [this.get_tag(), 'TK_TAG_HANDLEBARS_COMMENT'];
+                          } else if (this.input.substr(this.pos, 2) === '{{') {
+                              if (this.get_tag(true) === '{{else}}') {
+                                  break;
+                              }
+                          }
+                      }
+  
+                      input_char = this.input.charAt(this.pos);
+                      this.pos++;
+                      this.line_char_count++;
+                      content.push(input_char); //letter at-a-time (or string) inserted to an array
+                  }
+                  return content.length ? content.join('') : '';
+              };
+  
+              this.get_contents_to = function(name) { //get the full content of a script or style to pass to js_beautify
+                  if (this.pos === this.input.length) {
+                      return ['', 'TK_EOF'];
+                  }
+                  var input_char = '';
+                  var content = '';
+                  var reg_match = new RegExp('</' + name + '\\s*>', 'igm');
+                  reg_match.lastIndex = this.pos;
+                  var reg_array = reg_match.exec(this.input);
+                  var end_script = reg_array ? reg_array.index : this.input.length; //absolute end of script
+                  if (this.pos < end_script) { //get everything in between the script tags
+                      content = this.input.substring(this.pos, end_script);
+                      this.pos = end_script;
+                  }
+                  return content;
+              };
+  
+              this.record_tag = function(tag) { //function to record a tag and its parent in this.tags Object
+                  if (this.tags[tag + 'count']) { //check for the existence of this tag type
+                      this.tags[tag + 'count']++;
+                      this.tags[tag + this.tags[tag + 'count']] = this.indent_level; //and record the present indent level
+                  } else { //otherwise initialize this tag type
+                      this.tags[tag + 'count'] = 1;
+                      this.tags[tag + this.tags[tag + 'count']] = this.indent_level; //and record the present indent level
+                  }
+                  this.tags[tag + this.tags[tag + 'count'] + 'parent'] = this.tags.parent; //set the parent (i.e. in the case of a div this.tags.div1parent)
+                  this.tags.parent = tag + this.tags[tag + 'count']; //and make this the current parent (i.e. in the case of a div 'div1')
+              };
+  
+              this.retrieve_tag = function(tag) { //function to retrieve the opening tag to the corresponding closer
+                  if (this.tags[tag + 'count']) { //if the openener is not in the Object we ignore it
+                      var temp_parent = this.tags.parent; //check to see if it's a closable tag.
+                      while (temp_parent) { //till we reach '' (the initial value);
+                          if (tag + this.tags[tag + 'count'] === temp_parent) { //if this is it use it
+                              break;
+                          }
+                          temp_parent = this.tags[temp_parent + 'parent']; //otherwise keep on climbing up the DOM Tree
+                      }
+                      if (temp_parent) { //if we caught something
+                          this.indent_level = this.tags[tag + this.tags[tag + 'count']]; //set the indent_level accordingly
+                          this.tags.parent = this.tags[temp_parent + 'parent']; //and set the current parent
+                      }
+                      delete this.tags[tag + this.tags[tag + 'count'] + 'parent']; //delete the closed tags parent reference...
+                      delete this.tags[tag + this.tags[tag + 'count']]; //...and the tag itself
+                      if (this.tags[tag + 'count'] === 1) {
+                          delete this.tags[tag + 'count'];
+                      } else {
+                          this.tags[tag + 'count']--;
+                      }
+                  }
+              };
+  
+              this.indent_to_tag = function(tag) {
+                  // Match the indentation level to the last use of this tag, but don't remove it.
+                  if (!this.tags[tag + 'count']) {
+                      return;
+                  }
+                  var temp_parent = this.tags.parent;
+                  while (temp_parent) {
+                      if (tag + this.tags[tag + 'count'] === temp_parent) {
+                          break;
+                      }
+                      temp_parent = this.tags[temp_parent + 'parent'];
+                  }
+                  if (temp_parent) {
+                      this.indent_level = this.tags[tag + this.tags[tag + 'count']];
+                  }
+              };
+  
+              this.get_tag = function(peek) { //function to get a full tag and parse its type
+                  var input_char = '',
+                      content = [],
+                      comment = '',
+                      space = false,
+                      first_attr = true,
+                      tag_start, tag_end,
+                      tag_start_char,
+                      orig_pos = this.pos,
+                      orig_line_char_count = this.line_char_count;
+  
+                  peek = peek !== undefined ? peek : false;
+  
+                  do {
+                      if (this.pos >= this.input.length) {
+                          if (peek) {
+                              this.pos = orig_pos;
+                              this.line_char_count = orig_line_char_count;
+                          }
+                          return content.length ? content.join('') : ['', 'TK_EOF'];
+                      }
+  
+                      input_char = this.input.charAt(this.pos);
+                      this.pos++;
+  
+                      if (this.Utils.in_array(input_char, this.Utils.whitespace)) { //don't want to insert unnecessary space
+                          space = true;
+                          continue;
+                      }
+  
+                      if (input_char === "'" || input_char === '"') {
+                          input_char += this.get_unformatted(input_char);
+                          space = true;
+  
+                      }
+  
+                      if (input_char === '=') { //no space before =
+                          space = false;
+                      }
+  
+                      if (content.length && content[content.length - 1] !== '=' && input_char !== '>' && space) {
+                          //no space after = or before >
+                          this.space_or_wrap(content);
+                          space = false;
+                          if (!first_attr && wrap_attributes === 'force' &&  input_char !== '/') {
+                              this.print_newline(true, content);
+                              this.print_indentation(content);
+                              for (var count = 0; count < wrap_attributes_indent_size; count++) {
+                                  content.push(indent_character);
+                              }
+                          }
+                          for (var i = 0; i < content.length; i++) {
+                            if (content[i] === ' ') {
+                              first_attr = false;
+                              break;
+                            }
+                          }
+                      }
+  
+                      if (indent_handlebars && tag_start_char === '<') {
+                          // When inside an angle-bracket tag, put spaces around
+                          // handlebars not inside of strings.
+                          if ((input_char + this.input.charAt(this.pos)) === '{{') {
+                              input_char += this.get_unformatted('}}');
+                              if (content.length && content[content.length - 1] !== ' ' && content[content.length - 1] !== '<') {
+                                  input_char = ' ' + input_char;
+                              }
+                              space = true;
+                          }
+                      }
+  
+                      if (input_char === '<' && !tag_start_char) {
+                          tag_start = this.pos - 1;
+                          tag_start_char = '<';
+                      }
+  
+                      if (indent_handlebars && !tag_start_char) {
+                          if (content.length >= 2 && content[content.length - 1] === '{' && content[content.length - 2] === '{') {
+                              if (input_char === '#' || input_char === '/' || input_char === '!') {
+                                  tag_start = this.pos - 3;
+                              } else {
+                                  tag_start = this.pos - 2;
+                              }
+                              tag_start_char = '{';
+                          }
+                      }
+  
+                      this.line_char_count++;
+                      content.push(input_char); //inserts character at-a-time (or string)
+  
+                      if (content[1] && (content[1] === '!' || content[1] === '?' || content[1] === '%')) { //if we're in a comment, do something special
+                          // We treat all comments as literals, even more than preformatted tags
+                          // we just look for the appropriate close tag
+                          content = [this.get_comment(tag_start)];
+                          break;
+                      }
+  
+                      if (indent_handlebars && content[1] && content[1] === '{' && content[2] && content[2] === '!') { //if we're in a comment, do something special
+                          // We treat all comments as literals, even more than preformatted tags
+                          // we just look for the appropriate close tag
+                          content = [this.get_comment(tag_start)];
+                          break;
+                      }
+  
+                      if (indent_handlebars && tag_start_char === '{' && content.length > 2 && content[content.length - 2] === '}' && content[content.length - 1] === '}') {
+                          break;
+                      }
+                  } while (input_char !== '>');
+  
+                  var tag_complete = content.join('');
+                  var tag_index;
+                  var tag_offset;
+  
+                  if (tag_complete.indexOf(' ') !== -1) { //if there's whitespace, thats where the tag name ends
+                      tag_index = tag_complete.indexOf(' ');
+                  } else if (tag_complete.charAt(0) === '{') {
+                      tag_index = tag_complete.indexOf('}');
+                  } else { //otherwise go with the tag ending
+                      tag_index = tag_complete.indexOf('>');
+                  }
+                  if (tag_complete.charAt(0) === '<' || !indent_handlebars) {
+                      tag_offset = 1;
+                  } else {
+                      tag_offset = tag_complete.charAt(2) === '#' ? 3 : 2;
+                  }
+                  var tag_check = tag_complete.substring(tag_offset, tag_index).toLowerCase();
+                  if (tag_complete.charAt(tag_complete.length - 2) === '/' ||
+                      this.Utils.in_array(tag_check, this.Utils.single_token)) { //if this tag name is a single tag type (either in the list or has a closing /)
+                      if (!peek) {
+                          this.tag_type = 'SINGLE';
+                      }
+                  } else if (indent_handlebars && tag_complete.charAt(0) === '{' && tag_check === 'else') {
+                      if (!peek) {
+                          this.indent_to_tag('if');
+                          this.tag_type = 'HANDLEBARS_ELSE';
+                          this.indent_content = true;
+                          this.traverse_whitespace();
+                      }
+                  } else if (this.is_unformatted(tag_check, unformatted)) { // do not reformat the "unformatted" tags
+                      comment = this.get_unformatted('</' + tag_check + '>', tag_complete); //...delegate to get_unformatted function
+                      content.push(comment);
+                      tag_end = this.pos - 1;
+                      this.tag_type = 'SINGLE';
+                  } else if (tag_check === 'script' &&
+                      (tag_complete.search('type') === -1 ||
+                      (tag_complete.search('type') > -1 &&
+                      tag_complete.search(/\b(text|application)\/(x-)?(javascript|ecmascript|jscript|livescript)/) > -1))) {
+                      if (!peek) {
+                          this.record_tag(tag_check);
+                          this.tag_type = 'SCRIPT';
+                      }
+                  } else if (tag_check === 'style' &&
+                      (tag_complete.search('type') === -1 ||
+                      (tag_complete.search('type') > -1 && tag_complete.search('text/css') > -1))) {
+                      if (!peek) {
+                          this.record_tag(tag_check);
+                          this.tag_type = 'STYLE';
+                      }
+                  } else if (tag_check.charAt(0) === '!') { //peek for <! comment
+                      // for comments content is already correct.
+                      if (!peek) {
+                          this.tag_type = 'SINGLE';
+                          this.traverse_whitespace();
+                      }
+                  } else if (!peek) {
+                      if (tag_check.charAt(0) === '/') { //this tag is a double tag so check for tag-ending
+                          this.retrieve_tag(tag_check.substring(1)); //remove it and all ancestors
+                          this.tag_type = 'END';
+                      } else { //otherwise it's a start-tag
+                          this.record_tag(tag_check); //push it on the tag stack
+                          if (tag_check.toLowerCase() !== 'html') {
+                              this.indent_content = true;
+                          }
+                          this.tag_type = 'START';
+                      }
+  
+                      // Allow preserving of newlines after a start or end tag
+                      if (this.traverse_whitespace()) {
+                          this.space_or_wrap(content);
+                      }
+  
+                      if (this.Utils.in_array(tag_check, this.Utils.extra_liners)) { //check if this double needs an extra line
+                          this.print_newline(false, this.output);
+                          if (this.output.length && this.output[this.output.length - 2] !== '\n') {
+                              this.print_newline(true, this.output);
+                          }
+                      }
+                  }
+  
+                  if (peek) {
+                      this.pos = orig_pos;
+                      this.line_char_count = orig_line_char_count;
+                  }
+  
+                  return content.join(''); //returns fully formatted tag
+              };
+  
+              this.get_comment = function(start_pos) { //function to return comment content in its entirety
+                  // this is will have very poor perf, but will work for now.
+                  var comment = '',
+                      delimiter = '>',
+                      matched = false;
+  
+                  this.pos = start_pos;
+                  input_char = this.input.charAt(this.pos);
+                  this.pos++;
+  
+                  while (this.pos <= this.input.length) {
+                      comment += input_char;
+  
+                      // only need to check for the delimiter if the last chars match
+                      if (comment.charAt(comment.length - 1) === delimiter.charAt(delimiter.length - 1) &&
+                          comment.indexOf(delimiter) !== -1) {
+                          break;
+                      }
+  
+                      // only need to search for custom delimiter for the first few characters
+                      if (!matched && comment.length < 10) {
+                          if (comment.indexOf('<![if') === 0) { //peek for <![if conditional comment
+                              delimiter = '<![endif]>';
+                              matched = true;
+                          } else if (comment.indexOf('<![cdata[') === 0) { //if it's a <[cdata[ comment...
+                              delimiter = ']]>';
+                              matched = true;
+                          } else if (comment.indexOf('<![') === 0) { // some other ![ comment? ...
+                              delimiter = ']>';
+                              matched = true;
+                          } else if (comment.indexOf('<!--') === 0) { // <!-- comment ...
+                              delimiter = '-->';
+                              matched = true;
+                          } else if (comment.indexOf('{{!') === 0) { // {{! handlebars comment
+                              delimiter = '}}';
+                              matched = true;
+                          } else if (comment.indexOf('<?') === 0) { // {{! handlebars comment
+                              delimiter = '?>';
+                              matched = true;
+                          } else if (comment.indexOf('<%') === 0) { // {{! handlebars comment
+                              delimiter = '%>';
+                              matched = true;
+                          }
+                      }
+  
+                      input_char = this.input.charAt(this.pos);
+                      this.pos++;
+                  }
+  
+                  return comment;
+              };
+  
+              this.get_unformatted = function(delimiter, orig_tag) { //function to return unformatted content in its entirety
+  
+                  if (orig_tag && orig_tag.toLowerCase().indexOf(delimiter) !== -1) {
+                      return '';
+                  }
+                  var input_char = '';
+                  var content = '';
+                  var min_index = 0;
+                  var space = true;
+                  do {
+  
+                      if (this.pos >= this.input.length) {
+                          return content;
+                      }
+  
+                      input_char = this.input.charAt(this.pos);
+                      this.pos++;
+  
+                      if (this.Utils.in_array(input_char, this.Utils.whitespace)) {
+                          if (!space) {
+                              this.line_char_count--;
+                              continue;
+                          }
+                          if (input_char === '\n' || input_char === '\r') {
+                              content += '\n';
+                              /*  Don't change tab indention for unformatted blocks.  If using code for html editing, this will greatly affect <pre> tags if they are specified in the 'unformatted array'
+                  for (var i=0; i<this.indent_level; i++) {
+                    content += this.indent_string;
+                  }
+                  space = false; //...and make sure other indentation is erased
+                  */
+                              this.line_char_count = 0;
+                              continue;
+                          }
+                      }
+                      content += input_char;
+                      this.line_char_count++;
+                      space = true;
+  
+                      if (indent_handlebars && input_char === '{' && content.length && content.charAt(content.length - 2) === '{') {
+                          // Handlebars expressions in strings should also be unformatted.
+                          content += this.get_unformatted('}}');
+                          // These expressions are opaque.  Ignore delimiters found in them.
+                          min_index = content.length;
+                      }
+                  } while (content.toLowerCase().indexOf(delimiter, min_index) === -1);
+                  return content;
+              };
+  
+              this.get_token = function() { //initial handler for token-retrieval
+                  var token;
+  
+                  if (this.last_token === 'TK_TAG_SCRIPT' || this.last_token === 'TK_TAG_STYLE') { //check if we need to format javascript
+                      var type = this.last_token.substr(7);
+                      token = this.get_contents_to(type);
+                      if (typeof token !== 'string') {
+                          return token;
+                      }
+                      return [token, 'TK_' + type];
+                  }
+                  if (this.current_mode === 'CONTENT') {
+                      token = this.get_content();
+                      if (typeof token !== 'string') {
+                          return token;
+                      } else {
+                          return [token, 'TK_CONTENT'];
+                      }
+                  }
+  
+                  if (this.current_mode === 'TAG') {
+                      token = this.get_tag();
+                      if (typeof token !== 'string') {
+                          return token;
+                      } else {
+                          var tag_name_type = 'TK_TAG_' + this.tag_type;
+                          return [token, tag_name_type];
+                      }
+                  }
+              };
+  
+              this.get_full_indent = function(level) {
+                  level = this.indent_level + level || 0;
+                  if (level < 1) {
+                      return '';
+                  }
+  
+                  return Array(level + 1).join(this.indent_string);
+              };
+  
+              this.is_unformatted = function(tag_check, unformatted) {
+                  //is this an HTML5 block-level link?
+                  if (!this.Utils.in_array(tag_check, unformatted)) {
+                      return false;
+                  }
+  
+                  if (tag_check.toLowerCase() !== 'a' || !this.Utils.in_array('a', unformatted)) {
+                      return true;
+                  }
+  
+                  //at this point we have an  tag; is its first child something we want to remain
+                  //unformatted?
+                  var next_tag = this.get_tag(true /* peek. */ );
+  
+                  // test next_tag to see if it is just html tag (no external content)
+                  var tag = (next_tag || "").match(/^\s*<\s*\/?([a-z]*)\s*[^>]*>\s*$/);
+  
+                  // if next_tag comes back but is not an isolated tag, then
+                  // let's treat the 'a' tag as having content
+                  // and respect the unformatted option
+                  if (!tag || this.Utils.in_array(tag, unformatted)) {
+                      return true;
+                  } else {
+                      return false;
+                  }
+              };
+  
+              this.printer = function(js_source, indent_character, indent_size, wrap_line_length, brace_style) { //handles input/output and some other printing functions
+  
+                  this.input = js_source || ''; //gets the input for the Parser
+  
+                  // HACK: newline parsing inconsistent. This brute force normalizes the input.
+                  this.input = this.input.replace(/\r\n|[\r\u2028\u2029]/g, '\n')
+  
+                  this.output = [];
+                  this.indent_character = indent_character;
+                  this.indent_string = '';
+                  this.indent_size = indent_size;
+                  this.brace_style = brace_style;
+                  this.indent_level = 0;
+                  this.wrap_line_length = wrap_line_length;
+                  this.line_char_count = 0; //count to see if wrap_line_length was exceeded
+  
+                  for (var i = 0; i < this.indent_size; i++) {
+                      this.indent_string += this.indent_character;
+                  }
+  
+                  this.print_newline = function(force, arr) {
+                      this.line_char_count = 0;
+                      if (!arr || !arr.length) {
+                          return;
+                      }
+                      if (force || (arr[arr.length - 1] !== '\n')) { //we might want the extra line
+                          if ((arr[arr.length - 1] !== '\n')) {
+                              arr[arr.length - 1] = rtrim(arr[arr.length - 1]);
+                          }
+                          arr.push('\n');
+                      }
+                  };
+  
+                  this.print_indentation = function(arr) {
+                      for (var i = 0; i < this.indent_level; i++) {
+                          arr.push(this.indent_string);
+                          this.line_char_count += this.indent_string.length;
+                      }
+                  };
+  
+                  this.print_token = function(text) {
+                      // Avoid printing initial whitespace.
+                      if (this.is_whitespace(text) && !this.output.length) {
+                          return;
+                      }
+                      if (text || text !== '') {
+                          if (this.output.length && this.output[this.output.length - 1] === '\n') {
+                              this.print_indentation(this.output);
+                              text = ltrim(text);
+                          }
+                      }
+                      this.print_token_raw(text);
+                  };
+  
+                  this.print_token_raw = function(text) {
+                      // If we are going to print newlines, truncate trailing
+                      // whitespace, as the newlines will represent the space.
+                      if (this.newlines > 0) {
+                          text = rtrim(text);
+                      }
+  
+                      if (text && text !== '') {
+                          if (text.length > 1 && text.charAt(text.length - 1) === '\n') {
+                              // unformatted tags can grab newlines as their last character
+                              this.output.push(text.slice(0, -1));
+                              this.print_newline(false, this.output);
+                          } else {
+                              this.output.push(text);
+                          }
+                      }
+  
+                      for (var n = 0; n < this.newlines; n++) {
+                          this.print_newline(n > 0, this.output);
+                      }
+                      this.newlines = 0;
+                  };
+  
+                  this.indent = function() {
+                      this.indent_level++;
+                  };
+  
+                  this.unindent = function() {
+                      if (this.indent_level > 0) {
+                          this.indent_level--;
+                      }
+                  };
+              };
+              return this;
+          }
+  
+          /*_____________________--------------------_____________________*/
+  
+          multi_parser = new Parser(); //wrapping functions Parser
+          multi_parser.printer(html_source, indent_character, indent_size, wrap_line_length, brace_style); //initialize starting values
+  
+          while (true) {
+              var t = multi_parser.get_token();
+              multi_parser.token_text = t[0];
+              multi_parser.token_type = t[1];
+  
+              if (multi_parser.token_type === 'TK_EOF') {
+                  break;
+              }
+  
+              switch (multi_parser.token_type) {
+                  case 'TK_TAG_START':
+                      multi_parser.print_newline(false, multi_parser.output);
+                      multi_parser.print_token(multi_parser.token_text);
+                      if (multi_parser.indent_content) {
+                          multi_parser.indent();
+                          multi_parser.indent_content = false;
+                      }
+                      multi_parser.current_mode = 'CONTENT';
+                      break;
+                  case 'TK_TAG_STYLE':
+                  case 'TK_TAG_SCRIPT':
+                      multi_parser.print_newline(false, multi_parser.output);
+                      multi_parser.print_token(multi_parser.token_text);
+                      multi_parser.current_mode = 'CONTENT';
+                      break;
+                  case 'TK_TAG_END':
+                      //Print new line only if the tag has no content and has child
+                      if (multi_parser.last_token === 'TK_CONTENT' && multi_parser.last_text === '') {
+                          var tag_name = multi_parser.token_text.match(/\w+/)[0];
+                          var tag_extracted_from_last_output = null;
+                          if (multi_parser.output.length) {
+                              tag_extracted_from_last_output = multi_parser.output[multi_parser.output.length - 1].match(/(?:<|{{#)\s*(\w+)/);
+                          }
+                          if (tag_extracted_from_last_output === null ||
+                              (tag_extracted_from_last_output[1] !== tag_name && !multi_parser.Utils.in_array(tag_extracted_from_last_output[1], unformatted))) {
+                              multi_parser.print_newline(false, multi_parser.output);
+                          }
+                      }
+                      multi_parser.print_token(multi_parser.token_text);
+                      multi_parser.current_mode = 'CONTENT';
+                      break;
+                  case 'TK_TAG_SINGLE':
+                      // Don't add a newline before elements that should remain unformatted.
+                      var tag_check = multi_parser.token_text.match(/^\s*<([a-z-]+)/i);
+                      if (!tag_check || !multi_parser.Utils.in_array(tag_check[1], unformatted)) {
+                          multi_parser.print_newline(false, multi_parser.output);
+                      }
+                      multi_parser.print_token(multi_parser.token_text);
+                      multi_parser.current_mode = 'CONTENT';
+                      break;
+                  case 'TK_TAG_HANDLEBARS_ELSE':
+                      multi_parser.print_token(multi_parser.token_text);
+                      if (multi_parser.indent_content) {
+                          multi_parser.indent();
+                          multi_parser.indent_content = false;
+                      }
+                      multi_parser.current_mode = 'CONTENT';
+                      break;
+                  case 'TK_TAG_HANDLEBARS_COMMENT':
+                      multi_parser.print_token(multi_parser.token_text);
+                      multi_parser.current_mode = 'TAG';
+                      break;
+                  case 'TK_CONTENT':
+                      multi_parser.print_token(multi_parser.token_text);
+                      multi_parser.current_mode = 'TAG';
+                      break;
+                  case 'TK_STYLE':
+                  case 'TK_SCRIPT':
+                      if (multi_parser.token_text !== '') {
+                          multi_parser.print_newline(false, multi_parser.output);
+                          var text = multi_parser.token_text,
+                              _beautifier,
+                              script_indent_level = 1;
+                          if (multi_parser.token_type === 'TK_SCRIPT') {
+                              _beautifier = typeof js_beautify === 'function' && js_beautify;
+                          } else if (multi_parser.token_type === 'TK_STYLE') {
+                              _beautifier = typeof css_beautify === 'function' && css_beautify;
+                          }
+  
+                          if (options.indent_scripts === "keep") {
+                              script_indent_level = 0;
+                          } else if (options.indent_scripts === "separate") {
+                              script_indent_level = -multi_parser.indent_level;
+                          }
+  
+                          var indentation = multi_parser.get_full_indent(script_indent_level);
+                          if (_beautifier) {
+  
+                              // call the Beautifier if avaliable
+                              var Child_options = function() {
+                                  this.eol = '\n';
+                              };
+                              Child_options.prototype = options;
+                              var child_options = new Child_options();
+                              text = _beautifier(text.replace(/^\s*/, indentation), child_options);
+                          } else {
+                              // simply indent the string otherwise
+                              var white = text.match(/^\s*/)[0];
+                              var _level = white.match(/[^\n\r]*$/)[0].split(multi_parser.indent_string).length - 1;
+                              var reindent = multi_parser.get_full_indent(script_indent_level - _level);
+                              text = text.replace(/^\s*/, indentation)
+                                  .replace(/\r\n|\r|\n/g, '\n' + reindent)
+                                  .replace(/\s+$/, '');
+                          }
+                          if (text) {
+                              multi_parser.print_token_raw(text);
+                              multi_parser.print_newline(true, multi_parser.output);
+                          }
+                      }
+                      multi_parser.current_mode = 'TAG';
+                      break;
+                  default:
+                      // We should not be getting here but we don't want to drop input on the floor
+                      // Just output the text and move on
+                      if (multi_parser.token_text !== '') {
+                          multi_parser.print_token(multi_parser.token_text);
+                      }
+                      break;
+              }
+              multi_parser.last_token = multi_parser.token_type;
+              multi_parser.last_text = multi_parser.token_text;
+          }
+          var sweet_code = multi_parser.output.join('').replace(/[\r\n\t ]+$/, '');
+  
+          // establish end_with_newline
+          if (end_with_newline) {
+              sweet_code += '\n';
+          }
+  
+          if (eol != '\n') {
+              sweet_code = sweet_code.replace(/[\n]/g, eol);
+          }
+  
+          return sweet_code;
+      }
+  
+      if (true) {
+          // Add support for AMD ( https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property- )
+          !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, __webpack_require__(37), __webpack_require__(36)], __WEBPACK_AMD_DEFINE_RESULT__ = function(requireamd) {
+              var js_beautify =  __webpack_require__(37);
+              var css_beautify =  __webpack_require__(36);
+  
+              return {
+                html_beautify: function(html_source, options) {
+                  return style_html(html_source, options, js_beautify.js_beautify, css_beautify.css_beautify);
+                }
+              };
+          }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+      } else if (typeof exports !== "undefined") {
+          // Add support for CommonJS. Just put this file somewhere on your require.paths
+          // and you will be able to `var html_beautify = require("beautify").html_beautify`.
+          var js_beautify = require('./beautify.js');
+          var css_beautify = require('./beautify-css.js');
+  
+          exports.html_beautify = function(html_source, options) {
+              return style_html(html_source, options, js_beautify.js_beautify, css_beautify.css_beautify);
+          };
+      } else if (typeof window !== "undefined") {
+          // If we're running a web page and don't have either of the above, add our one global
+          window.html_beautify = function(html_source, options) {
+              return style_html(html_source, options, window.js_beautify, window.css_beautify);
+          };
+      } else if (typeof global !== "undefined") {
+          // If we don't even have window, try global.
+          global.html_beautify = function(html_source, options) {
+              return style_html(html_source, options, global.js_beautify, global.css_beautify);
+          };
+      }
+  
+  }());
+
+
+/***/ },
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -11485,9 +15266,9 @@
   var EventConstants = __webpack_require__(6);
   var EventPropagators = __webpack_require__(24);
   var ExecutionEnvironment = __webpack_require__(5);
-  var FallbackCompositionState = __webpack_require__(91);
-  var SyntheticCompositionEvent = __webpack_require__(127);
-  var SyntheticInputEvent = __webpack_require__(130);
+  var FallbackCompositionState = __webpack_require__(96);
+  var SyntheticCompositionEvent = __webpack_require__(132);
+  var SyntheticInputEvent = __webpack_require__(135);
   
   var keyOf = __webpack_require__(15);
   
@@ -11964,7 +15745,7 @@
 
 
 /***/ },
-/* 84 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -11987,8 +15768,8 @@
   var ReactUpdates = __webpack_require__(9);
   var SyntheticEvent = __webpack_require__(17);
   
-  var isEventSupported = __webpack_require__(54);
-  var isTextInputElement = __webpack_require__(79);
+  var isEventSupported = __webpack_require__(56);
+  var isTextInputElement = __webpack_require__(81);
   var keyOf = __webpack_require__(15);
   
   var topLevelTypes = EventConstants.topLevelTypes;
@@ -12350,7 +16131,7 @@
 
 
 /***/ },
-/* 85 */
+/* 90 */
 /***/ function(module, exports) {
 
   /**
@@ -12379,7 +16160,7 @@
 
 
 /***/ },
-/* 86 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -12396,10 +16177,10 @@
   
   'use strict';
   
-  var Danger = __webpack_require__(87);
-  var ReactMultiChildUpdateTypes = __webpack_require__(66);
+  var Danger = __webpack_require__(92);
+  var ReactMultiChildUpdateTypes = __webpack_require__(68);
   
-  var setTextContent = __webpack_require__(155);
+  var setTextContent = __webpack_require__(160);
   var invariant = __webpack_require__(1);
   
   /**
@@ -12453,7 +16234,7 @@
           var updatedChild = update.parentNode.childNodes[updatedIndex];
           var parentID = update.parentID;
   
-          (true ? invariant(
+          ( true ? invariant(
             updatedChild,
             'processUpdates(): Unable to find child %s of element. This ' +
             'probably means the DOM was unexpectedly mutated (e.g., by the ' +
@@ -12519,7 +16300,7 @@
 
 
 /***/ },
-/* 87 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -12540,9 +16321,9 @@
   
   var ExecutionEnvironment = __webpack_require__(5);
   
-  var createNodesFromMarkup = __webpack_require__(139);
+  var createNodesFromMarkup = __webpack_require__(144);
   var emptyFunction = __webpack_require__(14);
-  var getMarkupWrap = __webpack_require__(76);
+  var getMarkupWrap = __webpack_require__(78);
   var invariant = __webpack_require__(1);
   
   var OPEN_TAG_NAME_EXP = /^(<[^ \/>]+)/;
@@ -12575,7 +16356,7 @@
      * @internal
      */
     dangerouslyRenderMarkup: function(markupList) {
-      (true ? invariant(
+      ( true ? invariant(
         ExecutionEnvironment.canUseDOM,
         'dangerouslyRenderMarkup(...): Cannot render markup in a worker ' +
         'thread. Make sure `window` and `document` are available globally ' +
@@ -12586,7 +16367,7 @@
       var markupByNodeName = {};
       // Group markup by `nodeName` if a wrap is necessary, else by '*'.
       for (var i = 0; i < markupList.length; i++) {
-        (true ? invariant(
+        ( true ? invariant(
           markupList[i],
           'dangerouslyRenderMarkup(...): Missing markup.'
         ) : invariant(markupList[i]));
@@ -12636,7 +16417,7 @@
             resultIndex = +renderNode.getAttribute(RESULT_INDEX_ATTR);
             renderNode.removeAttribute(RESULT_INDEX_ATTR);
   
-            (true ? invariant(
+            ( true ? invariant(
               !resultList.hasOwnProperty(resultIndex),
               'Danger: Assigning to an already-occupied result index.'
             ) : invariant(!resultList.hasOwnProperty(resultIndex)));
@@ -12658,12 +16439,12 @@
   
       // Although resultList was populated out of order, it should now be a dense
       // array.
-      (true ? invariant(
+      ( true ? invariant(
         resultListAssignmentCount === resultList.length,
         'Danger: Did not assign to every index of resultList.'
       ) : invariant(resultListAssignmentCount === resultList.length));
   
-      (true ? invariant(
+      ( true ? invariant(
         resultList.length === markupList.length,
         'Danger: Expected markup to render %s nodes, but rendered %s.',
         markupList.length,
@@ -12682,15 +16463,15 @@
      * @internal
      */
     dangerouslyReplaceNodeWithMarkup: function(oldChild, markup) {
-      (true ? invariant(
+      ( true ? invariant(
         ExecutionEnvironment.canUseDOM,
         'dangerouslyReplaceNodeWithMarkup(...): Cannot render markup in a ' +
         'worker thread. Make sure `window` and `document` are available ' +
         'globally before requiring React when unit testing or use ' +
         'React.renderToString for server rendering.'
       ) : invariant(ExecutionEnvironment.canUseDOM));
-      (true ? invariant(markup, 'dangerouslyReplaceNodeWithMarkup(...): Missing markup.') : invariant(markup));
-      (true ? invariant(
+      ( true ? invariant(markup, 'dangerouslyReplaceNodeWithMarkup(...): Missing markup.') : invariant(markup));
+      ( true ? invariant(
         oldChild.tagName.toLowerCase() !== 'html',
         'dangerouslyReplaceNodeWithMarkup(...): Cannot replace markup of the ' +
         '<html> node. This is because browser quirks make this unreliable ' +
@@ -12708,7 +16489,7 @@
 
 
 /***/ },
-/* 88 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -12751,7 +16532,7 @@
 
 
 /***/ },
-/* 89 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -12895,7 +16676,7 @@
 
 
 /***/ },
-/* 90 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -12987,7 +16768,7 @@
 
 
 /***/ },
-/* 91 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -13007,7 +16788,7 @@
   var PooledClass = __webpack_require__(10);
   
   var assign = __webpack_require__(2);
-  var getTextContentAccessor = __webpack_require__(77);
+  var getTextContentAccessor = __webpack_require__(79);
   
   /**
    * This helper class stores information about text content of a target node,
@@ -13082,7 +16863,7 @@
 
 
 /***/ },
-/* 92 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -13297,7 +17078,7 @@
 
 
 /***/ },
-/* 93 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -13359,7 +17140,7 @@
 
 
 /***/ },
-/* 94 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -13377,27 +17158,27 @@
   
   'use strict';
   
-  var EventPluginUtils = __webpack_require__(37);
-  var ReactChildren = __webpack_require__(96);
-  var ReactComponent = __webpack_require__(61);
+  var EventPluginUtils = __webpack_require__(39);
+  var ReactChildren = __webpack_require__(101);
+  var ReactComponent = __webpack_require__(63);
   var ReactClass = __webpack_require__(7);
-  var ReactContext = __webpack_require__(42);
+  var ReactContext = __webpack_require__(44);
   var ReactCurrentOwner = __webpack_require__(12);
   var ReactElement = __webpack_require__(3);
   var ReactElementValidator = __webpack_require__(25);
-  var ReactDOM = __webpack_require__(98);
-  var ReactDOMTextComponent = __webpack_require__(63);
-  var ReactDefaultInjection = __webpack_require__(109);
+  var ReactDOM = __webpack_require__(103);
+  var ReactDOMTextComponent = __webpack_require__(65);
+  var ReactDefaultInjection = __webpack_require__(114);
   var ReactInstanceHandles = __webpack_require__(19);
   var ReactMount = __webpack_require__(8);
   var ReactPerf = __webpack_require__(13);
-  var ReactPropTypes = __webpack_require__(67);
+  var ReactPropTypes = __webpack_require__(69);
   var ReactReconciler = __webpack_require__(21);
-  var ReactServerRendering = __webpack_require__(120);
+  var ReactServerRendering = __webpack_require__(125);
   
   var assign = __webpack_require__(2);
-  var findDOMNode = __webpack_require__(72);
-  var onlyChild = __webpack_require__(151);
+  var findDOMNode = __webpack_require__(74);
+  var onlyChild = __webpack_require__(156);
   
   ReactDefaultInjection.inject();
   
@@ -13513,7 +17294,7 @@
 
 
 /***/ },
-/* 95 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -13532,9 +17313,9 @@
   
   var ReactReconciler = __webpack_require__(21);
   
-  var flattenChildren = __webpack_require__(141);
-  var instantiateReactComponent = __webpack_require__(53);
-  var shouldUpdateReactComponent = __webpack_require__(56);
+  var flattenChildren = __webpack_require__(146);
+  var instantiateReactComponent = __webpack_require__(55);
+  var shouldUpdateReactComponent = __webpack_require__(58);
   
   /**
    * ReactChildReconciler provides helpers for initializing or updating a set of
@@ -13644,7 +17425,7 @@
 
 
 /***/ },
-/* 96 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -13663,7 +17444,7 @@
   var PooledClass = __webpack_require__(10);
   var ReactFragment = __webpack_require__(29);
   
-  var traverseAllChildren = __webpack_require__(80);
+  var traverseAllChildren = __webpack_require__(82);
   var warning = __webpack_require__(4);
   
   var twoArgumentPooler = PooledClass.twoArgumentPooler;
@@ -13732,7 +17513,7 @@
   
     var keyUnique = !mapResult.hasOwnProperty(name);
     if (true) {
-      (true ? warning(
+      ( true ? warning(
         keyUnique,
         'ReactChildren.map(...): Encountered two children with the same key, ' +
         '`%s`. Child keys must be unique; when two children share a key, only ' +
@@ -13799,7 +17580,7 @@
 
 
 /***/ },
-/* 97 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -13815,16 +17596,16 @@
   
   'use strict';
   
-  var ReactComponentEnvironment = __webpack_require__(41);
-  var ReactContext = __webpack_require__(42);
+  var ReactComponentEnvironment = __webpack_require__(43);
+  var ReactContext = __webpack_require__(44);
   var ReactCurrentOwner = __webpack_require__(12);
   var ReactElement = __webpack_require__(3);
   var ReactElementValidator = __webpack_require__(25);
   var ReactInstanceMap = __webpack_require__(20);
-  var ReactLifeCycle = __webpack_require__(45);
+  var ReactLifeCycle = __webpack_require__(47);
   var ReactNativeComponent = __webpack_require__(30);
   var ReactPerf = __webpack_require__(13);
-  var ReactPropTypeLocations = __webpack_require__(46);
+  var ReactPropTypeLocations = __webpack_require__(48);
   var ReactPropTypeLocationNames = __webpack_require__(31);
   var ReactReconciler = __webpack_require__(21);
   var ReactUpdates = __webpack_require__(9);
@@ -13832,7 +17613,7 @@
   var assign = __webpack_require__(2);
   var emptyObject = __webpack_require__(34);
   var invariant = __webpack_require__(1);
-  var shouldUpdateReactComponent = __webpack_require__(56);
+  var shouldUpdateReactComponent = __webpack_require__(58);
   var warning = __webpack_require__(4);
   
   function getDeclarationErrorAddendum(component) {
@@ -13941,7 +17722,7 @@
       if (true) {
         // This will throw later in _renderValidatedComponent, but add an early
         // warning now to help debugging
-        (true ? warning(
+        ( true ? warning(
           inst.render != null,
           '%s(...): No `render` method found on the returned component ' +
           'instance: you may have forgotten to define `render` in your ' +
@@ -13970,7 +17751,7 @@
         // Since plain JS classes are defined without any special initialization
         // logic, we can not catch common errors early. Therefore, we have to
         // catch them here, at initialization time, instead.
-        (true ? warning(
+        ( true ? warning(
           !inst.getInitialState ||
           inst.getInitialState.isReactClassApproved,
           'getInitialState was defined on %s, a plain JavaScript class. ' +
@@ -13978,7 +17759,7 @@
           'Did you mean to define a state property instead?',
           this.getName() || 'a component'
         ) : null);
-        (true ? warning(
+        ( true ? warning(
           !inst.getDefaultProps ||
           inst.getDefaultProps.isReactClassApproved,
           'getDefaultProps was defined on %s, a plain JavaScript class. ' +
@@ -13986,19 +17767,19 @@
           'Use a static property to define defaultProps instead.',
           this.getName() || 'a component'
         ) : null);
-        (true ? warning(
+        ( true ? warning(
           !inst.propTypes,
           'propTypes was defined as an instance property on %s. Use a static ' +
           'property to define propTypes instead.',
           this.getName() || 'a component'
         ) : null);
-        (true ? warning(
+        ( true ? warning(
           !inst.contextTypes,
           'contextTypes was defined as an instance property on %s. Use a ' +
           'static property to define contextTypes instead.',
           this.getName() || 'a component'
         ) : null);
-        (true ? warning(
+        ( true ? warning(
           typeof inst.componentShouldUpdate !== 'function',
           '%s has a method called ' +
           'componentShouldUpdate(). Did you mean shouldComponentUpdate()? ' +
@@ -14012,7 +17793,7 @@
       if (initialState === undefined) {
         inst.state = initialState = null;
       }
-      (true ? invariant(
+      ( true ? invariant(
         typeof initialState === 'object' && !Array.isArray(initialState),
         '%s.state: must be set to an object or null',
         this.getName() || 'ReactCompositeComponent'
@@ -14186,7 +17967,7 @@
       var inst = this._instance;
       var childContext = inst.getChildContext && inst.getChildContext();
       if (childContext) {
-        (true ? invariant(
+        ( true ? invariant(
           typeof inst.constructor.childContextTypes === 'object',
           '%s.getChildContext(): childContextTypes must be defined in order to ' +
           'use getChildContext().',
@@ -14200,7 +17981,7 @@
           );
         }
         for (var name in childContext) {
-          (true ? invariant(
+          ( true ? invariant(
             name in inst.constructor.childContextTypes,
             '%s.getChildContext(): key "%s" is not defined in childContextTypes.',
             this.getName() || 'ReactCompositeComponent',
@@ -14262,7 +18043,7 @@
           try {
             // This is intentionally an invariant that gets caught. It's the same
             // behavior as without this statement except with a better message.
-            (true ? invariant(
+            ( true ? invariant(
               typeof propTypes[propName] === 'function',
               '%s: %s type `%s` is invalid; it must be a function, usually ' +
               'from React.PropTypes.',
@@ -14282,14 +18063,14 @@
   
             if (location === ReactPropTypeLocations.prop) {
               // Preface gives us something to blacklist in warning module
-              (true ? warning(
+              ( true ? warning(
                 false,
                 'Failed Composite propType: %s%s',
                 error.message,
                 addendum
               ) : null);
             } else {
-              (true ? warning(
+              ( true ? warning(
                 false,
                 'Failed Context Types: %s%s',
                 error.message,
@@ -14361,7 +18142,7 @@
       var displayName = this.getName() || 'ReactCompositeComponent';
       for (var i = 0; i < parentKeys.length; i++) {
         var key = parentKeys[i];
-        (true ? warning(
+        ( true ? warning(
           ownerBasedContext[key] === parentBasedContext[key],
           'owner-based and parent-based contexts differ '  +
           '(values: `%s` vs `%s`) for key (%s) while mounting %s ' +
@@ -14432,7 +18213,7 @@
         inst.shouldComponentUpdate(nextProps, nextState, nextContext);
   
       if (true) {
-        (true ? warning(
+        ( true ? warning(
           typeof shouldUpdate !== 'undefined',
           '%s.shouldComponentUpdate(): Returned undefined instead of a ' +
           'boolean value. Make sure to return true or false.',
@@ -14622,7 +18403,7 @@
         ReactContext.current = previousContext;
         ReactCurrentOwner.current = null;
       }
-      (true ? invariant(
+      ( true ? invariant(
         // TODO: An `isValidNode` function would probably be more appropriate
         renderedComponent === null || renderedComponent === false ||
         ReactElement.isValidElement(renderedComponent),
@@ -14714,7 +18495,7 @@
 
 
 /***/ },
-/* 98 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -14734,7 +18515,7 @@
   var ReactElement = __webpack_require__(3);
   var ReactElementValidator = __webpack_require__(25);
   
-  var mapObject = __webpack_require__(149);
+  var mapObject = __webpack_require__(154);
   
   /**
    * Create a factory that creates HTML tag elements.
@@ -14895,7 +18676,7 @@
 
 
 /***/ },
-/* 99 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -14963,7 +18744,7 @@
 
 
 /***/ },
-/* 100 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -14980,7 +18761,7 @@
   'use strict';
   
   var EventConstants = __webpack_require__(6);
-  var LocalEventTrapMixin = __webpack_require__(39);
+  var LocalEventTrapMixin = __webpack_require__(41);
   var ReactBrowserComponentMixin = __webpack_require__(11);
   var ReactClass = __webpack_require__(7);
   var ReactElement = __webpack_require__(3);
@@ -15016,7 +18797,7 @@
 
 
 /***/ },
-/* 101 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15033,7 +18814,7 @@
   'use strict';
   
   var EventConstants = __webpack_require__(6);
-  var LocalEventTrapMixin = __webpack_require__(39);
+  var LocalEventTrapMixin = __webpack_require__(41);
   var ReactBrowserComponentMixin = __webpack_require__(11);
   var ReactClass = __webpack_require__(7);
   var ReactElement = __webpack_require__(3);
@@ -15065,7 +18846,7 @@
 
 
 /***/ },
-/* 102 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15082,7 +18863,7 @@
   'use strict';
   
   var EventConstants = __webpack_require__(6);
-  var LocalEventTrapMixin = __webpack_require__(39);
+  var LocalEventTrapMixin = __webpack_require__(41);
   var ReactBrowserComponentMixin = __webpack_require__(11);
   var ReactClass = __webpack_require__(7);
   var ReactElement = __webpack_require__(3);
@@ -15115,7 +18896,7 @@
 
 
 /***/ },
-/* 103 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15133,7 +18914,7 @@
   
   var AutoFocusMixin = __webpack_require__(28);
   var DOMPropertyOperations = __webpack_require__(22);
-  var LinkedValueUtils = __webpack_require__(38);
+  var LinkedValueUtils = __webpack_require__(40);
   var ReactBrowserComponentMixin = __webpack_require__(11);
   var ReactClass = __webpack_require__(7);
   var ReactElement = __webpack_require__(3);
@@ -15267,13 +19048,13 @@
             continue;
           }
           var otherID = ReactMount.getID(otherNode);
-          (true ? invariant(
+          ( true ? invariant(
             otherID,
             'ReactDOMInput: Mixing React and non-React radio inputs with the ' +
             'same `name` is not supported.'
           ) : invariant(otherID));
           var otherInstance = instancesByReactID[otherID];
-          (true ? invariant(
+          ( true ? invariant(
             otherInstance,
             'ReactDOMInput: Unknown radio button ID %s.',
             otherID
@@ -15294,7 +19075,7 @@
 
 
 /***/ },
-/* 104 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15330,7 +19111,7 @@
     componentWillMount: function() {
       // TODO (yungsters): Remove support for `selected` in <option>.
       if (true) {
-        (true ? warning(
+        ( true ? warning(
           this.props.selected == null,
           'Use the `defaultValue` or `value` props on <select> instead of ' +
           'setting `selected` on <option>.'
@@ -15348,7 +19129,7 @@
 
 
 /***/ },
-/* 105 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15365,7 +19146,7 @@
   'use strict';
   
   var AutoFocusMixin = __webpack_require__(28);
-  var LinkedValueUtils = __webpack_require__(38);
+  var LinkedValueUtils = __webpack_require__(40);
   var ReactBrowserComponentMixin = __webpack_require__(11);
   var ReactClass = __webpack_require__(7);
   var ReactElement = __webpack_require__(3);
@@ -15530,7 +19311,7 @@
 
 
 /***/ },
-/* 106 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15548,8 +19329,8 @@
   
   var ExecutionEnvironment = __webpack_require__(5);
   
-  var getNodeForCharacterOffset = __webpack_require__(143);
-  var getTextContentAccessor = __webpack_require__(77);
+  var getNodeForCharacterOffset = __webpack_require__(148);
+  var getTextContentAccessor = __webpack_require__(79);
   
   /**
    * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -15747,7 +19528,7 @@
 
 
 /***/ },
-/* 107 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15765,7 +19546,7 @@
   
   var AutoFocusMixin = __webpack_require__(28);
   var DOMPropertyOperations = __webpack_require__(22);
-  var LinkedValueUtils = __webpack_require__(38);
+  var LinkedValueUtils = __webpack_require__(40);
   var ReactBrowserComponentMixin = __webpack_require__(11);
   var ReactClass = __webpack_require__(7);
   var ReactElement = __webpack_require__(3);
@@ -15812,18 +19593,18 @@
       var children = this.props.children;
       if (children != null) {
         if (true) {
-          (true ? warning(
+          ( true ? warning(
             false,
             'Use the `defaultValue` or `value` props instead of setting ' +
             'children on <textarea>.'
           ) : null);
         }
-        (true ? invariant(
+        ( true ? invariant(
           defaultValue == null,
           'If you supply `defaultValue` on a <textarea>, do not pass children.'
         ) : invariant(defaultValue == null));
         if (Array.isArray(children)) {
-          (true ? invariant(
+          ( true ? invariant(
             children.length <= 1,
             '<textarea> can only have at most one child.'
           ) : invariant(children.length <= 1));
@@ -15849,7 +19630,7 @@
       // Clone `this.props` so we don't mutate the input.
       var props = assign({}, this.props);
   
-      (true ? invariant(
+      ( true ? invariant(
         props.dangerouslySetInnerHTML == null,
         '`dangerouslySetInnerHTML` does not make sense on <textarea>.'
       ) : invariant(props.dangerouslySetInnerHTML == null));
@@ -15889,7 +19670,7 @@
 
 
 /***/ },
-/* 108 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15966,7 +19747,7 @@
 
 
 /***/ },
-/* 109 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -15982,42 +19763,42 @@
   
   'use strict';
   
-  var BeforeInputEventPlugin = __webpack_require__(83);
-  var ChangeEventPlugin = __webpack_require__(84);
-  var ClientReactRootIndex = __webpack_require__(85);
-  var DefaultEventPluginOrder = __webpack_require__(88);
-  var EnterLeaveEventPlugin = __webpack_require__(89);
+  var BeforeInputEventPlugin = __webpack_require__(88);
+  var ChangeEventPlugin = __webpack_require__(89);
+  var ClientReactRootIndex = __webpack_require__(90);
+  var DefaultEventPluginOrder = __webpack_require__(93);
+  var EnterLeaveEventPlugin = __webpack_require__(94);
   var ExecutionEnvironment = __webpack_require__(5);
-  var HTMLDOMPropertyConfig = __webpack_require__(92);
-  var MobileSafariClickEventPlugin = __webpack_require__(93);
+  var HTMLDOMPropertyConfig = __webpack_require__(97);
+  var MobileSafariClickEventPlugin = __webpack_require__(98);
   var ReactBrowserComponentMixin = __webpack_require__(11);
   var ReactClass = __webpack_require__(7);
   var ReactComponentBrowserEnvironment =
-    __webpack_require__(40);
-  var ReactDefaultBatchingStrategy = __webpack_require__(108);
-  var ReactDOMComponent = __webpack_require__(43);
-  var ReactDOMButton = __webpack_require__(99);
-  var ReactDOMForm = __webpack_require__(100);
-  var ReactDOMImg = __webpack_require__(102);
-  var ReactDOMIDOperations = __webpack_require__(62);
-  var ReactDOMIframe = __webpack_require__(101);
-  var ReactDOMInput = __webpack_require__(103);
-  var ReactDOMOption = __webpack_require__(104);
-  var ReactDOMSelect = __webpack_require__(105);
-  var ReactDOMTextarea = __webpack_require__(107);
-  var ReactDOMTextComponent = __webpack_require__(63);
+    __webpack_require__(42);
+  var ReactDefaultBatchingStrategy = __webpack_require__(113);
+  var ReactDOMComponent = __webpack_require__(45);
+  var ReactDOMButton = __webpack_require__(104);
+  var ReactDOMForm = __webpack_require__(105);
+  var ReactDOMImg = __webpack_require__(107);
+  var ReactDOMIDOperations = __webpack_require__(64);
+  var ReactDOMIframe = __webpack_require__(106);
+  var ReactDOMInput = __webpack_require__(108);
+  var ReactDOMOption = __webpack_require__(109);
+  var ReactDOMSelect = __webpack_require__(110);
+  var ReactDOMTextarea = __webpack_require__(112);
+  var ReactDOMTextComponent = __webpack_require__(65);
   var ReactElement = __webpack_require__(3);
-  var ReactEventListener = __webpack_require__(114);
-  var ReactInjection = __webpack_require__(115);
+  var ReactEventListener = __webpack_require__(119);
+  var ReactInjection = __webpack_require__(120);
   var ReactInstanceHandles = __webpack_require__(19);
   var ReactMount = __webpack_require__(8);
-  var ReactReconcileTransaction = __webpack_require__(118);
-  var SelectEventPlugin = __webpack_require__(123);
-  var ServerReactRootIndex = __webpack_require__(124);
-  var SimpleEventPlugin = __webpack_require__(125);
-  var SVGDOMPropertyConfig = __webpack_require__(122);
+  var ReactReconcileTransaction = __webpack_require__(123);
+  var SelectEventPlugin = __webpack_require__(128);
+  var ServerReactRootIndex = __webpack_require__(129);
+  var SimpleEventPlugin = __webpack_require__(130);
+  var SVGDOMPropertyConfig = __webpack_require__(127);
   
-  var createFullPageComponent = __webpack_require__(138);
+  var createFullPageComponent = __webpack_require__(143);
   
   function autoGenerateWrapperClass(type) {
     return ReactClass.createClass({
@@ -16115,7 +19896,7 @@
     if (true) {
       var url = (ExecutionEnvironment.canUseDOM && window.location.href) || '';
       if ((/[?&]react_perf\b/).test(url)) {
-        var ReactDefaultPerf = __webpack_require__(110);
+        var ReactDefaultPerf = __webpack_require__(115);
         ReactDefaultPerf.start();
       }
     }
@@ -16127,7 +19908,7 @@
 
 
 /***/ },
-/* 110 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -16145,11 +19926,11 @@
   'use strict';
   
   var DOMProperty = __webpack_require__(16);
-  var ReactDefaultPerfAnalysis = __webpack_require__(111);
+  var ReactDefaultPerfAnalysis = __webpack_require__(116);
   var ReactMount = __webpack_require__(8);
   var ReactPerf = __webpack_require__(13);
   
-  var performanceNow = __webpack_require__(153);
+  var performanceNow = __webpack_require__(158);
   
   function roundFloat(val) {
     return Math.floor(val * 100) / 100;
@@ -16397,7 +20178,7 @@
 
 
 /***/ },
-/* 111 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -16607,7 +20388,7 @@
 
 
 /***/ },
-/* 112 */
+/* 117 */
 /***/ function(module, exports) {
 
   /**
@@ -16643,7 +20424,7 @@
 
 
 /***/ },
-/* 113 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -16697,7 +20478,7 @@
 
 
 /***/ },
-/* 114 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -16714,7 +20495,7 @@
   
   'use strict';
   
-  var EventListener = __webpack_require__(90);
+  var EventListener = __webpack_require__(95);
   var ExecutionEnvironment = __webpack_require__(5);
   var PooledClass = __webpack_require__(10);
   var ReactInstanceHandles = __webpack_require__(19);
@@ -16722,8 +20503,8 @@
   var ReactUpdates = __webpack_require__(9);
   
   var assign = __webpack_require__(2);
-  var getEventTarget = __webpack_require__(52);
-  var getUnboundedScrollPosition = __webpack_require__(145);
+  var getEventTarget = __webpack_require__(54);
+  var getUnboundedScrollPosition = __webpack_require__(150);
   
   /**
    * Finds the parent React component of `node`.
@@ -16884,7 +20665,7 @@
 
 
 /***/ },
-/* 115 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -16902,14 +20683,14 @@
   
   var DOMProperty = __webpack_require__(16);
   var EventPluginHub = __webpack_require__(23);
-  var ReactComponentEnvironment = __webpack_require__(41);
+  var ReactComponentEnvironment = __webpack_require__(43);
   var ReactClass = __webpack_require__(7);
-  var ReactEmptyComponent = __webpack_require__(44);
+  var ReactEmptyComponent = __webpack_require__(46);
   var ReactBrowserEventEmitter = __webpack_require__(18);
   var ReactNativeComponent = __webpack_require__(30);
-  var ReactDOMComponent = __webpack_require__(43);
+  var ReactDOMComponent = __webpack_require__(45);
   var ReactPerf = __webpack_require__(13);
-  var ReactRootIndex = __webpack_require__(69);
+  var ReactRootIndex = __webpack_require__(71);
   var ReactUpdates = __webpack_require__(9);
   
   var ReactInjection = {
@@ -16930,7 +20711,7 @@
 
 
 /***/ },
-/* 116 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -16947,11 +20728,11 @@
   
   'use strict';
   
-  var ReactComponentEnvironment = __webpack_require__(41);
-  var ReactMultiChildUpdateTypes = __webpack_require__(66);
+  var ReactComponentEnvironment = __webpack_require__(43);
+  var ReactMultiChildUpdateTypes = __webpack_require__(68);
   
   var ReactReconciler = __webpack_require__(21);
-  var ReactChildReconciler = __webpack_require__(95);
+  var ReactChildReconciler = __webpack_require__(100);
   
   /**
    * Updating children of a component may trigger recursive updates. The depth is
@@ -17364,7 +21145,7 @@
 
 
 /***/ },
-/* 117 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -17436,7 +21217,7 @@
      * @internal
      */
     addComponentAsRefTo: function(component, ref, owner) {
-      (true ? invariant(
+      ( true ? invariant(
         ReactOwner.isValidOwner(owner),
         'addComponentAsRefTo(...): Only a ReactOwner can have refs. This ' +
         'usually means that you\'re trying to add a ref to a component that ' +
@@ -17457,7 +21238,7 @@
      * @internal
      */
     removeComponentAsRefFrom: function(component, ref, owner) {
-      (true ? invariant(
+      ( true ? invariant(
         ReactOwner.isValidOwner(owner),
         'removeComponentAsRefFrom(...): Only a ReactOwner can have refs. This ' +
         'usually means that you\'re trying to remove a ref to a component that ' +
@@ -17478,7 +21259,7 @@
 
 
 /***/ },
-/* 118 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -17495,11 +21276,11 @@
   
   'use strict';
   
-  var CallbackQueue = __webpack_require__(36);
+  var CallbackQueue = __webpack_require__(38);
   var PooledClass = __webpack_require__(10);
   var ReactBrowserEventEmitter = __webpack_require__(18);
-  var ReactInputSelection = __webpack_require__(64);
-  var ReactPutListenerQueue = __webpack_require__(68);
+  var ReactInputSelection = __webpack_require__(66);
+  var ReactPutListenerQueue = __webpack_require__(70);
   var Transaction = __webpack_require__(33);
   
   var assign = __webpack_require__(2);
@@ -17658,7 +21439,7 @@
 
 
 /***/ },
-/* 119 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -17674,7 +21455,7 @@
   
   'use strict';
   
-  var ReactOwner = __webpack_require__(117);
+  var ReactOwner = __webpack_require__(122);
   
   var ReactRef = {};
   
@@ -17733,7 +21514,7 @@
 
 
 /***/ },
-/* 120 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -17751,12 +21532,12 @@
   
   var ReactElement = __webpack_require__(3);
   var ReactInstanceHandles = __webpack_require__(19);
-  var ReactMarkupChecksum = __webpack_require__(65);
+  var ReactMarkupChecksum = __webpack_require__(67);
   var ReactServerRenderingTransaction =
-    __webpack_require__(121);
+    __webpack_require__(126);
   
   var emptyObject = __webpack_require__(34);
-  var instantiateReactComponent = __webpack_require__(53);
+  var instantiateReactComponent = __webpack_require__(55);
   var invariant = __webpack_require__(1);
   
   /**
@@ -17764,7 +21545,7 @@
    * @return {string} the HTML markup
    */
   function renderToString(element) {
-    (true ? invariant(
+    ( true ? invariant(
       ReactElement.isValidElement(element),
       'renderToString(): You must pass a valid ReactElement.'
     ) : invariant(ReactElement.isValidElement(element)));
@@ -17791,7 +21572,7 @@
    * (for generating static pages)
    */
   function renderToStaticMarkup(element) {
-    (true ? invariant(
+    ( true ? invariant(
       ReactElement.isValidElement(element),
       'renderToStaticMarkup(): You must pass a valid ReactElement.'
     ) : invariant(ReactElement.isValidElement(element)));
@@ -17817,7 +21598,7 @@
 
 
 /***/ },
-/* 121 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -17835,8 +21616,8 @@
   'use strict';
   
   var PooledClass = __webpack_require__(10);
-  var CallbackQueue = __webpack_require__(36);
-  var ReactPutListenerQueue = __webpack_require__(68);
+  var CallbackQueue = __webpack_require__(38);
+  var ReactPutListenerQueue = __webpack_require__(70);
   var Transaction = __webpack_require__(33);
   
   var assign = __webpack_require__(2);
@@ -17934,7 +21715,7 @@
 
 
 /***/ },
-/* 122 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18032,7 +21813,7 @@
 
 
 /***/ },
-/* 123 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18050,13 +21831,13 @@
   
   var EventConstants = __webpack_require__(6);
   var EventPropagators = __webpack_require__(24);
-  var ReactInputSelection = __webpack_require__(64);
+  var ReactInputSelection = __webpack_require__(66);
   var SyntheticEvent = __webpack_require__(17);
   
-  var getActiveElement = __webpack_require__(74);
-  var isTextInputElement = __webpack_require__(79);
+  var getActiveElement = __webpack_require__(76);
+  var isTextInputElement = __webpack_require__(81);
   var keyOf = __webpack_require__(15);
-  var shallowEqual = __webpack_require__(156);
+  var shallowEqual = __webpack_require__(161);
   
   var topLevelTypes = EventConstants.topLevelTypes;
   
@@ -18231,7 +22012,7 @@
 
 
 /***/ },
-/* 124 */
+/* 129 */
 /***/ function(module, exports) {
 
   /**
@@ -18266,7 +22047,7 @@
 
 
 /***/ },
-/* 125 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18283,19 +22064,19 @@
   'use strict';
   
   var EventConstants = __webpack_require__(6);
-  var EventPluginUtils = __webpack_require__(37);
+  var EventPluginUtils = __webpack_require__(39);
   var EventPropagators = __webpack_require__(24);
-  var SyntheticClipboardEvent = __webpack_require__(126);
+  var SyntheticClipboardEvent = __webpack_require__(131);
   var SyntheticEvent = __webpack_require__(17);
-  var SyntheticFocusEvent = __webpack_require__(129);
-  var SyntheticKeyboardEvent = __webpack_require__(131);
+  var SyntheticFocusEvent = __webpack_require__(134);
+  var SyntheticKeyboardEvent = __webpack_require__(136);
   var SyntheticMouseEvent = __webpack_require__(32);
-  var SyntheticDragEvent = __webpack_require__(128);
-  var SyntheticTouchEvent = __webpack_require__(132);
+  var SyntheticDragEvent = __webpack_require__(133);
+  var SyntheticTouchEvent = __webpack_require__(137);
   var SyntheticUIEvent = __webpack_require__(26);
-  var SyntheticWheelEvent = __webpack_require__(133);
+  var SyntheticWheelEvent = __webpack_require__(138);
   
-  var getEventCharCode = __webpack_require__(50);
+  var getEventCharCode = __webpack_require__(52);
   
   var invariant = __webpack_require__(1);
   var keyOf = __webpack_require__(15);
@@ -18575,7 +22356,7 @@
     executeDispatch: function(event, listener, domID) {
       var returnValue = EventPluginUtils.executeDispatch(event, listener, domID);
   
-      (true ? warning(
+      ( true ? warning(
         typeof returnValue !== 'boolean',
         'Returning `false` from an event handler is deprecated and will be ' +
         'ignored in a future release. Instead, manually call ' +
@@ -18676,7 +22457,7 @@
           EventConstructor = SyntheticClipboardEvent;
           break;
       }
-      (true ? invariant(
+      ( true ? invariant(
         EventConstructor,
         'SimpleEventPlugin: Unhandled event type, `%s`.',
         topLevelType
@@ -18696,7 +22477,7 @@
 
 
 /***/ },
-/* 126 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18745,7 +22526,7 @@
 
 
 /***/ },
-/* 127 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18794,7 +22575,7 @@
 
 
 /***/ },
-/* 128 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18837,7 +22618,7 @@
 
 
 /***/ },
-/* 129 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18880,7 +22661,7 @@
 
 
 /***/ },
-/* 130 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18930,7 +22711,7 @@
 
 
 /***/ },
-/* 131 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -18949,9 +22730,9 @@
   
   var SyntheticUIEvent = __webpack_require__(26);
   
-  var getEventCharCode = __webpack_require__(50);
-  var getEventKey = __webpack_require__(142);
-  var getEventModifierState = __webpack_require__(51);
+  var getEventCharCode = __webpack_require__(52);
+  var getEventKey = __webpack_require__(147);
+  var getEventModifierState = __webpack_require__(53);
   
   /**
    * @interface KeyboardEvent
@@ -19021,7 +22802,7 @@
 
 
 /***/ },
-/* 132 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19040,7 +22821,7 @@
   
   var SyntheticUIEvent = __webpack_require__(26);
   
-  var getEventModifierState = __webpack_require__(51);
+  var getEventModifierState = __webpack_require__(53);
   
   /**
    * @interface TouchEvent
@@ -19073,7 +22854,7 @@
 
 
 /***/ },
-/* 133 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19138,7 +22919,7 @@
 
 
 /***/ },
-/* 134 */
+/* 139 */
 /***/ function(module, exports) {
 
   /**
@@ -19176,7 +22957,7 @@
 
 
 /***/ },
-/* 135 */
+/* 140 */
 /***/ function(module, exports) {
 
   /**
@@ -19212,7 +22993,7 @@
 
 
 /***/ },
-/* 136 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19229,7 +23010,7 @@
   
   "use strict";
   
-  var camelize = __webpack_require__(135);
+  var camelize = __webpack_require__(140);
   
   var msPattern = /^-ms-/;
   
@@ -19258,7 +23039,7 @@
 
 
 /***/ },
-/* 137 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19273,7 +23054,7 @@
    * @typechecks
    */
   
-  var toArray = __webpack_require__(157);
+  var toArray = __webpack_require__(162);
   
   /**
    * Perform a heuristic test to determine if an object is "array-like".
@@ -19348,7 +23129,7 @@
 
 
 /***/ },
-/* 138 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19390,7 +23171,7 @@
       displayName: 'ReactFullPageComponent' + tag,
   
       componentWillUnmount: function() {
-        (true ? invariant(
+        ( true ? invariant(
           false,
           '%s tried to unmount. Because of cross-browser quirks it is ' +
           'impossible to unmount some top-level components (eg <html>, <head>, ' +
@@ -19412,7 +23193,7 @@
 
 
 /***/ },
-/* 139 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19431,8 +23212,8 @@
   
   var ExecutionEnvironment = __webpack_require__(5);
   
-  var createArrayFromMixed = __webpack_require__(137);
-  var getMarkupWrap = __webpack_require__(76);
+  var createArrayFromMixed = __webpack_require__(142);
+  var getMarkupWrap = __webpack_require__(78);
   var invariant = __webpack_require__(1);
   
   /**
@@ -19469,7 +23250,7 @@
    */
   function createNodesFromMarkup(markup, handleScript) {
     var node = dummyNode;
-    (true ? invariant(!!dummyNode, 'createNodesFromMarkup dummy not initialized') : invariant(!!dummyNode));
+    ( true ? invariant(!!dummyNode, 'createNodesFromMarkup dummy not initialized') : invariant(!!dummyNode));
     var nodeName = getNodeName(markup);
   
     var wrap = nodeName && getMarkupWrap(nodeName);
@@ -19486,7 +23267,7 @@
   
     var scripts = node.getElementsByTagName('script');
     if (scripts.length) {
-      (true ? invariant(
+      ( true ? invariant(
         handleScript,
         'createNodesFromMarkup(...): Unexpected <script> element rendered.'
       ) : invariant(handleScript));
@@ -19504,7 +23285,7 @@
 
 
 /***/ },
-/* 140 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19521,7 +23302,7 @@
   
   'use strict';
   
-  var CSSProperty = __webpack_require__(58);
+  var CSSProperty = __webpack_require__(60);
   
   var isUnitlessNumber = CSSProperty.isUnitlessNumber;
   
@@ -19566,7 +23347,7 @@
 
 
 /***/ },
-/* 141 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19582,7 +23363,7 @@
   
   'use strict';
   
-  var traverseAllChildren = __webpack_require__(80);
+  var traverseAllChildren = __webpack_require__(82);
   var warning = __webpack_require__(4);
   
   /**
@@ -19595,7 +23376,7 @@
     var result = traverseContext;
     var keyUnique = !result.hasOwnProperty(name);
     if (true) {
-      (true ? warning(
+      ( true ? warning(
         keyUnique,
         'flattenChildren(...): Encountered two children with the same key, ' +
         '`%s`. Child keys must be unique; when two children share a key, only ' +
@@ -19626,7 +23407,7 @@
 
 
 /***/ },
-/* 142 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19643,7 +23424,7 @@
   
   'use strict';
   
-  var getEventCharCode = __webpack_require__(50);
+  var getEventCharCode = __webpack_require__(52);
   
   /**
    * Normalization of deprecated HTML5 `key` values
@@ -19735,7 +23516,7 @@
 
 
 /***/ },
-/* 143 */
+/* 148 */
 /***/ function(module, exports) {
 
   /**
@@ -19814,7 +23595,7 @@
 
 
 /***/ },
-/* 144 */
+/* 149 */
 /***/ function(module, exports) {
 
   /**
@@ -19853,7 +23634,7 @@
 
 
 /***/ },
-/* 145 */
+/* 150 */
 /***/ function(module, exports) {
 
   /**
@@ -19897,7 +23678,7 @@
 
 
 /***/ },
-/* 146 */
+/* 151 */
 /***/ function(module, exports) {
 
   /**
@@ -19934,7 +23715,7 @@
 
 
 /***/ },
-/* 147 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19951,7 +23732,7 @@
   
   "use strict";
   
-  var hyphenate = __webpack_require__(146);
+  var hyphenate = __webpack_require__(151);
   
   var msPattern = /^ms-/;
   
@@ -19979,7 +23760,7 @@
 
 
 /***/ },
-/* 148 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -19994,7 +23775,7 @@
    * @typechecks
    */
   
-  var isNode = __webpack_require__(78);
+  var isNode = __webpack_require__(80);
   
   /**
    * @param {*} object The object to check.
@@ -20008,7 +23789,7 @@
 
 
 /***/ },
-/* 149 */
+/* 154 */
 /***/ function(module, exports) {
 
   /**
@@ -20065,7 +23846,7 @@
 
 
 /***/ },
-/* 150 */
+/* 155 */
 /***/ function(module, exports) {
 
   /**
@@ -20102,7 +23883,7 @@
 
 
 /***/ },
-/* 151 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -20133,7 +23914,7 @@
    * structure.
    */
   function onlyChild(children) {
-    (true ? invariant(
+    ( true ? invariant(
       ReactElement.isValidElement(children),
       'onlyChild must be passed a children with exactly one child.'
     ) : invariant(ReactElement.isValidElement(children)));
@@ -20144,7 +23925,7 @@
 
 
 /***/ },
-/* 152 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -20176,7 +23957,7 @@
 
 
 /***/ },
-/* 153 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -20191,7 +23972,7 @@
    * @typechecks
    */
   
-  var performance = __webpack_require__(152);
+  var performance = __webpack_require__(157);
   
   /**
    * Detect if we can use `window.performance.now()` and gracefully fallback to
@@ -20208,7 +23989,7 @@
 
 
 /***/ },
-/* 154 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -20240,7 +24021,7 @@
 
 
 /***/ },
-/* 155 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -20258,7 +24039,7 @@
   
   var ExecutionEnvironment = __webpack_require__(5);
   var escapeTextContentForBrowser = __webpack_require__(35);
-  var setInnerHTML = __webpack_require__(55);
+  var setInnerHTML = __webpack_require__(57);
   
   /**
    * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -20286,7 +24067,7 @@
 
 
 /***/ },
-/* 156 */
+/* 161 */
 /***/ function(module, exports) {
 
   /**
@@ -20334,7 +24115,7 @@
 
 
 /***/ },
-/* 157 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -20365,19 +24146,19 @@
   
     // Some browse builtin objects can report typeof 'function' (e.g. NodeList in
     // old versions of Safari).
-    (true ? invariant(
+    ( true ? invariant(
       !Array.isArray(obj) &&
       (typeof obj === 'object' || typeof obj === 'function'),
       'toArray: Array-like object expected'
     ) : invariant(!Array.isArray(obj) &&
     (typeof obj === 'object' || typeof obj === 'function')));
   
-    (true ? invariant(
+    ( true ? invariant(
       typeof length === 'number',
       'toArray: Object needs a length property'
     ) : invariant(typeof length === 'number'));
   
-    (true ? invariant(
+    ( true ? invariant(
       length === 0 ||
       (length - 1) in obj,
       'toArray: Object should have keys for indices'
@@ -20406,6 +24187,30 @@
   
   module.exports = toArray;
 
+
+/***/ },
+/* 163 */
+/***/ function(module, exports) {
+
+  "use strict";
+  
+  var html = "\n<!-- Other Front-End Technologies -->\n\n<div class=\"fe-tech\">\n  <p>\n    I have used both pure HTML and HTML templating languages such as Jade or\n    Jinja2 in my projects. While the templating languages offer some more\n    functionality, I don&#8217;t have a preference either way. As for CSS, I\n    was a big fan and user of bootstrap, however, I find myself using the\n    Flexbox layout now to lay out and align items in my projects now. Unlike\n    with HTML, I also much prefer a pre-processor (Sass/Scss is my\n    favorite but I have experience with Less).\n  </p>\n</div>\n";
+  
+  module.exports = html;
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  var beautify = __webpack_require__(86);
+  
+  var raw = '\n\n// Javascript\n\nfunction testing() {\n  /**\n   * Utilizing frameworks such as Karma, Jasmine, Mocha, Chai, and Sinon, I\n   * have written many tests for both front-end and server components of\n   * applications. I prefer the use of frameworks such as these for their\n   * expressive nature and readable style. I have also used istanbul for\n   * code coverage, however chasing after code coverage can result in\n   * fragile tests.\n   */\n }\n\nfunction frameworks() {\n  /**\n   * On the job, I have been using AngularJS very extensively due to its\n   * ability to help get projects up and running quickly and efficiently.\n   * However, it\'s dependency injection, two-way data binding,\n   * debugging difficulty, and lack of server-side rendering have led to\n   * me to use React in my personal projects. Because my projects tend to\n   * rely on communication via JSON, Node.js made sense to me from the start,\n   * and I\'ve loved it ever since.\n   */\n}\n\n/**\n * Hires a specific candidate at the company specified\n * @example\n * // returns a job\n * jobMarket.hire(michael, companyX);\n * @returns {Job} Returns a job for the candidate\n */\n\njobMarket.hire = function(candidate, company) {\n  var companyIndex = candidate.potentialCompanies.indexOf(company);\n  var wantsJob = (companyIndex > -1);\n  if (wantsJob && company instanceof Company && company.isQualified(candidate)) {\n    var newJob = new Job(company);\n    candidate.setJob(newJob);\n    return newJob;\n  } else if (wantsJob) {\n    console.log(company.name.toString() + \' wishes  \' + candidate.toString() +\n      \' the best of luck in his/her career\');\n    candidate.potentialCompanies.splice(companyIndex);\n    continueSearch();\n  } else {\n    console.log(\'It just did not work out.\');\n  }\n}\n';
+  
+  var code = beautify(raw);
+  
+  module.exports = code;
 
 /***/ }
 /******/ ]);

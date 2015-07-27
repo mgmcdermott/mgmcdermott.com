@@ -1,9 +1,9 @@
 @import '../../base';
 
 html, body, #app, .wrapper {
+  -webkit-font-smoothing: antialiased;
   width: 100%;
   height:100%;
   margin: 0;
-  background-color: $background-light;
   font-family: $font-family;
 }

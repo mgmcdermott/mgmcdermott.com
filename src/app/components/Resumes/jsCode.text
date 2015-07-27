@@ -1,0 +1,23 @@
+/**
+ * Helps get a job programming in Javascript
+ * @example
+ * // returns a job
+ * jobMarket.hire(michael, companyX);
+ * @returns &#123;Job} Returns a job for the user specified
+ */
+
+jobMarket.hire = function(candidate, company) {
+  var companyIndex = candidate.potentialCompanies.indexOf(company);
+  var wantsJob = (companyIndex > -1);
+  if (wantsJob && company instanceof Company && company.isQualified(candidate)) {
+    var newJob = new Job(company);
+    candidate.setJob(newJob);
+    return newJob;
+  } else if (wantsJob) {
+    console.log(company.name.toString() + ' wishes  ' + candidate.toString() + ' the best of luck in his/her career');
+    candidate.potentialCompanies.splice(companyIndex);
+    continueSearch();
+  } else {
+    console.log('It just didn\'t work out.'');
+  }
+}

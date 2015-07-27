@@ -3,8 +3,6 @@
  * Created on 5/20/15
  */
 
-'use strict';
-
 // Include Gulp and other build automation tools and utilities
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
@@ -79,7 +77,9 @@ gulp.task('sass', function() {
 gulp.task('copy', function() {
   src.static = [
     'src/app/server/**',
-    'src/client/index.html'
+    'src/client/index.html',
+    'src/client/scripts/prettify.min.js',
+    'src/client/prettify.min.css'
   ];
   return gulp.src(src.static)
     .pipe($.changed('build'))
@@ -184,7 +184,7 @@ gulp.task('sync', ['serve'], function(cb) {
 
   browserSync({
     logPrefix: 'ME',
-    notify: false,
+    notify: true,
     // Run as an https by setting 'https: true'
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
@@ -211,7 +211,7 @@ gulp.task('sync', ['serve'], function(cb) {
 gulp.task('deploy', function(cb) {
   var push = require('git-push');
   if (argv.production) {
-    push('./build', 'ssh://mgm@copper/var/repo/kevinandkevin.git', cb)
+    push('./build', 'ssh://mgm@copper/var/repo/kevinandkevin.git', cb);
   } else {
     push('.', 'https://github.com/mgmcdermott/mgmcdermott.com.git', cb);
   }
