@@ -78,8 +78,7 @@ gulp.task('copy', function() {
   src.static = [
     'src/app/server/**',
     'src/client/index.html',
-    'src/client/scripts/prettify.min.js',
-    'src/client/prettify.min.css'
+    'src/client/libs/**'
   ];
   return gulp.src(src.static)
     .pipe($.changed('build'))

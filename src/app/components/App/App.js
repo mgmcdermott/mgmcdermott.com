@@ -5,14 +5,17 @@
 
 var React = require('react');
 //var ComingSoon = require('../ComingSoon/ComingSoon');
+var NavBar = require('../Nav/Nav');
 var Resume = require('../Resumes/Resume');
 // var Mikebook = require('../Resumes/Mikebook/Mikebook');
 
 var App = React.createClass({
+
   render: function() {
     return (
-      <div className="wrapper">
-          <Resume />
+      <div className="wrapper" onScroll={this.handleScroll}>
+        <NavBar />
+        <Resume />
       </div>
     );
   }

@@ -1,0 +1,24 @@
+@import '../../base';
+
+.mgm-nav {
+  background-color: $color-blue;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+
+  span {
+    margin: 0;
+    font-size: 36px;
+    line-height: 60px;
+    font-weight: 300;
+  }
+}
+
+.nav-inner {
+  margin: 0 30px;
+}
+
+.logo-dot {
+  color: white;
+}
