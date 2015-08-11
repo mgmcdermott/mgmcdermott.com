@@ -1,0 +1,29 @@
+@import '../../base';
+
+.mgm-headshot {
+  height: 150px;
+  width: 300px;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+  background-color: darkgray;
+}
+
+.about {
+  background-color: white;
+  flex-direction: column;
+}
+
+.about-header {
+  color: $color-blue;
+}
+
+.about-inner {
+  flex-direction: row;
+  @media all and (max-width: $break-small) {
+    flex-direction: column;
+  }
+  * {
+    flex: 1;
+  }
+}

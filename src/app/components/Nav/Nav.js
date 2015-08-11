@@ -24,7 +24,15 @@ var Nav = React.createClass({
     return (
       <div className={navClasses}>
         <div className="nav-inner">
-          <span className="logo-dot">.</span><span className="mgm-kwd">mgm</span>
+          <div className="logo">
+            <span className="logo-dot">.</span>
+            <span className="mgm-kwd">mgm</span>
+          </div>
+          <div className="nav-right">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+          </div>
         </div>
       </div>
     );

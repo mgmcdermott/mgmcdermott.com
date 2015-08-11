@@ -4,18 +4,22 @@
  */
 
 var React = require('react');
-//var ComingSoon = require('../ComingSoon/ComingSoon');
 var NavBar = require('../Nav/Nav');
-var Resume = require('../Resumes/Resume');
-// var Mikebook = require('../Resumes/Mikebook/Mikebook');
+var Landing = require('../Landing/Landing');
+var About = require('../About/About');
+var Experience = require('../Experience/Experience');
+var Skills = require('../Skills/Skills');
 
 var App = React.createClass({
 
   render: function() {
     return (
-      <div className="wrapper" onScroll={this.handleScroll}>
+      <div className="wrapper">
         <NavBar />
-        <Resume />
+        <Landing />
+        <About />
+        <Experience />
+        <Skills />
       </div>
     );
   }
