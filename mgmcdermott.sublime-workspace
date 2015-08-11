@@ -124,6 +124,14 @@
 			}
 		},
 		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 2005,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/app/components/App/App.scss",
 			"settings":
 			{
@@ -442,7 +450,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -465,13 +473,15 @@
 						"settings":
 						{
 							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -502,7 +512,7 @@
 						"translation.y": 5547.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -525,13 +535,15 @@
 						"settings":
 						{
 							"open_with_edit": true,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -561,7 +573,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -591,7 +603,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -621,11 +633,39 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2005,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1994,
+								1994
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Seti_UI/Langs/Git.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1529.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "src/app/components/App/App.scss",
 					"semi_transient": false,
 					"settings":
@@ -651,7 +691,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
