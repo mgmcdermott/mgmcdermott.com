@@ -53,10 +53,10 @@ var About = React.createClass({
                 prepare for it.
               </p>
               <p>
-                In my spare time, I host websites for myself, friends, and family on
-                my personal servers running Ubuntu, nginx, and PM2. I also enjoy
-                contributing to open source javascript and giving back on Stack
-                Overflow.
+                In my spare time, I host websites running in Docker containers
+                for myself, friends, and family on my personal servers running
+                Ubuntu and nginx. I also enjoy contributing to open source
+                javascript and giving back on Stack Overflow.
               </p>
           </div>
         </div>
