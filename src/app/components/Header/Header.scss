@@ -1,0 +1,10 @@
+@import '../../base';
+@import '../../animations/fadeInDown.scss';
+
+.mgm-header {
+  margin-top: 96px;
+  font-size: 48px;
+  font-weight: 300;
+  text-align: center;
+  color: $color-blue;
+}

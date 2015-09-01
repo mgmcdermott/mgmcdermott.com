@@ -36,11 +36,7 @@ var publicDir = __dirname;
 console.log('Serving static files from ' + publicDir);
 app.use('/', express.static(publicDir));
 
-//require('./routes')(app);
-
-app.get('/', function (req, res) {
-  res.sendFile(publicDir + '/index.html');
-});
+require('./routes')(app, publicDir);
 
 app.use(haltOnTimeout);
 function haltOnTimeout(req, res, next) {

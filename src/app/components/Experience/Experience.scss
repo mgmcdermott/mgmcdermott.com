@@ -1,24 +1,26 @@
 @import '../../base';
+@import '../../animations/fadeInLeftBig.scss';
 
 .experience {
-  background: url('../../images/nyc-background.jpg') no-repeat center fixed;
+  background: url('../../images/ms-background.jpg') no-repeat center fixed;
   background-size: cover;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.experience-header {
-  color: white;
-}
-
-.work, .work-header {
-  width: 100%;
-}
-
-.work-header {
-  color: $color-blue;
+.experience-inner {
+  height: 50%;
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  border-bottom: 1px solid $color-blue;
+  align-items: flex-end;
+}
+
+.work {
+  background-color: rgba(23, 53, 73, 0.75);
+
+  h2 {
+    font-weight: 500;
+    color: white;
+    padding: 10px 100px;
+  }
 }

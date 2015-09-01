@@ -4,20 +4,32 @@
 		"selected_items":
 		[
 			[
-				"align",
-				"align-content"
-			],
-			[
-				"sst",
-				"sst	React: this.setState({ ... })"
-			],
-			[
-				"cdm",
-				"cdm	React: componentDidMount: fn() { ... }"
+				"fadeInU",
+				"fadeInUpBig.scss"
 			],
 			[
 				"rcc",
 				"rcc	React: component skeleton"
+			],
+			[
+				"win",
+				"windowMult"
+			],
+			[
+				"ge",
+				"getDefaultProps (fn/0)"
+			],
+			[
+				"fadi",
+				"fadeInDown.scss"
+			],
+			[
+				"rot",
+				"rotateInDownLeft.scss"
+			],
+			[
+				"fadeInLeft",
+				"fadeInLeftBig.scss"
 			],
 			[
 				"stat",
@@ -64,6 +76,10 @@
 				"highlight-primary"
 			],
 			[
+				"align",
+				"align-items"
+			],
+			[
 				"border",
 				"border-right"
 			],
@@ -75,70 +91,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/app/components/Experience/Experience.js",
-			"settings":
-			{
-				"buffer_size": 1248,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/300.otf) format('opentype');\n  font-weight: 300;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/300-italic.otf) format('opentype');\n  font-weight: 300;\n  font-style: italic;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/400.otf) format('opentype');\n  font-weight: 400;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/400-italic.otf) format('opentype');\n  font-weight: 400;\n  font-style: italic;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/500.otf) format('opentype');\n  font-weight: 500;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/500-italic.otf) format('opentype');\n  font-weight: 500;\n  font-style: italic;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/600.otf) format('opentype');\n  font-weight: 600;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/600-italic.otf) format('opentype');\n  font-weight: 600;\n  font-style: italic;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/700.otf) format('opentype');\n  font-weight: 700;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/700-italic.otf) format('opentype');\n  font-weight: 700;\n  font-style: italic;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/800.otf) format('opentype');\n  font-weight: 800;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/800-italic.otf) format('opentype');\n  font-weight: 800;\n  font-style: italic;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/900.otf) format('opentype');\n  font-weight: 900;\n}\n@font-face {\n  font-family: ProximaNova;\n  src: url(/fonts/ProximaNova/900-italic.otf) format('opentype');\n  font-weight: 900;\n  font-style: italic;\n}\n* {\n  margin: 0;\n  padding: 0;\n  font-family: ProximaNova;\n}\nbody {\n  background-color: #808080;\n  color: #fff;\n  text-align: center;\n}\nul {\n  padding-left: 0;\n  list-style-type: none;\n}\na {\n  text-decoration: none;\n  cursor: pointer;\n  color: inherit;\n}\n#landing-container {\n  height: 652px;\n  background-color: #5f5e63;\n  position: relative;\n  background-image: url(\"/images/tristan-bg.jpg\");\n  background-image: -webkit-image-set(url(\"/images/tristan-bg.jpg\") 1x, url(\"/images/tristan-bg@2x.jpg\") 2x);\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n@media all and (max-width: 564px) {\n  #landing-container {\n    height: 592px;\n  }\n}\n#landing-container h1 {\n  text-indent: -9999px;\n  white-space: nowrap;\n  color: transparent;\n  background-image: url(\"/images/te-logo.svg\");\n  width: 93px;\n  height: 236px;\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n  margin: 0 auto;\n  padding-top: 80px;\n  background-position: center bottom;\n  margin-bottom: 50px;\n}\n@media all and (max-width: 564px) {\n  #landing-container h1 {\n    padding-top: 40px;\n  }\n}\n#landing-container h2 {\n  font-weight: 300;\n}\n@media all and (max-width: 650px) {\n  #landing-container h2 {\n    margin: 20px;\n    font-size: 21px;\n  }\n}\n#landing-container .arrow {\n  background-image: url(\"/images/arrow-down.svg\");\n  position: absolute;\n  bottom: 20px;\n  left: 50%;\n  width: 26px;\n  height: 43px;\n  margin-left: -12px;\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n  -webkit-animation: arrowHint 0.5s linear 0s infinite alternate;\n  -moz-animation: arrowHint 0.5s linear 0s infinite alternate;\n  -o-animation: arrowHint 0.5s linear 0s infinite alternate;\n  -ms-animation: arrowHint 0.5s linear 0s infinite alternate;\n  animation: arrowHint 0.5s linear 0s infinite alternate;\n}\n#landing-container .social-icons {\n  margin-top: 50px;\n}\n#landing-container .social-icons a {\n  width: 42px;\n  height: 42px;\n  display: inline-block;\n  margin: 30px;\n  position: relative;\n  cursor: pointer;\n  text-indent: -9999px;\n  white-space: nowrap;\n  color: transparent;\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#landing-container .social-icons a.twitter {\n  background-image: url(\"/images/social-twitter.svg\");\n}\n#landing-container .social-icons a.twitter .bg {\n  background-image: url(\"/images/social-twitter-bg.svg\");\n}\n#landing-container .social-icons a.dribbble {\n  background-image: url(\"/images/social-dribbble.svg\");\n}\n#landing-container .social-icons a.dribbble .bg {\n  background-image: url(\"/images/social-dribbble-bg.svg\");\n}\n#landing-container .social-icons a.github {\n  background-image: url(\"/images/social-github.svg\");\n}\n#landing-container .social-icons a.github .bg {\n  background-image: url(\"/images/social-github-bg.svg\");\n}\n#landing-container .social-icons a .bg {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 42px;\n  height: 42px;\n  margin: 0 auto;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#landing-container .social-icons a:hover {\n  -webkit-animation: pulseIcon 0.3s;\n  -moz-animation: pulseIcon 0.3s;\n  -o-animation: pulseIcon 0.3s;\n  -ms-animation: pulseIcon 0.3s;\n  animation: pulseIcon 0.3s;\n}\n#landing-container .social-icons a:hover .bg {\n  -webkit-animation: poofIcon 0.4s ease-out;\n  -moz-animation: poofIcon 0.4s ease-out;\n  -o-animation: poofIcon 0.4s ease-out;\n  -ms-animation: poofIcon 0.4s ease-out;\n  animation: poofIcon 0.4s ease-out;\n}\nh3 {\n  font-size: 30px;\n  font-weight: 300;\n  max-width: 590px;\n  margin: 0 auto;\n  padding: 50px 0;\n  position: relative;\n}\n#safello-container {\n  height: 544px;\n  background-color: #eef6fa;\n  overflow: hidden;\n  position: relative;\n}\n#safello-container h3 {\n  color: #9fbbce;\n  padding-top: 80px;\n  top: -20px;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  -webkit-transition: all 0.5s;\n  -moz-transition: all 0.5s;\n  -o-transition: all 0.5s;\n  -ms-transition: all 0.5s;\n  transition: all 0.5s;\n}\n@media all and (max-width: 600px) {\n  #safello-container h3 {\n    margin: 0 20px;\n  }\n}\n@media all and (max-width: 500px) {\n  #safello-container h3 {\n    line-height: 47px;\n  }\n  #safello-container h3 .logo {\n    top: 0 !important;\n  }\n}\n@media all and (max-width: 450px) {\n  #safello-container h3 {\n    top: -20px !important;\n  }\n}\n@media all and (max-width: 352px) {\n  #safello-container h3 {\n    font-size: 23px;\n  }\n}\n#safello-container h3.show {\n  top: 0;\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n}\n#safello-container h3 .logo {\n  text-indent: -9999px;\n  white-space: nowrap;\n  color: transparent;\n  position: relative;\n  top: -9px;\n  width: 150px;\n  height: 39px;\n  margin-right: 5px;\n  display: inline-block;\n  background-image: url(\"/images/safello-logo.svg\");\n  z-index: 1;\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#safello-container .artwork-mobile {\n  width: 300px;\n  height: 800px;\n  background-image: url(\"/images/safello-iphone.png\");\n  background-image: -webkit-image-set(url(\"/images/safello-iphone.png\") 1x, url(\"/images/safello-iphone@2x.png\") 2x);\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n  position: absolute;\n  left: 50%;\n  bottom: -400px;\n  margin-left: -150px;\n  display: none;\n}\n@media all and (max-width: 644px) {\n  #safello-container .artwork-mobile {\n    display: block;\n  }\n}\n@media all and (max-width: 400px) {\n  #safello-container .artwork-mobile {\n    width: 260px;\n    margin-left: -130px;\n    bottom: -370px;\n  }\n}\n#safello-container .artwork-container {\n  position: absolute;\n  left: 50%;\n  bottom: -30px;\n}\n@media all and (max-width: 644px) {\n  #safello-container .artwork-container {\n    display: none;\n  }\n}\n#safello-container .artwork-container .window {\n  width: 626px;\n  height: 379px;\n  position: absolute;\n  left: 50%;\n  bottom: -360px;\n  background-image: url(\"/images/safello-window-2.png\");\n  background-image: -webkit-image-set(url(\"/images/safello-window-2.png\") 1x, url(\"/images/safello-window-2@2x.png\") 2x);\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n  -webkit-transition: all 0.5s;\n  -moz-transition: all 0.5s;\n  -o-transition: all 0.5s;\n  -ms-transition: all 0.5s;\n  transition: all 0.5s;\n}\n#safello-container .artwork-container .window.center {\n  width: 626px;\n  height: 379px;\n  margin-left: -313px;\n  z-index: 1;\n}\n#safello-container .artwork-container .window.left {\n  background-image: url(\"/images/safello-window.png\");\n  background-image: -webkit-image-set(url(\"/images/safello-window.png\") 1x, url(\"/images/safello-window@2x.png\") 2x);\n  width: 526px;\n  bottom: -50px;\n  margin-left: -320px;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  -webkit-transform: perspective(1000px) rotateY(-20deg);\n  -moz-transform: perspective(1000px) rotateY(-20deg);\n  -o-transform: perspective(1000px) rotateY(-20deg);\n  -ms-transform: perspective(1000px) rotateY(-20deg);\n  /* transform: perspective(1000px) rotateY(-20deg); */\n  -webkit-transition-delay: 0.3s;\n  -moz-transition-delay: 0.3s;\n  -o-transition-delay: 0.3s;\n  -ms-transition-delay: 0.3s;\n  transition-delay: 0.3s;\n}\n#safello-container .artwork-container .window.right {\n  background-image: url(\"/images/safello-window-3.png\");\n  background-image: -webkit-image-set(url(\"/images/safello-window-3.png\") 1x, url(\"/images/safello-window-3@2x.png\") 2x);\n  width: 526px;\n  bottom: -50px;\n  margin-right: -320px;\n  left: auto;\n  right: 50%;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  -webkit-transform: perspective(1000px) rotateY(20deg);\n  -moz-transform: perspective(1000px) rotateY(20deg);\n  -o-transform: perspective(1000px) rotateY(20deg);\n  -ms-transform: perspective(1000px) rotateY(20deg);\n  transform: perspective(1000px) rotateY(20deg);\n  -webkit-transition-delay: 0.3s;\n  -moz-transition-delay: 0.3s;\n  -o-transition-delay: 0.3s;\n  -ms-transition-delay: 0.3s;\n  transition-delay: 0.3s;\n}\n#safello-container .artwork-container.show .center {\n  bottom: -30px;\n}\n#safello-container .artwork-container.show .left {\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n  margin-left: -500px;\n}\n@media all and (max-width: 968px) {\n  #safello-container .artwork-container.show .left {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n}\n#safello-container .artwork-container.show .right {\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n  margin-right: -500px;\n}\n@media all and (max-width: 968px) {\n  #safello-container .artwork-container.show .right {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n}\n#ludu-container {\n  height: 544px;\n  background: -webkit-linear-gradient(top, #6ba43f, #38ab6d);\n  background: -moz-linear-gradient(top, #6ba43f, #38ab6d);\n  background: -o-linear-gradient(top, #6ba43f, #38ab6d);\n  background: -ms-linear-gradient(top, #6ba43f, #38ab6d);\n  background: linear-gradient(to bottom, #6ba43f, #38ab6d);\n  position: relative;\n}\n@media all and (max-width: 450px) {\n  #ludu-container {\n    height: 444px;\n  }\n}\n#ludu-container::after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-image: url(\"/images/ludu-bg.png\");\n  background-image: -webkit-image-set(url(\"/images/ludu-bg.png\") 1x, url(\"/images/ludu-bg@2x.png\") 2x);\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#ludu-container h3 {\n  padding-top: 100px;\n  max-width: 700px;\n  padding-bottom: 0;\n  top: -20px;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  -webkit-transition: all 0.5s;\n  -moz-transition: all 0.5s;\n  -o-transition: all 0.5s;\n  -ms-transition: all 0.5s;\n  transition: all 0.5s;\n}\n#ludu-container h3.show {\n  top: 0;\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n}\n@media all and (max-width: 680px) {\n  #ludu-container h3 {\n    top: -50px !important;\n  }\n}\n@media all and (max-width: 540px) {\n  #ludu-container h3 {\n    margin: 0 20px;\n  }\n}\n#ludu-container h3 .logo {\n  text-indent: -9999px;\n  white-space: nowrap;\n  color: transparent;\n  position: relative;\n  top: -35px;\n  width: 162px;\n  height: 88px;\n  display: inline-block;\n  z-index: 1;\n  background-image: url(\"/images/ludu-logo.png\");\n  background-image: -webkit-image-set(url(\"/images/ludu-logo.png\") 1x, url(\"/images/ludu-logo@2x.png\") 2x);\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n@media all and (max-width: 680px) {\n  #ludu-container h3 .logo {\n    top: 20px;\n    display: block;\n    margin: 0 auto;\n  }\n}\n@media all and (max-width: 450px) {\n  #ludu-container ul.art {\n    margin-top: -90px;\n  }\n}\n#ludu-container ul.art li {\n  display: inline-block;\n  position: relative;\n  margin: 20px;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  -webkit-transition: all 0.1s;\n  -moz-transition: all 0.1s;\n  -o-transition: all 0.1s;\n  -ms-transition: all 0.1s;\n  transition: all 0.1s;\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n@media all and (max-width: 1030px) {\n  #ludu-container ul.art li {\n    margin: 10px;\n  }\n}\n#ludu-container ul.art li.thanks {\n  width: 137px;\n  height: 135px;\n  background-image: url(\"/images/ludu-thanks.png\");\n  background-image: -webkit-image-set(url(\"/images/ludu-thanks.png\") 1x, url(\"/images/ludu-thanks@2x.png\") 2x);\n}\n@media all and (max-width: 680px) {\n  #ludu-container ul.art li.thanks {\n    top: 40px;\n  }\n}\n@media all and (max-width: 450px) {\n  #ludu-container ul.art li.thanks {\n    width: 80px;\n    height: 80px;\n  }\n}\n#ludu-container ul.art li.blocks {\n  width: 252px;\n  height: 183px;\n  bottom: -100px;\n  background-image: url(\"/images/ludu-blocks.png\");\n  background-image: -webkit-image-set(url(\"/images/ludu-blocks.png\") 1x, url(\"/images/ludu-blocks@2x.png\") 2x);\n}\n@media all and (max-width: 450px) {\n  #ludu-container ul.art li.blocks {\n    width: 180px;\n    height: 150px;\n  }\n}\n#ludu-container ul.art li.devices {\n  width: 218px;\n  height: 171px;\n  background-image: url(\"/images/ludu-devices.png\");\n  background-image: -webkit-image-set(url(\"/images/ludu-devices.png\") 1x, url(\"/images/ludu-devices@2x.png\") 2x);\n}\n@media all and (max-width: 700px) {\n  #ludu-container ul.art li.devices {\n    display: none;\n  }\n}\n#ludu-container ul.art li.tips {\n  width: 232px;\n  height: 169px;\n  bottom: -100px;\n  background-image: url(\"/images/ludu-donate.png\");\n  background-image: -webkit-image-set(url(\"/images/ludu-donate.png\") 1x, url(\"/images/ludu-donate@2x.png\") 2x);\n}\n@media all and (max-width: 950px) {\n  #ludu-container ul.art li.tips {\n    display: none;\n  }\n}\n#ludu-container ul.art.show li {\n  -webkit-animation: plopIcon 0.3s;\n  -moz-animation: plopIcon 0.3s;\n  -o-animation: plopIcon 0.3s;\n  -ms-animation: plopIcon 0.3s;\n  animation: plopIcon 0.3s;\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n}\n#ludu-container ul.art.show li.blocks {\n  -webkit-animation-delay: 0.1s;\n  -moz-animation-delay: 0.1s;\n  -o-animation-delay: 0.1s;\n  -ms-animation-delay: 0.1s;\n  animation-delay: 0.1s;\n}\n#ludu-container ul.art.show li.devices {\n  -webkit-animation-delay: 0.2s;\n  -moz-animation-delay: 0.2s;\n  -o-animation-delay: 0.2s;\n  -ms-animation-delay: 0.2s;\n  animation-delay: 0.2s;\n}\n#ludu-container ul.art.show li.tips {\n  -webkit-animation-delay: 0.3s;\n  -moz-animation-delay: 0.3s;\n  -o-animation-delay: 0.3s;\n  -ms-animation-delay: 0.3s;\n  animation-delay: 0.3s;\n}\n#frs-container {\n  height: 544px;\n  background-color: #5f533f;\n  position: relative;\n  overflow: hidden;\n  background-image: url(\"/images/frs-bg.jpg\");\n  background-image: -webkit-image-set(url(\"/images/frs-bg.jpg\") 1x, url(\"/images/frs-bg@2x.jpg\") 2x);\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n@media all and (max-width: 930px) {\n  #frs-container {\n    background-position: left center;\n  }\n}\n@media all and (max-width: 500px) {\n  #frs-container {\n    height: 344px;\n  }\n}\n#frs-container h3 {\n  padding-top: 200px;\n  margin: 20px auto;\n  display: none;\n}\n@media all and (max-width: 650px) {\n  #frs-container h3 {\n    margin: 20px;\n  }\n}\n@media all and (max-width: 500px) {\n  #frs-container h3 {\n    font-size: 20px;\n    line-height: 47px;\n    top: -80px !important;\n    opacity: 1 !important;\n    -ms-filter: none;\n    filter: none;\n    display: block !important;\n  }\n}\n@media all and (max-width: 364px) {\n  #frs-container h3 {\n    top: -100px !important;\n  }\n}\n#frs-container h3 .logo {\n  text-indent: -9999px;\n  white-space: nowrap;\n  color: transparent;\n  position: relative;\n  top: -9px;\n  width: 44px;\n  height: 44px;\n  display: inline-block;\n  background-image: url(\"/images/frs-logo.svg\");\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#other-things-container {\n  padding-bottom: 50px;\n  background: -webkit-linear-gradient(top, #3f3d38, #413e38);\n  background: -moz-linear-gradient(top, #3f3d38, #413e38);\n  background: -o-linear-gradient(top, #3f3d38, #413e38);\n  background: -ms-linear-gradient(top, #3f3d38, #413e38);\n  background: linear-gradient(to bottom, #3f3d38, #413e38);\n}\n#other-things-container h3 {\n  font-size: 23px;\n  color: #cfc9c0;\n}\n#other-things-container ul.icons a {\n  display: inline-block;\n  margin: 0 40px;\n  cursor: pointer;\n}\n@media all and (max-width: 515px) {\n  #other-things-container ul.icons a {\n    display: block;\n    margin: 40px;\n  }\n}\n#other-things-container ul.icons a .icon {\n  display: inline-block;\n  width: 90px;\n  height: 90px;\n  margin-bottom: 12px;\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#other-things-container ul.icons a.sweetalert .icon {\n  -webkit-background-size: 74px;\n  -moz-background-size: 74px;\n  background-size: 74px;\n}\n#other-things-container ul.icons a.sevenesque .icon {\n  -webkit-background-size: 85px;\n  -moz-background-size: 85px;\n  background-size: 85px;\n}\n#other-things-container ul.icons a.jarvios .icon {\n  -webkit-background-size: 73px;\n  -moz-background-size: 73px;\n  background-size: 73px;\n}\n#other-things-container ul.icons a.sweetalert .icon {\n  background-image: url(\"/images/sweetalert-icon.png\");\n  background-image: -webkit-image-set(url(\"/images/sweetalert-icon.png\") 1x, url(\"/images/sweetalert-icon@2x.png\") 2x);\n}\n#other-things-container ul.icons a.sevenesque .icon {\n  background-image: url(\"/images/sevenesque-icon.png\");\n  background-image: -webkit-image-set(url(\"/images/sevenesque-icon.png\") 1x, url(\"/images/sevenesque-icon@2x.png\") 2x);\n}\n#other-things-container ul.icons a.jarvios .icon {\n  background-image: url(\"/images/jarvios-icon.png\");\n  background-image: -webkit-image-set(url(\"/images/jarvios-icon.png\") 1x, url(\"/images/jarvios-icon@2x.png\") 2x);\n}\n#other-things-container ul.icons a h4 {\n  color: #8a8a8a;\n  font-size: 17px;\n  font-weight: 300;\n  -webkit-transition: color 0.3s;\n  -moz-transition: color 0.3s;\n  -o-transition: color 0.3s;\n  -ms-transition: color 0.3s;\n  transition: color 0.3s;\n}\n#other-things-container ul.icons a:hover h4 {\n  color: #fff;\n}\n#contact-container {\n  background-color: #615f67;\n  padding-top: 60px;\n}\n#contact-container .icon {\n  width: 90px;\n  height: 90px;\n  background-image: url(\"/images/avatar-small.png\");\n  background-image: -webkit-image-set(url(\"/images/avatar-small.png\") 1x, url(\"/images/avatar-small@2x.png\") 2x);\n  -webkit-border-radius: 50%;\n  border-radius: 50%;\n  margin: 0 auto 30px auto;\n}\n#contact-container .contact {\n  -webkit-border-radius: 36px;\n  border-radius: 36px;\n  border: 3px solid #fff;\n  padding: 16px 58px;\n  text-transform: uppercase;\n  font-weight: 600;\n  font-size: 20px;\n  display: inline-block;\n  margin-top: 5px;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  -o-transition: all 0.3s;\n  -ms-transition: all 0.3s;\n  transition: all 0.3s;\n  cursor: pointer;\n}\n#contact-container .contact:hover {\n  background-color: rgba(255,255,255,0.1);\n}\n#contact-container footer {\n  margin-top: 100px;\n  padding-bottom: 30px;\n  color: #9a999f;\n}\n#contact-container footer .te-logo {\n  text-indent: -9999px;\n  white-space: nowrap;\n  color: transparent;\n  -webkit-background-size: contain;\n  -moz-background-size: contain;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n  height: 16px;\n  width: 16px;\n  display: inline-block;\n  margin-right: 5px;\n  background-image: url(\"/images/te-logo-small.svg\");\n}\n@-moz-keyframes pulseIcon {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n@-webkit-keyframes pulseIcon {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n@-o-keyframes pulseIcon {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n@keyframes pulseIcon {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n@-moz-keyframes poofIcon {\n  0% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  30% {\n    opacity: 0.3;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)\";\n    filter: alpha(opacity=30);\n  }\n  100% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n    -webkit-transform: scale(2.4);\n    -moz-transform: scale(2.4);\n    -o-transform: scale(2.4);\n    -ms-transform: scale(2.4);\n    transform: scale(2.4);\n  }\n}\n@-webkit-keyframes poofIcon {\n  0% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  30% {\n    opacity: 0.3;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)\";\n    filter: alpha(opacity=30);\n  }\n  100% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n    -webkit-transform: scale(2.4);\n    -moz-transform: scale(2.4);\n    -o-transform: scale(2.4);\n    -ms-transform: scale(2.4);\n    transform: scale(2.4);\n  }\n}\n@-o-keyframes poofIcon {\n  0% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  30% {\n    opacity: 0.3;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)\";\n    filter: alpha(opacity=30);\n  }\n  100% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n    -webkit-transform: scale(2.4);\n    -moz-transform: scale(2.4);\n    -o-transform: scale(2.4);\n    -ms-transform: scale(2.4);\n    transform: scale(2.4);\n  }\n}\n@keyframes poofIcon {\n  0% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  30% {\n    opacity: 0.3;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)\";\n    filter: alpha(opacity=30);\n  }\n  100% {\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n    -webkit-transform: scale(2.4);\n    -moz-transform: scale(2.4);\n    -o-transform: scale(2.4);\n    -ms-transform: scale(2.4);\n    transform: scale(2.4);\n  }\n}\n@-moz-keyframes arrowHint {\n  0% {\n    bottom: 20px;\n  }\n  100% {\n    bottom: 10px;\n  }\n}\n@-webkit-keyframes arrowHint {\n  0% {\n    bottom: 20px;\n  }\n  100% {\n    bottom: 10px;\n  }\n}\n@-o-keyframes arrowHint {\n  0% {\n    bottom: 20px;\n  }\n  100% {\n    bottom: 10px;\n  }\n}\n@keyframes arrowHint {\n  0% {\n    bottom: 20px;\n  }\n  100% {\n    bottom: 10px;\n  }\n}\n@-moz-keyframes plopIcon {\n  0% {\n    -webkit-transform: scale(0.3);\n    -moz-transform: scale(0.3);\n    -o-transform: scale(0.3);\n    -ms-transform: scale(0.3);\n    transform: scale(0.3);\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n    opacity: 1;\n    -ms-filter: none;\n    filter: none;\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n@-webkit-keyframes plopIcon {\n  0% {\n    -webkit-transform: scale(0.3);\n    -moz-transform: scale(0.3);\n    -o-transform: scale(0.3);\n    -ms-transform: scale(0.3);\n    transform: scale(0.3);\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n    opacity: 1;\n    -ms-filter: none;\n    filter: none;\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n@-o-keyframes plopIcon {\n  0% {\n    -webkit-transform: scale(0.3);\n    -moz-transform: scale(0.3);\n    -o-transform: scale(0.3);\n    -ms-transform: scale(0.3);\n    transform: scale(0.3);\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n    opacity: 1;\n    -ms-filter: none;\n    filter: none;\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n@keyframes plopIcon {\n  0% {\n    -webkit-transform: scale(0.3);\n    -moz-transform: scale(0.3);\n    -o-transform: scale(0.3);\n    -ms-transform: scale(0.3);\n    transform: scale(0.3);\n    opacity: 0;\n    -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n    filter: alpha(opacity=0);\n  }\n  50% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    transform: scale(1.1);\n    opacity: 1;\n    -ms-filter: none;\n    filter: none;\n  }\n  100% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -o-transform: scale(1);\n    -ms-transform: scale(1);\n    transform: scale(1);\n  }\n}\n/*# sourceMappingURL=index.css.map */\n",
-			"settings":
-			{
-				"buffer_size": 29416,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/components/Experience/Experience.scss",
-			"settings":
-			{
-				"buffer_size": 427,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/components/App/App.js",
-			"settings":
-			{
-				"buffer_size": 557,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/components/About/About.js",
-			"settings":
-			{
-				"buffer_size": 1477,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/components/About/About.scss",
-			"settings":
-			{
-				"buffer_size": 411,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 2005,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/components/App/App.scss",
-			"settings":
-			{
-				"buffer_size": 498,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -147,17 +99,13 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 160.0,
-		"last_filter": "ssxcss",
+		"height": 400.0,
+		"last_filter": "save",
 		"selected_items":
 		[
 			[
-				"ssxcss",
-				"Set Syntax: CSS"
-			],
-			[
-				"ssxbab",
-				"Set Syntax: JavaScript (Babel)"
+				"save",
+				"Project: Save As"
 			],
 			[
 				"ssjsonba",
@@ -220,10 +168,6 @@
 				"Project: Edit Project"
 			],
 			[
-				"save",
-				"Project: Save As"
-			],
-			[
 				"ins",
 				"Package Control: Install Package"
 			]
@@ -251,41 +195,44 @@
 	[
 		"/Users/mmcdermott/dev/mgmcdermott.com",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills"
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server"
 	],
 	"file_history":
 	[
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/index.html",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/_base.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing/Landing.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing/Landing.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/server.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/routes.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/mgmcdermott.sublime-project",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintrc",
+		"/Users/mmcdermott/.bash_profile",
+		"/Users/mmcdermott/Google Drive/defaults/.zshrc",
+		"/Users/mmcdermott/.zshrc",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Resumes/Resume.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Resumes/Resume.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/index.html",
-		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/mgmcdermott.sublime-project",
-		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintignore",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Resumes/jsCode.text",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/prettify.css.erb.css.erb",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts/run_prettify.min.js",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/reg_replace.sublime-settings",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts/client.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/.jsbeautifyrc",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
-		"/Users/mmcdermott/dev/kevinandkevin/src/client/scripts/client.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintrc",
-		"/Users/mmcdermott/dev/kevinandkevin/src/app/components/MainBanner/MainBanner.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/.tern-port",
 		"/Users/mmcdermott/dev/mgmcdermott.com/.tern-project",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
@@ -365,7 +312,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -382,19 +329,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"from",
+			"      :",
+			"error",
+			"mailOptions",
+			"nodemailer",
+			"background-color: $color-green-sea;",
+			";\n",
+			"Contact",
+			"About",
+			"nodejs",
+			"sass",
+			"marathon",
+			"docker",
+			"fadeInLeftBig",
+			"rotateIn",
+			"fadeInLeftBig",
+			"handleScroll",
 			"h3",
-			"experience",
-			"Experience",
-			"navHeight",
-			"heightToShow",
-			"title",
-			"nav",
-			"title_height",
-			"header_height",
-			"mainbottom",
-			"top",
-			"str",
-			"kwd",
+			"  $('.",
 			"vm.center",
 			"MEPLINCS",
 			"LINCSPCCSE",
@@ -450,256 +403,14 @@
 	"groups":
 	[
 		{
-			"selected": 6,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/app/components/Experience/Experience.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1248,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								221
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 29416,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6975,
-								6975
-							]
-						],
-						"settings":
-						{
-							"default_dir": "/Users/mmcdermott/dev/mgmcdermott.com",
-							"is_xml": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5547.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/app/components/Experience/Experience.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 427,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								204,
-								204
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/app/components/App/App.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 557,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								306,
-								306
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/app/components/About/About.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1477,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								201,
-								201
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/app/components/About/About.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 411,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								285,
-								285
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1994,
-								1994
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Seti_UI/Langs/Git.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1529.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/app/components/App/App.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 498,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								443,
-								443
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -740,7 +451,7 @@
 	"project": "mgmcdermott.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -750,68 +461,60 @@
 		"selected_items":
 		[
 			[
-				"apscs",
-				"src/app/components/App/App.scss"
+				"indexht",
+				"src/client/index.html"
 			],
 			[
-				"abouts",
-				"src/app/components/About/About.scss"
+				"skills",
+				"src/app/components/Skills/Skills.scss"
 			],
 			[
-				"about.",
-				"src/app/components/About/About.js"
+				"star",
+				"src/app/components/Star/Star.scss"
 			],
 			[
-				"apps",
-				"src/app/components/App/App.js"
-			],
-			[
-				"bases",
-				"src/app/_base.scss"
+				"header",
+				"src/app/components/Header/Header.js"
 			],
 			[
 				"appscs",
 				"src/app/components/App/App.scss"
 			],
 			[
-				"aboutscs",
+				"abou",
 				"src/app/components/About/About.scss"
-			],
-			[
-				"nav",
-				"src/app/components/Nav/Nav.js"
 			],
 			[
 				"about",
 				"src/app/components/About/About.js"
 			],
 			[
-				"landin",
-				"src/app/components/Landing/Landing.js"
-			],
-			[
-				"gulf",
-				"gulpfile.js"
-			],
-			[
-				"idnex",
-				"src/client/index.html"
+				"nav",
+				"src/app/components/Nav/Nav.js"
 			],
 			[
 				"inde",
 				"src/client/index.html"
 			],
 			[
-				"navjs",
-				"src/app/components/Nav/Nav.js"
+				"resume",
+				"src/app/components/Resumes/Resume.js"
 			],
 			[
-				"res",
-				"src/app/components/Resumes/Resume.scss"
+				"resu",
+				"src/app/components/Resumes/jsCode.text"
 			],
 			[
 				"base",
 				"src/app/_base.scss"
+			],
+			[
+				"gulpf",
+				"gulpfile.js"
+			],
+			[
+				"r",
+				"src/app/components/Resumes/Resume.scss"
 			],
 			[
 				"grps",
@@ -932,7 +635,7 @@
 		[
 			[
 				"",
-				"~/Work/ldr/ldr.sublime-project"
+				"~/Work/lincs-milestones/lincsMilestones.sublime-project"
 			],
 			[
 				"ldr",
@@ -953,12 +656,21 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 215.0,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

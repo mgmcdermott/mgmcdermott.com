@@ -1,4 +1,7 @@
 @import '../../base';
+@import '../../animations/fadeInDownBig.scss';
+@import '../../animations/rotateInDownLeft.scss';
+@import '../../animations/rotateInDownRight.scss';
 
 .mgm-headshot {
   height: 150px;
@@ -12,10 +15,6 @@
 .about {
   background-color: white;
   flex-direction: column;
-}
-
-.about-header {
-  color: $color-blue;
 }
 
 .about-inner {

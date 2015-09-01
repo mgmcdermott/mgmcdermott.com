@@ -40,7 +40,7 @@ var Landing = React.createClass({
 
   render: function() {
     return (
-      <div className="mgm-container center name">
+      <div id="landing" className="mgm-container center name">
         <h1 className="typed"></h1>
         <a href="#about">
           <svg version="1.1" x="0px" y="0px"

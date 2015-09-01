@@ -1,33 +1,51 @@
 var React = require('react');
+var ExecutionEnvironment = require('react/lib/ExecutionEnvironment');
+var cx = require('classnames');
 
 var Experience = React.createClass({
-
+  componentWillMount: function() {
+    if (ExecutionEnvironment.canUseDOM) {
+      window.addEventListener('scroll', this.revealOnScroll, false);
+    }
+  },
+  componentWillUnmount: function() {
+    window.removeEventListener('scroll', this.revealOnScroll);
+  },
+  getInitialState: function() {
+    return {
+      hidden: true,
+      animated: false,
+      fadeInLeftBig: false
+    };
+  },
   render: function() {
+    var workClasses = cx({
+      'work': true,
+      'hidden': this.state.hidden,
+      'animated': this.state.animated,
+      'fadeInLeftBig': this.state.fadeInLeftBig
+    });
     return (
       <div id="experience" className="mgm-container experience">
-        <h2 className="mgm-header experience-header">Experience</h2>
-        <div className="mgm-inner">
-          <div className="work">
-            <div className="work-header">
-              <h3 className="company">Icahn School of Medicine at Mount Sinai</h3>
-              <h3 className="work-date">November 2014 - Present</h3>
-            </div>
-            <h4 className="job-title">Researcher/Programmer Analyst</h4>
-            <p className="job-desc">Foo bar</p>
-            <div className="work-header">
-              <h3 className="company">University of Connecticut School of Fine Arts</h3>
-              <h3 className="work-date">August 2013 - June 2014</h3>
-            </div>
-            <h4 className="job-title">IT Assistant</h4>
-            <p className="job-desc">
-              In addition to repairing and installing computers, I was part of
-              a team responsible for the development and maintaining of
-              http://art.uconn.edu
-            </p>
+        <div className="experience-inner">
+          <div className={workClasses}>
+            <h2>
+              Currently I work as a Researcher Programmer/Analyst <br />
+              at the Icahn School of Medicine at Mount Sinai, developing <br />
+              websites and applications to help researchers be more productive.
+            </h2>
           </div>
         </div>
       </div>
     );
+  },
+  revealOnScroll: function() {
+    var heightToShow = window.innerHeight * 1.25;
+
+    if (window.pageYOffset > heightToShow && !this.state.animated) {
+      this.setState({ hidden: false, animated: true, fadeInLeftBig: true });
+      window.removeEventListener('scroll', this.revealOnScroll);
+    }
   }
 
 });
