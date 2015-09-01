@@ -1,24 +1,23 @@
 @import '../../base';
 
 .footer {
-  border-top: 1px solid $color-blue-light-border;
   background-color: $color-blue;
+  border-top: 1px solid $color-blue-light-border;
   display: flex;
 }
 
 .icons {
-  padding: 20px 0;
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  padding: 20px 0;
 }
 
 .resume,
 .linkedin,
 .twitter,
 .github {
-
   margin: 0 5px;
 
   svg {
