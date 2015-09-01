@@ -23,17 +23,16 @@ var Nav = React.createClass({
     });
     return (
       <div className={navClasses}>
-        <div className="nav-inner">
+        <div className="mgm-inner nav-inner">
           <div className="logo">
-            <a href="#landing">
-              .<span className="mgm-kwd">mgm</span>
-            </a>
+            <a href="#landing">.<span className="mgm-kwd">mgm</span></a>
           </div>
           <div className="nav-right">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
+            {/*<a href="http://blog.mgmcdermott.com*/}
           </div>
         </div>
       </div>

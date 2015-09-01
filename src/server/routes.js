@@ -26,8 +26,9 @@ module.exports = function(app, dir) {
     transporter.sendMail(opts, function(err, info) {
       if (err) {
         console.log(err);
+        res.status(500).send('An error occurred sending email');
       } else {
-        console.log('Message sent: ' + info.response);
+        res.status(200).send('Message sent: ' + info.response);
       }
     });
   });

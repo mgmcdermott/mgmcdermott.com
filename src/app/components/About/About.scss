@@ -1,19 +1,19 @@
 @import '../../base';
-@import '../../animations/fadeInDownBig.scss';
-@import '../../animations/rotateInDownLeft.scss';
-@import '../../animations/rotateInDownRight.scss';
+@import '../../animations/fadeInDownBig';
+@import '../../animations/rotateInDownLeft';
+@import '../../animations/rotateInDownRight';
 
 .mgm-headshot {
-  height: 150px;
-  width: 300px;
-  color: white;
+  background-color: $color-blue;
+  color: $color-white;
+  height: 250px;
+  padding-top: 120px;
   text-align: center;
-  padding-top: 150px;
-  background-color: darkgray;
+  width: 300px;
 }
 
 .about {
-  background-color: white;
+  background-color: $color-white;
   flex-direction: column;
 }
 
@@ -22,6 +22,7 @@
   @media all and (max-width: $break-small) {
     flex-direction: column;
   }
+
   * {
     flex: 1;
   }

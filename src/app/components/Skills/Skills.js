@@ -5,8 +5,14 @@ var Header = require('../Header/Header');
 
 var Skills = React.createClass({
   render: function() {
+    // Don't forget to add mgm-container back to outer-div once completed
     return (
-      <div id="skills" className="mgm-container skills">
+      <div id="skills" className="skills">
+        <div className="under-construction">
+          <div className="construction-banner">
+            <h1>This section is under construction. Hold tight!</h1>
+          </div>
+        </div>
         <Header title="Some Things I Enjoy Working With" windowMult={2} />
         <div className="mgm-inner">
           <div className="mgm-logos">

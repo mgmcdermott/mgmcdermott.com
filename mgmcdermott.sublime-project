@@ -3,7 +3,7 @@
   [
     {
       "path": ".",
-      "folder_exclude_patterns": [".idea", "node_modules", "build"],
+      "folder_exclude_patterns": [".idea", "node_modules", "build", "resources"],
       "file_exclude_patterns": [".tern-port"]
     }
   ]

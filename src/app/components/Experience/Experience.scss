@@ -1,26 +1,26 @@
 @import '../../base';
-@import '../../animations/fadeInLeftBig.scss';
+@import '../../animations/fadeInLeftBig';
 
 .experience {
+  align-items: flex-start;
   background: url('../../images/ms-background.jpg') no-repeat center fixed;
   background-size: cover;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
 }
 
 .experience-inner {
-  height: 50%;
-  display: flex;
   align-items: flex-end;
+  display: flex;
+  height: 50%;
 }
 
 .work {
-  background-color: rgba(23, 53, 73, 0.75);
+  background-color: rgba(23, 53, 73, .75);
 
   h2 {
+    color: $color-white;
     font-weight: 500;
-    color: white;
     padding: 10px 100px;
   }
 }

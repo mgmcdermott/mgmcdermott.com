@@ -2,6 +2,97 @@
 
 .contact {
   background-color: $color-blue-light;
-  // background-color: $color-yellow;
   flex-direction: column;
+  padding: 96px 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.contact-inner,
+.form-info,
+.form-body,
+.form-buttons {
+  display: flex;
+}
+
+.contact-inner {
+  flex-direction: column;
+}
+
+$form-width: 600px;
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+  width: 390px;
+  @media (min-width: $break-small) {
+    width: $form-width;
+  }
+
+  input,
+  textarea {
+    border: 1px solid $color-blue-light-border;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+  }
+
+  textarea {
+    height: 200px;
+    resize: none;
+  }
+}
+
+.form-info {
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  input {
+    flex: 1;
+  }
+
+  input:first-child {
+    margin-right: 5px;
+  }
+
+  @media (min-width: $break-small) {
+    flex-direction: row;
+  }
+}
+
+.form-body {
+  flex-direction: column;
+}
+
+.form-buttons {
+  justify-content: flex-end;
+}
+
+.button {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: $color-white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-submit {
+  background-color: $color-blue;
+  margin-right: 5px;
+}
+
+.button-reset {
+  background-color: $color-orange;
 }

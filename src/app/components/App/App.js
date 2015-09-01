@@ -10,6 +10,7 @@ var About = require('../About/About');
 var Experience = require('../Experience/Experience');
 var Skills = require('../Skills/Skills');
 var Contact = require('../Contact/Contact');
+var Footer = require('../Footer/Footer');
 
 var App = React.createClass({
 
@@ -22,6 +23,7 @@ var App = React.createClass({
         <Experience />
         <Skills />
         <Contact />
+        <Footer />
       </div>
     );
   }
