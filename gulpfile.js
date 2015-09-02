@@ -57,7 +57,7 @@ gulp.task('images', function() {
 
 gulp.task('sass', function() {
   src.styles = [
-    'src/app/**/*.scss'
+    'src/app/components/App/App.scss'
   ];
   var processors = [
     autoprefixer({browsers: ['last 2 versions']}),
@@ -78,7 +78,7 @@ gulp.task('copy', function() {
   src.static = [
     'src/app/server/**',
     'src/client/index.html',
-    'src/client/libs/**'
+    'src/libs/**'
   ];
   return gulp.src(src.static)
     .pipe($.changed('build'))
@@ -210,7 +210,7 @@ gulp.task('sync', ['serve'], function(cb) {
 gulp.task('deploy', function(cb) {
   var push = require('git-push');
   if (argv.production) {
-    push('./build', 'ssh://mgm@copper/var/repo/kevinandkevin.git', cb);
+    push('./build', 'ssh://mgm@mgm-mini/var/repo/mgmcdermott.git', cb);
   } else {
     push('.', 'https://github.com/mgmcdermott/mgmcdermott.com.git', cb);
   }

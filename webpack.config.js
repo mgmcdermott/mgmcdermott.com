@@ -55,6 +55,11 @@ var config = {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },
 
+  externals: {
+    'react': 'React',
+    'jquery': 'jQuery'
+  },
+
   module: {
     preLoaders: [
       {

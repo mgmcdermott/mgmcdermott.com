@@ -1,8 +1,12 @@
 var nodeMailer = require('nodemailer');
+var React = require('react');
+var App = require('../app/components/App/App');
 
-module.exports = function(app, dir) {
+module.exports = function(app) {
   app.get('/', function(req, res) {
-    res.sendFile(dir + '/index.html');
+    res.setHeader('Content-Type', 'text/html');
+    var html = React.renderToStaticMarkup(App);
+    res.end(html);
   });
 
   // create reusable transporter object using SMTP transport
