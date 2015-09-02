@@ -5,7 +5,12 @@ var App = require('../app/components/App/App');
 module.exports = function(app) {
   app.get('/', function(req, res) {
     res.setHeader('Content-Type', 'text/html');
-    var html = React.renderToStaticMarkup(App);
+    var html = React.renderToStaticMarkup(
+
+      <div id="app">
+        <App />
+      </div>
+    );
     res.end(html);
   });
 

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"flex-",
+				"flex-grow"
+			],
+			[
 				"fadeInU",
 				"fadeInUpBig.scss"
 			],
@@ -100,9 +104,21 @@
 	"command_palette":
 	{
 		"height": 400.0,
-		"last_filter": "save",
+		"last_filter": "remove",
 		"selected_items":
 		[
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"gitgit",
+				"GitGutter: Show Comparing Against"
+			],
+			[
+				"enable lin",
+				"SublimeLinter: Enable Linter"
+			],
 			[
 				"save",
 				"Project: Save As"
@@ -118,10 +134,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
 			],
 			[
 				"remove ",
@@ -172,7 +184,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 538.0
+		"width": 592.0
 	},
 	"console":
 	{
@@ -195,33 +207,46 @@
 	[
 		"/Users/mmcdermott/dev/mgmcdermott.com",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/client",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/server"
 	],
 	"file_history":
 	[
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/index.html",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/_base.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/server.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/routes.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/webpack.config.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing/Landing.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/_base.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Footer/Footer.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Footer/Footer.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/ComingSoon/ComingSoon.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.scss",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintrc",
 		"/Users/mmcdermott/dev/mgmcdermott.com/mgmcdermott.sublime-project",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/server.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintrc",
 		"/Users/mmcdermott/.bash_profile",
 		"/Users/mmcdermott/Google Drive/defaults/.zshrc",
 		"/Users/mmcdermott/.zshrc",
@@ -230,8 +255,6 @@
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Resumes/jsCode.text",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/prettify.css.erb.css.erb",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts/run_prettify.min.js",
-		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
 		"/Users/mmcdermott/dev/mgmcdermott.com/.tern-project",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
@@ -319,6 +342,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/mmcdermott/dev/mgmcdermott.com/src",
 			"/Users/mmcdermott/Work/ldr/app/public",
 			"<open folders>",
 			""
@@ -329,6 +353,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Modernizr",
+			"blue",
+			"Contact",
+			"rotateInDownRight",
+			"scss",
+			"handleChange",
 			"from",
 			"      :",
 			"error",
@@ -461,12 +491,72 @@
 		"selected_items":
 		[
 			[
-				"indexht",
-				"src/client/index.html"
+				"contac",
+				"src/app/components/Contact/Contact.scss"
+			],
+			[
+				"app",
+				"src/app/components/App/App.js"
+			],
+			[
+				"appscs",
+				"src/app/components/App/App.scss"
+			],
+			[
+				"about",
+				"src/app/components/About/About.scss"
+			],
+			[
+				"base",
+				"src/app/_base.scss"
+			],
+			[
+				"coming",
+				"src/app/components/ComingSoon/ComingSoon.js"
+			],
+			[
+				"navjs",
+				"src/app/components/Nav/Nav.js"
+			],
+			[
+				"navsc",
+				"src/app/components/Nav/Nav.scss"
+			],
+			[
+				"nav",
+				"src/app/components/Nav/Nav.scss"
+			],
+			[
+				"headerscs",
+				"src/app/components/Header/Header.scss"
+			],
+			[
+				"skilss",
+				"src/app/components/Skills/Skills.scss"
 			],
 			[
 				"skills",
-				"src/app/components/Skills/Skills.scss"
+				"src/app/components/Skills/Skills.js"
+			],
+			[
+				"expersc",
+				"src/app/components/Experience/Experience.scss"
+			],
+			[
+				"exper",
+				"src/app/components/Experience/Experience.js"
+			],
+			[
+				"experien",
+				"src/app/components/Experience/Experience.js"
+			],
+			[
+				"contact",
+				"src/app/components/Contact/Contact.js"
+			],
+			[
+				"indexht",
+				"src/client/index.html"
 			],
 			[
 				"star",
@@ -477,20 +567,8 @@
 				"src/app/components/Header/Header.js"
 			],
 			[
-				"appscs",
-				"src/app/components/App/App.scss"
-			],
-			[
 				"abou",
 				"src/app/components/About/About.scss"
-			],
-			[
-				"about",
-				"src/app/components/About/About.js"
-			],
-			[
-				"nav",
-				"src/app/components/Nav/Nav.js"
 			],
 			[
 				"inde",
@@ -503,10 +581,6 @@
 			[
 				"resu",
 				"src/app/components/Resumes/jsCode.text"
-			],
-			[
-				"base",
-				"src/app/_base.scss"
 			],
 			[
 				"gulpf",
@@ -559,10 +633,6 @@
 			[
 				"cen",
 				"app/public/centers/centers.scss"
-			],
-			[
-				"app",
-				"app/public/app.js"
 			],
 			[
 				"foo",
@@ -630,9 +700,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "mgm",
 		"selected_items":
 		[
+			[
+				"mgm",
+				"~/dev/mgmcdermott.com/mgmcdermott.sublime-project"
+			],
 			[
 				"",
 				"~/Work/lincs-milestones/lincsMilestones.sublime-project"
