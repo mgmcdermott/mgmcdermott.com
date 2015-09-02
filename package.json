@@ -25,6 +25,7 @@
     "connect-timeout": "^1.6.2",
     "cors": "^2.6.0",
     "express": "^4.12.4",
+    "jquery": "^2.1.4",
     "lodash": "^3.9.1",
     "mongoose": "^4.0.5",
     "morgan": "^1.5.3",
@@ -64,18 +65,12 @@
     "psi": "^1.0.6",
     "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.0",
+    "sass-loader": "^2.0.1",
     "style-loader": "^0.12.2",
     "url-loader": "^0.5.5",
     "webpack": "^1.9.7"
   },
-  "jest": {
-    "scriptPreprocessor": "./tools/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "react"
-    ],
-    "testPathDirs": [
-      "./src/app",
-      "./src/client"
-    ]
+  "scripts": {
+    "deploy": "gulp pre-deploy --production && webpack --release && cd build/ && git add . && git commit -a -m \"App is now rendered on server.\" && git push -f live master"
   }
 }

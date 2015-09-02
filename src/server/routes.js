@@ -1,16 +1,9 @@
 var nodeMailer = require('nodemailer');
-var React = require('react');
-var App = require('../app/components/App/App');
+var html = require('./staticHome');
 
 module.exports = function(app) {
   app.get('/', function(req, res) {
     res.setHeader('Content-Type', 'text/html');
-    var html = React.renderToStaticMarkup(
-
-      <div id="app">
-        <App />
-      </div>
-    );
     res.end(html);
   });
 
@@ -29,7 +22,7 @@ module.exports = function(app) {
       to: 'michael@mgmcdermott.com',
       subject: req.body.subject,
       text: req.body.content
-      // html: '<b>Hello world ✔</b>'
+        // html: '<b>Hello world ✔</b>'
     };
 
     transporter.sendMail(opts, function(err, info) {

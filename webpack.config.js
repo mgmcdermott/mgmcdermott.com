@@ -5,22 +5,13 @@
 
 'use strict';
 
-var _ = require('lodash');
+var merge = require('lodash/object/merge');
 var webpack = require('webpack');
 var argv = require('minimist')(process.argv.slice(2));
 
 var DEBUG = !argv.release;
 var STYLE_LOADER = 'style-loader/useable';
 var CSS_LOADER = DEBUG ? 'css-loader' : 'css-loader?minimize';
-var AUTOPREFIXER_LOADER = 'autoprefixer-loader?{browsers:' + JSON.stringify([
-    'Android 2.3',
-    'Android >= 4',
-    'Chrome >= 20',
-    'Firefox >= 24',
-    'Explorer >= 8',
-    'iOS >= 6',
-    'Opera >= 12',
-    'Safari >= 6']) + '}';
 var GLOBALS = {
   'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
   '__DEV__': DEBUG
@@ -49,22 +40,22 @@ var config = {
 
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin()
+    // new webpack.ProvidePlugin({
+    //     $: require('jquery')(require('jsdom').jsdom().parentWindow),
+    //     jQuery: 'jquery',
+    //     'window.jQuery': 'jquery'
+    // })
   ],
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },
 
-  externals: {
-    'react': 'React',
-    'jquery': 'jQuery'
-  },
-
   module: {
     preLoaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /src\/libs/],
         loader: 'eslint-loader'
       }
     ],
@@ -72,12 +63,7 @@ var config = {
     loaders: [
       {
         test: /\.css$/,
-        loader: STYLE_LOADER + '!' + CSS_LOADER + '!' + AUTOPREFIXER_LOADER
-      },
-      {
-        test: /\.less$/,
-        loader: STYLE_LOADER + '!' + CSS_LOADER + '!' + AUTOPREFIXER_LOADER +
-        '!less-loader'
+        loader: STYLE_LOADER + '!' + CSS_LOADER
       },
       {
         test: /\.gif/,
@@ -108,13 +94,13 @@ var config = {
 // Configuration for the client-side bundle (app.js)
 // -----------------------------------------------------------------------------
 
-var appConfig = _.merge({}, config, {
+var appConfig = merge({}, config, {
   entry: './src/client/scripts/client.js',
   output: {
     filename: 'app.js'
   },
   plugins: config.plugins.concat([
-      new webpack.DefinePlugin(_.merge(GLOBALS, {'__SERVER__': false}))
+      new webpack.DefinePlugin(merge(GLOBALS, {'__SERVER__': false}))
     ].concat(DEBUG ? [] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(),
@@ -127,7 +113,7 @@ var appConfig = _.merge({}, config, {
 // Configuration for the server-side bundle (server.js)
 // -----------------------------------------------------------------------------
 
-var serverConfig = _.merge({}, config, {
+var serverConfig = merge({}, config, {
   entry: './src/server/server.js',
   output: {
     filename: 'server.js',
@@ -144,12 +130,12 @@ var serverConfig = _.merge({}, config, {
     __dirname: false
   },
   plugins: config.plugins.concat(
-    new webpack.DefinePlugin(_.merge(GLOBALS, {'__SERVER__': true}))
+    new webpack.DefinePlugin(merge(GLOBALS, {'__SERVER__': true}))
   ),
   module: {
     loaders: config.module.loaders.map(function(loader) {
       // Remove style-loader
-      return _.merge(loader, {
+      return merge(loader, {
         loader: loader.loader = loader.loader.replace(STYLE_LOADER + '!', '')
       });
     })

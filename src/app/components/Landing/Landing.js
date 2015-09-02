@@ -1,41 +1,31 @@
 var React = require('react');
-var $ = require('jquery');
+var ExecutionEnvironment = require('react/lib/ExecutionEnvironment');
 
-$(function() {
-  $('.typed').typed({
-    strings: [
-    '<<span class="mgm-kwd">div</span> <span class="mgm-class">className</span>=<span class="mgm-str">"mgm-dev"</span>><<span class="mgm-kwd">div</span>>',
-      '<span class="mgm-kwd">var</span> mgm = <span class="mgm-kwd">require</span>(<span class="mgm-str">\'dev\'</span>);',
-      '<span class="mgm-kwd">@import</span> <span class="mgm-str">\'mgm\'</span>;',
-      '<span class="mgm-kwd">FROM</span> mgm:dev',
-      '<span class="mgm-kwd">{%</span> <span class="mgm-kwd">extends</span> <span class="mgm-str">\'mgm.dev\'</span> <span class="mgm-kwd">%}</span>',
-      '<span class="mgm-kwd">from</span> mgm <span class="mgm-kwd">import</span> dev',
-      '<span class="mgm-kwd">SELECT</span> * <span class="mgm-kwd">FROM</span> mgm_dev',
-      'angular<span class="mgm-kwd">.module</span>(<span class="mgm-str">\'mgm\'</span>, [<span class="mgm-str">\'dev\'</span>]);'
+if (ExecutionEnvironment.canUseDOM) {
+  var $ = window.jQuery = require('jquery');
+  require('../../../libs/typed.min.js');
+  $(function() {
+    $('.typed').typed({
+      strings: [
+      '<<span class="mgm-kwd">div</span> <span class="mgm-class">className</span>=<span class="mgm-str">"mgm-dev"</span>><<span class="mgm-kwd">div</span>>',
+        '<span class="mgm-kwd">var</span> mgm = <span class="mgm-kwd">require</span>(<span class="mgm-str">\'dev\'</span>);',
+        '<span class="mgm-kwd">@import</span> <span class="mgm-str">\'mgm\'</span>;',
+        '<span class="mgm-kwd">FROM</span> mgm:dev',
+        '<span class="mgm-kwd">{%</span> <span class="mgm-kwd">extends</span> <span class="mgm-str">\'mgm.dev\'</span> <span class="mgm-kwd">%}</span>',
+        '<span class="mgm-kwd">from</span> mgm <span class="mgm-kwd">import</span> dev',
+        '<span class="mgm-kwd">SELECT</span> * <span class="mgm-kwd">FROM</span> mgm_dev',
+        'angular<span class="mgm-kwd">.module</span>(<span class="mgm-str">\'mgm\'</span>, [<span class="mgm-str">\'dev\'</span>]);'
 
-    ],
-    typeSpeed: 0,
-    backDelay: 1000,
-    loop: true,
-    loopCount: false,
-    contentType: 'html',
-    cursorChar: '|',
-    callback: function() {
-    },
-    // starting callback function before each string
-    preStringTyped: function() {
-
-    },
-    //callback for every typed string
-    onStringTyped: function() {
-
-    },
-    // callback for reset
-    resetCallback: function() {
-
-    }
- });
-});
+      ],
+      typeSpeed: 0,
+      backDelay: 1000,
+      loop: true,
+      loopCount: false,
+      contentType: 'html',
+      cursorChar: '|'
+   });
+  });
+}
 
 var Landing = React.createClass({
 

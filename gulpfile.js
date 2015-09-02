@@ -3,7 +3,6 @@
  * Created on 5/20/15
  */
 
-// Include Gulp and other build automation tools and utilities
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
@@ -19,10 +18,8 @@ var src = {};
 var watch = false;
 var browserSync;
 
-// The default task
 gulp.task('default', ['sync']);
 
-// Clean output directory
 gulp.task('clean', del.bind(
   null, ['.tmp', 'build/*', '!build/.git'], {dot: true}
 ));
@@ -64,20 +61,24 @@ gulp.task('sass', function() {
     mqpacker,
     csswring
   ];
-  return gulp.src(src.styles)
-    .pipe($.sourcemaps.init())
+  var chain = gulp.src(src.styles);
+  if (!argv.production) {
+    chain = chain.pipe($.sourcemaps.init());
+  }
+  chain
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.postcss(processors))
-    .pipe($.concat('main.css'))
-    .pipe($.sourcemaps.write())
-    .pipe($.size({title: 'sass'}))
-    .pipe(gulp.dest('build'));
+    .pipe($.concat('main.css'));
+  if (!argv.production) {
+    chain = chain.pipe($.sourcemaps.write());
+  }
+  return chain.pipe($.size({title: 'sass'}))
+    .pipe(gulp.dest('src/app'));
 });
 
 gulp.task('copy', function() {
   src.static = [
     'src/app/server/**',
-    'src/client/index.html',
     'src/libs/**'
   ];
   return gulp.src(src.static)
@@ -86,7 +87,6 @@ gulp.task('copy', function() {
     .pipe($.size({title: 'static'}));
 });
 
-// Bundle
 gulp.task('bundle', function(cb) {
   var started = false;
   var config = require('./webpack.config.js');
@@ -122,12 +122,18 @@ gulp.task('bundle', function(cb) {
   }
 });
 
-// Build the app from source code
 gulp.task('build', ['clean'], function(cb) {
   runSequence(['vendor', 'favicons', 'images', 'sass', 'copy', 'bundle'], cb);
 });
 
-// Build and start watching for modifications
+gulp.task('pre-deploy', ['clean'], function(cb) {
+  runSequence(['vendor', 'favicons', 'images', 'sass', 'copy'], cb);
+});
+
+gulp.task('build', ['clean'], function(cb) {
+  runSequence(['vendor', 'favicons', 'images', 'sass', 'copy', 'bundle'], cb);
+});
+
 gulp.task('build:watch', function(cb) {
   watch = true;
   runSequence('build', function() {
@@ -139,7 +145,6 @@ gulp.task('build:watch', function(cb) {
   });
 });
 
-// Launch a Node.js/Express server
 gulp.task('serve', ['build:watch'], function(cb) {
   src.server = [
     'build/server.js'
@@ -177,19 +182,13 @@ gulp.task('serve', ['build:watch'], function(cb) {
   });
 });
 
-// Launch BrowserSync development server
 gulp.task('sync', ['serve'], function(cb) {
   browserSync = require('browser-sync');
 
   browserSync({
     logPrefix: 'ME',
     notify: true,
-    // Run as an https by setting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
     https: false,
-    // Informs browser-sync to proxy our Express app which would run
-    // at the following location
     proxy: 'localhost:4224'
   }, cb);
 
@@ -206,21 +205,11 @@ gulp.task('sync', ['serve'], function(cb) {
   });
 });
 
-// Deploy via Git
-gulp.task('deploy', function(cb) {
-  var push = require('git-push');
-  if (argv.production) {
-    push('./build', 'ssh://mgm@mgm-mini/var/repo/mgmcdermott.git', cb);
-  } else {
-    push('.', 'https://github.com/mgmcdermott/mgmcdermott.com.git', cb);
-  }
-});
-
 // Run PageSpeed Insights
 gulp.task('pagespeed', function(cb) {
   var pagespeed = require('psi');
   // Update the below URL to the public URL of your site
-  pagespeed.output('example.com', {
+  pagespeed.output('mgmcdermott.com', {
     strategy: 'mobile'
     // By default we use the PageSpeed Insights free (no API key) tier.
     // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE

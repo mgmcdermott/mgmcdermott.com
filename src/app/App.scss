@@ -1,0 +1,56 @@
+@import '../../base';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app,
+.wrapper {
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.mgm-container {
+  display: flex;
+  min-height: 100%;
+  padding-top: 96px;
+  position: relative;
+  width: 100%;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.mgm-inner {
+  display: flex;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}
+
+@import '../About/About';
+@import '../Contact/Contact';
+@import '../Experience/Experience';
+@import '../Footer/Footer';
+@import '../Header/Header';
+@import '../Landing/Landing';
+@import '../Nav/Nav';
+@import '../Skills/Skills';
