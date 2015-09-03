@@ -28,8 +28,6 @@ module.exports = React.renderToStaticMarkup(
     <meta name="theme-color" content="#ffffff" />
 
     <style id="server-side-style" dangerouslySetInnerHTML={{__html: styles}} />
-    <script src="jquery-2.1.4.min.js"></script>
-    <script src="typed.min.js"></script>
   </head>
   <body>
     <div id="app"><App /></div>

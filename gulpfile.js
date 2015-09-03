@@ -37,6 +37,11 @@ gulp.task('favicons', function() {
   ];
   return gulp.src(src.favicons)
     .pipe($.changed('build'))
+    .pipe($.imagemin({
+      optimizationLevel: 3,
+      progressive: true,
+      interlaced: true
+    }))
     .pipe(gulp.dest('build'))
     .pipe($.size({title: 'favicons'}));
 });
@@ -48,6 +53,11 @@ gulp.task('images', function() {
   ];
   return gulp.src(src.images)
     .pipe($.changed('build/images'))
+    .pipe($.imagemin({
+      optimizationLevel: 3,
+      progressive: true,
+      interlaced: true
+    }))
     .pipe(gulp.dest('build/images'))
     .pipe($.size({title: 'images'}));
 });
@@ -208,11 +218,5 @@ gulp.task('sync', ['serve'], function(cb) {
 // Run PageSpeed Insights
 gulp.task('pagespeed', function(cb) {
   var pagespeed = require('psi');
-  // Update the below URL to the public URL of your site
-  pagespeed.output('mgmcdermott.com', {
-    strategy: 'mobile'
-    // By default we use the PageSpeed Insights free (no API key) tier.
-    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
-    // key: 'YOUR_API_KEY'
-  }, cb);
+  pagespeed.output('http://mgmcdermott.com', cb);
 });

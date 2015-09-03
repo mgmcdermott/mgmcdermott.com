@@ -95,6 +95,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 2006,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/server/staticHome.js",
+			"settings":
+			{
+				"buffer_size": 1951,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * @author Michael McDermott\n * Created on 5/20/15\n */\n\nvar gulp = require('gulp');\nvar $ = require('gulp-load-plugins')();\nvar del = require('del');\nvar path = require('path');\nvar runSequence = require('run-sequence');\nvar autoprefixer = require('autoprefixer-core');\nvar mqpacker = require('css-mqpacker');\nvar csswring = require('csswring');\nvar webpack = require('webpack');\nvar argv = require('minimist')(process.argv.slice(2));\n\nvar src = {};\nvar watch = false;\nvar browserSync;\n\ngulp.task('default', ['sync']);\n\ngulp.task('clean', del.bind(\n  null, ['.tmp', 'build/*', '!build/.git'], {dot: true}\n));\n\ngulp.task('vendor', function() {\n  gulp.src('package.json')\n    .pipe(gulp.dest('build'));\n  return gulp.src('node_modules/bootstrap/dist/fonts/**')\n    .pipe(gulp.dest('build/fonts'));\n});\n\ngulp.task('favicons', function() {\n  src.favicons = [\n    'src/app/images/favicons/**'\n  ];\n  return gulp.src(src.favicons)\n    .pipe($.changed('build'))\n    .pipe($.imagemin({}))\n    .pipe(gulp.dest('build'))\n    .pipe($.size({title: 'favicons'}));\n});\n\ngulp.task('images', function() {\n  src.images = [\n    'src/app/images/**',\n    '!src/app/images/{favicons,favicons/**}'\n  ];\n  return gulp.src(src.images)\n    .pipe($.changed('build/images'))\n    .pipe(gulp.dest('build/images'))\n    .pipe($.size({title: 'images'}));\n});\n\ngulp.task('sass', function() {\n  src.styles = [\n    'src/app/components/App/App.scss'\n  ];\n  var processors = [\n    autoprefixer({browsers: ['last 2 versions']}),\n    mqpacker,\n    csswring\n  ];\n  var chain = gulp.src(src.styles);\n  if (!argv.production) {\n    chain = chain.pipe($.sourcemaps.init());\n  }\n  chain\n    .pipe($.sass().on('error', $.sass.logError))\n    .pipe($.postcss(processors))\n    .pipe($.concat('main.css'));\n  if (!argv.production) {\n    chain = chain.pipe($.sourcemaps.write());\n  }\n  return chain.pipe($.size({title: 'sass'}))\n    .pipe(gulp.dest('src/app'));\n});\n\ngulp.task('copy', function() {\n  src.static = [\n    'src/app/server/**',\n    'src/libs/**'\n  ];\n  return gulp.src(src.static)\n    .pipe($.changed('build'))\n    .pipe(gulp.dest('build'))\n    .pipe($.size({title: 'static'}));\n});\n\ngulp.task('bundle', function(cb) {\n  var started = false;\n  var config = require('./webpack.config.js');\n  var bundler = webpack(config);\n  var verbose = !!argv.verbose;\n\n  function bundle(err, stats) {\n    if (err) {\n      throw new $.util.PluginError('webpack', err);\n    }\n\n    console.log(stats.toString({\n      colors: $.util.colors.supportsColor,\n      hash: verbose,\n      version: verbose,\n      timings: verbose,\n      chunks: verbose,\n      chunkModules: verbose,\n      cached: verbose,\n      cachedAssets: verbose\n    }));\n\n    if (!started) {\n      started = true;\n      return cb();\n    }\n  }\n\n  if (watch) {\n    bundler.watch(200, bundle);\n  } else {\n    bundler.run(bundle);\n  }\n});\n\ngulp.task('build', ['clean'], function(cb) {\n  runSequence(['vendor', 'favicons', 'images', 'sass', 'copy', 'bundle'], cb);\n});\n\ngulp.task('pre-deploy', ['clean'], function(cb) {\n  runSequence(['vendor', 'favicons', 'images', 'sass', 'copy'], cb);\n});\n\ngulp.task('build', ['clean'], function(cb) {\n  runSequence(['vendor', 'favicons', 'images', 'sass', 'copy', 'bundle'], cb);\n});\n\ngulp.task('build:watch', function(cb) {\n  watch = true;\n  runSequence('build', function() {\n    gulp.watch(src.static, ['copy']);\n    gulp.watch(src.favicons, ['favicons']);\n    gulp.watch(src.images, ['images']);\n    gulp.watch(src.styles, ['sass']);\n    cb();\n  });\n});\n\ngulp.task('serve', ['build:watch'], function(cb) {\n  src.server = [\n    'build/server.js'\n  ];\n\n  var started = false;\n  var cp = require('child_process');\n  var assign = require('react/lib/Object.assign');\n\n  var server = (function startup() {\n    var child = cp.fork('build/server.js', {\n      env: assign({NODE_ENV: 'development'}, process.env)\n    });\n    child.once('message', function(message) {\n      if (message.match(/^online$/)) {\n        if (browserSync) {\n          browserSync.reload();\n        }\n        if (!started) {\n          started = true;\n          gulp.watch(src.server, function() {\n            $.util.log('Restarting development server.');\n            server.kill('SIGTERM');\n            server = startup();\n          });\n          cb();\n        }\n      }\n    });\n    return child;\n  })();\n\n  process.on('exit', function() {\n    server.kill('SIGTERM');\n  });\n});\n\ngulp.task('sync', ['serve'], function(cb) {\n  browserSync = require('browser-sync');\n\n  browserSync({\n    logPrefix: 'ME',\n    notify: true,\n    https: false,\n    proxy: 'localhost:4224'\n  }, cb);\n\n  process.on('exit', function() {\n    browserSync.exit();\n  });\n\n  gulp.watch(['build/**/*.*'].concat(\n    src.server.map(function(file) {\n      return '!' + file;\n    })\n  ), function(file) {\n    browserSync.reload(path.relative(__dirname, file.path));\n  });\n});\n\n// Run PageSpeed Insights\ngulp.task('pagespeed', function(cb) {\n  var pagespeed = require('psi');\n  pagespeed.output('http://mgmcdermott.com', cb);\n});\n",
+			"file": "gulpfile.js",
+			"file_size": 4980,
+			"file_write_time": 130857660530000000,
+			"settings":
+			{
+				"buffer_size": 5006,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -207,22 +234,24 @@
 	[
 		"/Users/mmcdermott/dev/mgmcdermott.com",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/libs",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/server"
 	],
 	"file_history":
 	[
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/index.html",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/routes.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/webpack.config.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing/Landing.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts/client.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/staticHome.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/webpack.config.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/routes.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/server.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/index.html",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/main.css",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/collectStyles.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/_base.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.scss",
@@ -235,14 +264,11 @@
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.scss",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintrc",
 		"/Users/mmcdermott/dev/mgmcdermott.com/mgmcdermott.sublime-project",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/server.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.js",
@@ -335,7 +361,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -353,6 +379,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"../../images",
+			"\"",
 			"Modernizr",
 			"blue",
 			"Contact",
@@ -418,6 +446,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"./images",
 			"k",
 			"@mixin \\2",
 			"\\1\\2",
@@ -433,8 +462,99 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1975,
+								1975
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Seti_UI/Langs/npm JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 914.0,
+						"translation.y": 769.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/server/staticHome.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1951,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1929,
+								1929
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 69.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								981,
+								981
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Seti_UI/Langs/Gulpfile JS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 481.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -490,6 +610,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"gulp",
+				"gulpfile.js"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"ulpfile",
+				"gulpfile.js"
+			],
 			[
 				"contac",
 				"src/app/components/Contact/Contact.scss"
@@ -700,9 +832,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "mgm",
+		"last_filter": "ldr",
 		"selected_items":
 		[
+			[
+				"ldr",
+				"~/Work/ldr/ldr.sublime-project"
+			],
 			[
 				"mgm",
 				"~/dev/mgmcdermott.com/mgmcdermott.sublime-project"
@@ -710,10 +846,6 @@
 			[
 				"",
 				"~/Work/lincs-milestones/lincsMilestones.sublime-project"
-			],
-			[
-				"ldr",
-				"~/Work/ldr/ldr.sublime-project"
 			]
 		],
 		"width": 380.0
