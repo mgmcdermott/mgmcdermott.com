@@ -26,7 +26,6 @@ module.exports = React.renderToStaticMarkup(
     <meta name="msapplication-TileColor" content="#193549" />
     <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300" />
 
     <style id="server-side-style" dangerouslySetInnerHTML={{__html: styles}} />
   </head>

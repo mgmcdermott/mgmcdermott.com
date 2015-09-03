@@ -75,15 +75,16 @@ gulp.task('sass', function() {
   if (!argv.production) {
     chain = chain.pipe($.sourcemaps.init());
   }
-  chain
+  chain = chain
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.postcss(processors))
     .pipe($.concat('main.css'));
   if (!argv.production) {
     chain = chain.pipe($.sourcemaps.write());
   }
-  return chain.pipe($.size({title: 'sass'}))
+  chain = chain.pipe($.size({title: 'sass'}))
     .pipe(gulp.dest('src/app'));
+  return chain;
 });
 
 gulp.task('copy', function() {

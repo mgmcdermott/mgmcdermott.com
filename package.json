@@ -4,7 +4,7 @@
   "description": "The homepage of developer Michael McDermott",
   "main": "build/app.js",
   "scripts": {
-    "deploy": "gulp pre-deploy --production && webpack --release && cd build/ && git add . && git commit -a -m \"$MESSAGE\" && git push -f live master && ssh mgm@68.173.40.20 'cd /var/www/mgmcdermott.com && npm install'"
+    "deploy": "gulp pre-deploy --production && webpack --release && cd build/ && git add . && git commit -a -m \"$MESSAGE\" && git push -f live master && ssh mgm@68.173.40.20 'cd /var/www/mgmcdermott.com && npm install --production'"
   },
   "repository": {
     "type": "git",
