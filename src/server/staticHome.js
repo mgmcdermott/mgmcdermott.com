@@ -2,12 +2,9 @@ var React = require('react');
 var App = require('../app/components/App/App');
 var styles = require('../app/main.css');
 
-var gFontTag = 'var WebFontConfig = { google: { families: [\'Source+Sans+Pro:400,300:latin\'] }}; (function() { var wf = document.createElement(\'script\'); wf.src = (\'https:\' == document.location.protocol ? \'https\' : \'http\') + \'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js\'; wf.type = \'text/javascript\'; wf.async = \'true\'; var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(wf, s); })();';
-
 module.exports = React.renderToStaticMarkup(
   <html>
   <head>
-    <script dangerouslySetInnerHtml={{__html: gFontTag}}></script>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Michael McDermott</title>
@@ -32,7 +29,6 @@ module.exports = React.renderToStaticMarkup(
 
     <style id="server-side-style" dangerouslySetInnerHTML={{__html: styles}} />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   </head>
   <body>

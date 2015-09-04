@@ -32,7 +32,7 @@ var Landing = React.createClass({
   render: function() {
     return (
       <div id="landing" className="mgm-container center name">
-        <h1 className="typed"></h1>
+        <h1 className="typed"><span className="typed-cursor">|</span></h1>
         <a href="#about">
           <svg version="1.1" x="0px" y="0px"
           width="52.682px" height="30.071px" viewBox="23.656 39.858 52.682 30.071"

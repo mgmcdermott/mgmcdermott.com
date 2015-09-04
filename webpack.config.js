@@ -50,41 +50,38 @@ var config = {
   externals: {},
 
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: [/node_modules/, /src\/libs/],
-        loader: 'eslint-loader'
-      }
-    ],
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: [/node_modules/, /src\/libs/],
+      loader: 'eslint-loader'
+    }],
 
-    loaders: [
-      {
-        test: /\.css$/,
-        loader: STYLE_LOADER + '!' + CSS_LOADER
-      },
-      {
-        test: /\.gif/,
-        loader: 'url-loader?limit=10000&mimetype=image/gif'
-      },
-      {
-        test: /\.jpg/,
-        loader: 'url-loader?limit=10000&mimetype=image/jpg'
-      },
-      {
-        test: /\.png/,
-        loader: 'url-loader?limit=10000&mimetype=image/png'
-      },
-      {
-        test: /\.svg/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
+    loaders: [{
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'url-loader?limit=10000&minetype=application/font-woff'
+    }, {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'file-loader'
+    }, {
+      test: /\.css$/,
+      loader: STYLE_LOADER + '!' + CSS_LOADER
+    }, {
+      test: /\.gif/,
+      loader: 'url-loader?limit=10000&mimetype=image/gif'
+    }, {
+      test: /\.jpg/,
+      loader: 'url-loader?limit=10000&mimetype=image/jpg'
+    }, {
+      test: /\.png/,
+      loader: 'url-loader?limit=10000&mimetype=image/png'
+    }, {
+      test: /\.svg/,
+      loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+    }, {
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader'
+    }]
   }
 };
 
@@ -105,13 +102,22 @@ var appConfig = merge({}, config, {
     filename: 'app.js'
   },
   plugins: config.plugins.concat([
-      new webpack.DefinePlugin(merge(GLOBALS, {'__SERVER__': false}))
-    ].concat(DEBUG ? [] : [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin({compress: { warnings: false }, minimize: true, output: { comments: false }}),
-        new webpack.optimize.AggressiveMergingPlugin()
-      ])
-  )
+    new webpack.DefinePlugin(merge(GLOBALS, {
+      '__SERVER__': false
+    }))
+  ].concat(DEBUG ? [] : [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      minimize: true,
+      output: {
+        comments: false
+      }
+    }),
+    new webpack.optimize.AggressiveMergingPlugin()
+  ]))
 });
 
 //
@@ -135,13 +141,16 @@ var serverConfig = merge({}, config, {
     __dirname: false
   },
   plugins: config.plugins.concat(
-    new webpack.DefinePlugin(merge(GLOBALS, {'__SERVER__': true}))
+    new webpack.DefinePlugin(merge(GLOBALS, {
+      '__SERVER__': true
+    }))
   ),
   module: {
     loaders: config.module.loaders.map(function(loader) {
       // Remove style-loader
       return merge(loader, {
-        loader: loader.loader = loader.loader.replace(STYLE_LOADER + '!', '')
+        loader: loader.loader = loader.loader.replace(STYLE_LOADER +
+          '!', '')
       });
     })
   }

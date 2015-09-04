@@ -1,7 +1,15 @@
 @font-face {
   font-family: 'Source Sans Pro';
+  src: 'sourcesanspro-light-webfont.eot';
+  src: 'sourcesanspro-light-webfont.eot?#iefix' format('embedded-opentype'), 'sourcesanspro-light-webfont.woff2' format('woff2'), 'sourcesanspro-light-webfont.woff' format('woff'), 'sourcesanspro-light-webfont.ttf' format('truetype'), 'sourcesanspro-light-webfont.svg#source_sans_prolight' format('svg');
+  font-weight: 300;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: 'sourcesanspro-regular-webfont.eot';
+  src: 'sourcesanspro-regular-webfont.eot?#iefix' format('embedded-opentype'), 'sourcesanspro-regular-webfont.woff2' format('woff2'), 'sourcesanspro-regular-webfont.woff' format('woff'), 'sourcesanspro-regular-webfont.ttf' format('truetype'), 'sourcesanspro-regular-webfont.svg#source_sans_proregular' format('svg');
   font-weight: 400;
-  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), 'sourcesanspro.woff2' format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  font-style: normal;
 }
