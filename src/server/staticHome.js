@@ -31,6 +31,9 @@ module.exports = React.renderToStaticMarkup(
     <meta name="theme-color" content="#ffffff" />
 
     <style id="server-side-style" dangerouslySetInnerHTML={{__html: styles}} />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   </head>
   <body>
     <div id="app"><App /></div>

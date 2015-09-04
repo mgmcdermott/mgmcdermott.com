@@ -39,17 +39,15 @@ var config = {
   },
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin()
-    // new webpack.ProvidePlugin({
-    //     $: require('jquery')(require('jsdom').jsdom().parentWindow),
-    //     jQuery: 'jquery',
-    //     'window.jQuery': 'jquery'
-    // })
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.PrefetchPlugin('react')
   ],
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },
+
+  externals: {},
 
   module: {
     preLoaders: [
@@ -90,6 +88,13 @@ var config = {
   }
 };
 
+if (!DEBUG) {
+  config.externals = {
+    'react': 'React',
+    'jquery': 'jQuery'
+  };
+}
+
 //
 // Configuration for the client-side bundle (app.js)
 // -----------------------------------------------------------------------------
@@ -103,7 +108,7 @@ var appConfig = merge({}, config, {
       new webpack.DefinePlugin(merge(GLOBALS, {'__SERVER__': false}))
     ].concat(DEBUG ? [] : [
         new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({compress: { warnings: false }, minimize: true, output: { comments: false }}),
         new webpack.optimize.AggressiveMergingPlugin()
       ])
   )
