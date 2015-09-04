@@ -2,9 +2,12 @@ var React = require('react');
 var App = require('../app/components/App/App');
 var styles = require('../app/main.css');
 
+var gFontTag = 'var WebFontConfig = { google: { families: [\'Source+Sans+Pro:400,300:latin\'] }}; (function() { var wf = document.createElement(\'script\'); wf.src = (\'https:\' == document.location.protocol ? \'https\' : \'http\') + \'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js\'; wf.type = \'text/javascript\'; wf.async = \'true\'; var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(wf, s); })();';
+
 module.exports = React.renderToStaticMarkup(
-<html>
+  <html>
   <head>
+    <script dangerouslySetInnerHtml={{__html: gFontTag}}></script>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Michael McDermott</title>
