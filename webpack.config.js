@@ -60,24 +60,18 @@ var config = {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'url-loader?limit=10000&minetype=application/font-woff'
     }, {
-      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'file-loader'
     }, {
       test: /\.css$/,
-      loader: STYLE_LOADER + '!' + CSS_LOADER
+      loader: CSS_LOADER
     }, {
-      test: /\.gif/,
-      loader: 'url-loader?limit=10000&mimetype=image/gif'
-    }, {
-      test: /\.jpg/,
-      loader: 'url-loader?limit=10000&mimetype=image/jpg'
-    }, {
-      test: /\.png/,
-      loader: 'url-loader?limit=10000&mimetype=image/png'
-    }, {
-      test: /\.svg/,
-      loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-    }, {
+    test: /.*\.(gif|png|jpe?g|svg)$/i,
+    loaders: [
+      'file?hash=sha512&digest=hex&name=[hash].[ext]',
+      'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+    ]
+  }, {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
@@ -144,16 +138,7 @@ var serverConfig = merge({}, config, {
     new webpack.DefinePlugin(merge(GLOBALS, {
       '__SERVER__': true
     }))
-  ),
-  module: {
-    loaders: config.module.loaders.map(function(loader) {
-      // Remove style-loader
-      return merge(loader, {
-        loader: loader.loader = loader.loader.replace(STYLE_LOADER +
-          '!', '')
-      });
-    })
-  }
+  )
 });
 
 module.exports = [appConfig, serverConfig];
