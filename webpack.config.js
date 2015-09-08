@@ -65,13 +65,7 @@ var config = {
     }, {
       test: /\.css$/,
       loader: CSS_LOADER
-    }, {
-    test: /.*\.(gif|png|jpe?g|svg)$/i,
-    loaders: [
-      'file?hash=sha512&digest=hex&name=[hash].[ext]',
-      'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
-    ]
-  }, {
+    }, { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'url?limit=10000!img?minimize&optimizationLevel=7&progressive=true' }, {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
@@ -138,7 +132,16 @@ var serverConfig = merge({}, config, {
     new webpack.DefinePlugin(merge(GLOBALS, {
       '__SERVER__': true
     }))
-  )
+  ),
+  module: {
+    loaders: config.module.loaders.map(function(loader) {
+      // Remove style-loader
+      return merge(loader, {
+        loader: loader.loader = loader.loader.replace(STYLE_LOADER +
+          '!', '')
+      });
+    })
+  }
 });
 
 module.exports = [appConfig, serverConfig];

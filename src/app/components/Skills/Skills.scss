@@ -34,8 +34,49 @@
 }
 
 .mgm-logos {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  img {
-    width: 180px;
-  }
+.mgm-logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 180px;
+  width: 180px;
+}
+
+.docker-logo {
+  background-image: url('./images/docker-logo.png');
+}
+
+.javascript-logo {
+  background-image: url('./images/javascript.png');
+}
+
+.mesos-logo {
+  background-image: url('./images/mesos.png');
+}
+
+.reactjs-logo {
+  background-image: url('./images/reactjs.svg');
+}
+
+.angularjs-logo {
+  background-image: url('./images/angularjs.png');
+}
+
+.marathon-logo {
+  background-image: url('./images/marathon.png');
+}
+
+.sass-logo {
+  background-image: url('./images/sass.png');
+}
+
+.nodejs-logo {
+  background-image: url('./images/nodejs.png');
+}
+
+.gulp-logo {
+  background-image: url('./images/gulp.png');
 }

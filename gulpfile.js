@@ -63,15 +63,16 @@ gulp.task('images', function() {
 });
 
 gulp.task('sass', function() {
+  src.styleEntry = 'src/app/components/App/App.scss';
   src.styles = [
-    'src/app/components/App/App.scss'
+    'src/app/**/*.scss'
   ];
   var processors = [
     autoprefixer({browsers: ['last 2 versions']}),
     mqpacker,
     csswring
   ];
-  var chain = gulp.src(src.styles);
+  var chain = gulp.src(src.styleEntry);
   if (!argv.production) {
     chain = chain.pipe($.sourcemaps.init());
   }

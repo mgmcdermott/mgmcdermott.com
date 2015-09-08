@@ -1,38 +1,39 @@
 var React = require('react');
 var ExecutionEnvironment = require('react/lib/ExecutionEnvironment');
-
 if (ExecutionEnvironment.canUseDOM) {
   var $ = window.jQuery = require('jquery');
   require('../../../libs/typed.min.js');
   $(function() {
     $('.typed').typed({
       strings: [
-      '<<span class="mgm-kwd">div</span> <span class="mgm-class">className</span>=<span class="mgm-str">"mgm-dev"</span>><<span class="mgm-kwd">div</span>>',
-        '<span class="mgm-kwd">var</span> mgm = <span class="mgm-kwd">require</span>(<span class="mgm-str">\'dev\'</span>);',
-        '<span class="mgm-kwd">@import</span> <span class="mgm-str">\'mgm\'</span>;',
-        '<span class="mgm-kwd">FROM</span> mgm:dev',
-        '<span class="mgm-kwd">{%</span> <span class="mgm-kwd">extends</span> <span class="mgm-str">\'mgm.dev\'</span> <span class="mgm-kwd">%}</span>',
-        '<span class="mgm-kwd">from</span> mgm <span class="mgm-kwd">import</span> dev',
-        '<span class="mgm-kwd">SELECT</span> * <span class="mgm-kwd">FROM</span> mgm_dev',
-        'angular<span class="mgm-kwd">.module</span>(<span class="mgm-str">\'mgm\'</span>, [<span class="mgm-str">\'dev\'</span>]);'
-
+        '<span class="mgm-kwd">var</span> Michael = <span class="mgm-kwd">require</span>(<span class="mgm-str">\'McDermott\'</span>);',
+        '<span class="mgm-kwd">@import</span> <span class="mgm-str">\'michaelMcDermott\'</span>;',
+        '<span class="mgm-kwd">FROM</span> michael:mcdermott',
+        '<span class="mgm-kwd">{%</span> <span class="mgm-kwd">extends</span> <span class="mgm-str">\'Michael.McDermott\'</span> <span class="mgm-kwd">%}</span>',
+        '<span class="mgm-kwd">from</span> Michael <span class="mgm-kwd">import</span> McDermott',
+        '<span class="mgm-kwd">SELECT</span> * <span class="mgm-kwd">FROM</span> michael_mcdermott',
+        'angular<span class="mgm-kwd">.module</span>(<span class="mgm-str">\'michael\'</span>, [<span class="mgm-str">\'mcdermott\'</span>]);',
+        'Michael McDermott <br /> <span class="mgm-kwd">Developer</span>'
       ],
       typeSpeed: 0,
+      startDelay: 0,
       backDelay: 1000,
-      loop: true,
+      loop: false,
       loopCount: false,
       contentType: 'html',
-      cursorChar: '|'
+      cursorChar: '|',
+      callback: function() {
+        $('.typed-cursor').hide();
+      }
    });
   });
 }
 
 var Landing = React.createClass({
-
   render: function() {
     return (
       <div id="landing" className="mgm-container center name">
-        <h1 className="typed"><span className="typed-cursor">|</span></h1>
+        <h1 className="typed"></h1>
         <a href="#about">
           <svg version="1.1" x="0px" y="0px"
           width="52.682px" height="30.071px" viewBox="23.656 39.858 52.682 30.071"

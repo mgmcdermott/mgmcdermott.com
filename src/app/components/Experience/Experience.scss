@@ -21,5 +21,9 @@
     color: $color-white;
     font-weight: 500;
     padding: 10px 100px;
+
+    @media all and (max-width: $break-small) {
+      padding: 10px 20px;
+    }
   }
 }
