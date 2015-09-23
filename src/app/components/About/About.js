@@ -21,7 +21,6 @@ var About = React.createClass({
   },
   render: function() {
     var headshotClasses = cx({
-      'mgm-headshot': true,
       'hidden': this.state.hidden,
       'animated': this.state.animated,
       'fadeInLeftBig': this.state.runAnimation
@@ -36,7 +35,9 @@ var About = React.createClass({
       <div id="about" className="mgm-container about">
         <Header title="About" windowMult={0.25} />
           <div className="mgm-inner about-inner center">
-            <div className={headshotClasses}>Headshot Container</div>
+            <div className={headshotClasses}>
+              <div className="mgm-headshot"></div>
+            </div>
             <div className={infoClasses}>
               <p>
                 My name is Michael McDermott and I am a passionate web developer

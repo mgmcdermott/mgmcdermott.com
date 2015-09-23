@@ -3,12 +3,13 @@
 @import '../../animations/rotateInDownRight';
 
 .mgm-headshot {
-  background-color: $color-blue;
-  color: $color-white;
+  background: url('./images/headshot.jpg') no-repeat center;
+  background-size: contain;
+  border: 1px solid $color-primary;
+  border-radius: 125px;
   height: 250px;
-  padding-top: 120px;
-  text-align: center;
-  width: 300px;
+  width: 250px;
+  margin: 0 auto;
 }
 
 .about {
