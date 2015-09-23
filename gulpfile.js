@@ -90,6 +90,7 @@ gulp.task('sass', function() {
 
 gulp.task('copy', function() {
   src.static = [
+    'src/files/**',
     'src/app/server/**',
     'src/libs/**'
   ];
