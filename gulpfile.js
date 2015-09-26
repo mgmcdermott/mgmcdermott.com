@@ -89,6 +89,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('copy', function() {
+  gulp.src('src/equityzen/**').pipe(gulp.dest('build/equityzen'));
   src.static = [
     'src/files/**',
     'src/app/server/**',

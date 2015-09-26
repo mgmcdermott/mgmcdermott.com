@@ -11,7 +11,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var cors = require('cors');
 var morgan = require('morgan');
-//var path = require('path');
+var path = require('path');
 var bodyParser = require('body-parser');
 var timeout = require('connect-timeout');
 var compress = require('compression');
@@ -34,6 +34,11 @@ app.use(compress());
 
 var publicDir = __dirname;
 console.log('Serving static files from ' + publicDir);
+var equityzen = path.join(__dirname, 'equityzen', '/');
+app.get('/EquityZenQ1', function(req, res) {
+  res.status(200).sendFile(equityzen + 'index.html');
+});
+
 app.use('/', express.static(publicDir));
 
 require('./routes')(app, publicDir);
