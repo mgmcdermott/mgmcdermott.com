@@ -86,6 +86,11 @@ $form-width: 600px;
   white-space: nowrap;
 }
 
+.success-message {
+  color: $color-blue;
+  margin: 7px 10px 7px 0;
+}
+
 .button-submit {
   background-color: $color-blue;
   margin-right: 5px;

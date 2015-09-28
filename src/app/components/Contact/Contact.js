@@ -4,6 +4,7 @@ var Header = require('../Header/Header');
 var Contact = React.createClass({
   getInitialState: function() {
     return {
+      messageSent: false,
       name: '',
       email: '',
       subject: '',
@@ -29,6 +30,12 @@ var Contact = React.createClass({
                 onChange={this.handleInput.bind(this, 'content')}/>
             </div>
             <div className="form-buttons">
+              {
+                this.state.messageSent ?
+                  <p className="success-message">Message Sent!</p>
+                :
+                  <p></p>
+              }
               <button className="button button-submit" type="submit">
                 Submit
               </button>
@@ -43,6 +50,9 @@ var Contact = React.createClass({
     );
   },
   handleInput: function(name, e) {
+    this.setState({
+      messageSent: false
+    });
     var change = {};
     change[name] = e.target.value;
     this.setState(change);
@@ -56,6 +66,7 @@ var Contact = React.createClass({
     });
   },
   submit: function(e) {
+    var that = this;
     e.preventDefault();
     var opts = {
       name: this.state.name,
@@ -69,9 +80,13 @@ var Contact = React.createClass({
       data: opts
     })
     .fail(function() {
-      console.log('Failed to submit form. Please try again');
     })
-    .done(this.clear());
+    .done(function() {
+      that.clear();
+      that.setState({
+        messageSent: true
+      });
+    });
   }
 });
 

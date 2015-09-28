@@ -1,4 +1,5 @@
 var nodeMailer = require('nodemailer');
+var config = require('./config');
 var html = require('./staticHome');
 
 module.exports = function(app) {
@@ -11,18 +12,22 @@ module.exports = function(app) {
   var transporter = nodeMailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'mgmcdermottcom@gmail.com',
-      pass: 'mgmcdermott@124'
+      user: config.emailUser,
+      pass: config.emailPass
     }
   });
 
   app.post('/contact', function(req, res) {
+    var content = '<p><strong>Subject: </strong>' + req.body.subject + '</p>' +
+      '<p><strong>Name: </strong>' + req.body.name + '</p>' +
+      '<p><strong>Email: </strong>' + req.body.email + '</p>' +
+      '<p><strong>Content: </strong>' + req.body.content + '</p>';
+
     var opts = {
-      from: req.body.from,
+      from: req.body.email,
       to: 'michael@mgmcdermott.com',
-      subject: req.body.subject,
-      text: req.body.content
-        // html: '<b>Hello world ✔</b>'
+      subject: 'Someone sent a new message from mgmcdermott.com!',
+      html: content
     };
 
     transporter.sendMail(opts, function(err, info) {
