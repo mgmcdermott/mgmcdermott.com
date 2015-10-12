@@ -4,10 +4,6 @@
 		"selected_items":
 		[
 			[
-				"flex-",
-				"flex-grow"
-			],
-			[
 				"fadeInU",
 				"fadeInUpBig.scss"
 			],
@@ -96,18 +92,26 @@
 	"buffers":
 	[
 		{
-			"file": "src/app/components/Footer/Footer.js",
+			"file": "src/server/routes.js",
 			"settings":
 			{
-				"buffer_size": 4402,
+				"buffer_size": 1230,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "gulpfile.js",
+			"file": "src/app/components/Contact/Contact.js",
 			"settings":
 			{
-				"buffer_size": 5350,
+				"buffer_size": 2562,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/components/Contact/Contact.scss",
+			"settings":
+			{
+				"buffer_size": 1510,
 				"line_ending": "Unix"
 			}
 		},
@@ -115,7 +119,50 @@
 			"file": "src/server/server.js",
 			"settings":
 			{
-				"buffer_size": 1449,
+				"buffer_size": 1389,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 2126,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nAnaconda\n--------\n\n  # Anaconda\n  Anaconda turns your Sublime Text 3 into a full featured Python IDE. Read the plugin documentation on [http://damnwidget.github.io/anaconda](http://damnwidget.github.io/anaconda).\n  \n  [![Book Status](https://www.gitbook.io/button/status/book/damnwidget/anacondast3-developers-documentation)](https://www.gitbook.io/book/damnwidget/anacondast3-developers-documentation/activity)\n  \n  ## Getting Started\n  Anaconda works out of the box but there are multitude of options and features that you can tune and adapt to your own style or needs.\n  \n  * [Autocompletion on dot](http://damnwidget.github.io/anaconda/IDE/#toc_3)\n  * [Powerful IDE](http://damnwidget.github.io/anaconda/IDE/)\n  * [Advanced Configuration](http://damnwidget.github.io/anaconda/anaconda_settings/)\n  * [Run Tests using Anaconda](http://damnwidget.github.io/anaconda/tests_runner/)\n  * [Linting theme customization](http://damnwidget.github.io/anaconda/IDE/#toc_50)\n  * [Using Vagrant Environments](http://damnwidget.github.io/anaconda/vagrant/)\n  \n  ## License\n  This program is distributed under the terms of the GNU GPL v3. See the [LICENSE][license] file for more details.\n  \n  ## Tooltips\n  anaconda officially supports user themeable tooltips and displaying advanced signatures. This is how it looks in a dark theme:\n  \n  ![Tooltips Image][tooltips-dark-image]\n  \n  **Note**: This feature is enabled for users of Sublime Text 3 build 3070 or superior only.\n  \n  ## Troubleshooting\n  This section lists some common issues faced by users, along with workarounds.\n  \n  #### Anaconda does not appear in the Available Packages list on Package Control.\n  \n  **Work-around**: You have to update your Package Control version to the version 2.0 or better.\n  \n  #### Errors in the console about \"the file can't be open\" in worker.py file.\n  Your Sublime Text can't find the interpreter that you set in your configuration, by default, anaconda sets this as `python` so it will get your configured Python interpreter in your PATH (if any).\n  \n  **Work-around**: Add a Python interpreter (named `python`) to your PATH or set a right full path to your python interpreter as parameter of `python_interpreter` settings option, for example `/usr/local/bin/python3.4`.\n  \n  #### Auto-complete for import behaves badly.\n  Sublime Text 3's default Python package cancels the auto-completion when some words are detected (for example `def` or `class`). This list of words includes `import`.\n  \n  **Work-around**: Create a new Python directory in your Packages directory and copy the contents of the file [Completion Rules.tmPreferences][Completion-Rules] there with the same name.\n  \n  #### Auto-complete drop-down shows up incorrectly.\n  SublimeCodeIntel interferes with anaconda's auto-completion.\n  \n  **Work-around**: Consider disabling SublimeCodeIntel for Python views or disabling/removing it completely when using anaconda.\n  \n  ## Contributing to Anaconda\n  There are several ways to contribute with anaconda.\n  \n  > Note: A [Developers Documentation book][dev-docs] is maintained up to date with the latest information about anaconda's internals and useful information about how to contribute to the project.\n  \n  ### Feedback\n  Giving feedback about the plugin and how it works in your platform, helps make the plugin better.\n  \n  ### Bug Hunting\n  Did you found a bug and you know how to fix it? First of all, Thank you very much. You just have to report the bug as a new issue, fork the repository, make your changes and send a new pull request.\n  \n  ### Suggesting and Implementing Features\n  So you thought of a new killer feature to implement in Anaconda? Great! Open an issue for it and and we will discuss it with you.\n  \n  ### Donations\n  Please donate to help keep this project alive.\n  \n  [![PayPal][paypal-donate-image]][paypal-donate-link]\n  [![Flatter][flatter-image]][flatter-link]\n  \n  [license]: https://raw.githubusercontent.com/DamnWidget/anaconda/master/LICENSE\n  [Completion-Rules]: https://raw.githubusercontent.com/DamnWidget/anaconda/master/Completion%20Rules.tmPreferences\n  [dev-docs]: http://damnwidget.gitbooks.io/anacondast3-developers-documentation/\n  [paypal-donate-image]: https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\n  [paypal-donate-link]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KP7PAHR962UGG&lc=US&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted\n  [flatter-image]: https://api.flattr.com/button/flattr-badge-large.png\n  [flatter-link]: http://flattr.com/thing/1765332/DamnWidgetanaconda-on-GitHub\n  [tooltips-dark-image]: http://damnwidget.github.io/anaconda/img/tooltips.png\n",
+			"settings":
+			{
+				"buffer_size": 4720,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/app/components/App/App.scss",
+			"settings":
+			{
+				"buffer_size": 874,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 2068,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/server/config.js",
+			"settings":
+			{
+				"buffer_size": 94,
 				"line_ending": "Unix"
 			}
 		}
@@ -127,7 +174,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 400.0,
+		"height": 126.0,
 		"last_filter": "remove",
 		"selected_items":
 		[
@@ -136,12 +183,8 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"gitgit",
-				"GitGutter: Show Comparing Against"
-			],
-			[
-				"enable lin",
-				"SublimeLinter: Enable Linter"
+				"ssxjavs",
+				"Set Syntax: JavaScript (Babel)"
 			],
 			[
 				"save",
@@ -208,7 +251,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 592.0
+		"width": 538.0
 	},
 	"console":
 	{
@@ -233,79 +276,47 @@
 		"/Users/mmcdermott/dev/mgmcdermott.com/src",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Footer",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/libs",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/server"
 	],
 	"file_history":
 	[
-		"/Users/mmcdermott/Desktop/gulpfile.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/equityzen/equityzen-question1.css",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/equityzen/equityzen-question1.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/mgmcdermott.sublime-project",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/base/_base.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/equityzen/index.html",
-		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/server.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/pages/_landing.scss",
-		"/Users/mmcdermott/Work/ldr/server.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/vendor/_font-awesome.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/vendor/fontawesome/_variables.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/main.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Footer.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/pages/_about.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/.gitignore",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/client.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/pages/_experience.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/pages/_contact.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/components/_header.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/webpack.config.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts/client.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/staticHome.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing/Landing.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/layout/_footer.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/pages/_skills.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/layout/_nav.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/base/_fonts.scss copy",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/base/_fonts.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/utils/_variables.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/stylesheets/utils/_mixins.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/_base.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/fonts/_fonts.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Footer/Footer.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/gulpfile.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/package.json",
-		"/Users/mmcdermott/Downloads/sourcesanspro.woff2",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/App.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Footer/Footer.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.scss",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing/Landing.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Resume/Resume.scss",
+		"/Users/mmcdermott/Documents/resumes/mcdermott-resume-6-22.txt",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Resume/Resume.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Landing/Landing.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/routes.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/index.html",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/main.css",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/collectStyles.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/App/App.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/ComingSoon/ComingSoon.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.js",
-		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/static/Home.js",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintrc",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/static/Resume.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/Dockerfile",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/staticHome.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/index.html",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Contact/Contact.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/server/server.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Nav/Nav.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/mgmcdermott.sublime-project",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.js",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.scss",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Star/Star.js",
-		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/About/About.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Experience/Experience.js",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Skills/Skills.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Header/Header.scss",
+		"/Users/mmcdermott/dev/mgmcdermott.com/.eslintrc",
 		"/Users/mmcdermott/.bash_profile",
 		"/Users/mmcdermott/Google Drive/defaults/.zshrc",
 		"/Users/mmcdermott/.zshrc",
@@ -314,6 +325,7 @@
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components/Resumes/jsCode.text",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/prettify.css.erb.css.erb",
 		"/Users/mmcdermott/dev/mgmcdermott.com/src/client/scripts/run_prettify.min.js",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
 		"/Users/mmcdermott/dev/mgmcdermott.com/.tern-project",
 		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
@@ -329,6 +341,7 @@
 		"/Users/mmcdermott/Work/ldr/app/public/centers/centers.scss",
 		"/Users/mmcdermott/Work/ldr/app/backend/config/database.js",
 		"/Users/mmcdermott/Work/ldr/app/backend/config/baseUrl.js",
+		"/Users/mmcdermott/Work/ldr/server.js",
 		"/Users/mmcdermott/Work/ldr/app/public/index.html",
 		"/Users/mmcdermott/Work/ldr/app/public/centers/dcic/dcic.scss",
 		"/Users/mmcdermott/Work/ldr/app/public/centers/dsgcCenter/dsgcCenter.scss",
@@ -365,19 +378,41 @@
 		"/Users/mmcdermott/Work/ldr/app/public/services/exportService.js",
 		"/Users/mmcdermott/Work/ldr/app/public/services/releasesService.js",
 		"/Users/mmcdermott/Work/ldr/app/public/services/adminService.js",
-		"/Users/mmcdermott/Work/ldr/app/public/services/metadataService.js"
+		"/Users/mmcdermott/Work/ldr/app/public/services/metadataService.js",
+		"/Users/mmcdermott/Work/ldr/app/public/services/messagesService.js",
+		"/Users/mmcdermott/Work/ldr/app/public/releases/overview/overview.js",
+		"/Users/mmcdermott/Work/ldr/app/public/data/data.html",
+		"/Users/mmcdermott/Work/ldr/.eslintrc",
+		"/Users/mmcdermott/Work/ldr/app/public/group/settings/settings.js",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/Users/mmcdermott/Work/ldr/app/public/bar/bar.js",
+		"/Users/mmcdermott/Work/ldr/app/public/msgModal/msgModal.js",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/mmcdermott/Work/ldr/karma.conf.js",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/JSLint/JSLint.sublime-settings",
+		"/Users/mmcdermott/Library/Application Support/Sublime Text 3/Packages/User/JSLint.sublime-settings",
+		"/Users/mmcdermott/Work/ldr/bower.json",
+		"/Users/mmcdermott/Work/ldr/app/public/releases/overview/overview.scss",
+		"/Users/mmcdermott/Work/ldr/app/public/releases/create/create.scss",
+		"/Users/mmcdermott/Work/ldr/app/public/msgModal/msgModal.scss",
+		"/Users/mmcdermott/Work/ldr/app/public/group/home/home.scss",
+		"/Users/mmcdermott/Work/ldr/app/public/nav/nav.js",
+		"/Users/mmcdermott/Work/ldr/app/public/partials/legend.scss",
+		"/Users/mmcdermott/Work/ldr/ldr.sublime-project",
+		"/Users/mmcdermott/Work/ldr/app/public/style/main.scss",
+		"/Users/mmcdermott/Work/ldr/package.json",
+		"/Users/mmcdermott/Work/ldr/app/public/style/less/main.less"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
-			"/Users/mmcdermott/dev/mgmcdermott.com/src/app/components",
-			"/Users/mmcdermott/dev/mgmcdermott.com/src",
 			"/Users/mmcdermott/Work/ldr/app/public",
 			"<open folders>",
 			""
@@ -388,24 +423,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"class=",
-			"contact",
-			"100%",
-			"max",
+			"swal",
 			"\"",
-			"') ",
-			"url",
-			"0px",
-			"class",
-			"400px",
-			"../../images",
-			"\"",
-			"Modernizr",
-			"blue",
-			"Contact",
-			"rotateInDownRight",
-			"scss",
-			"handleChange",
+			"h3",
+			"h2",
+			"Skills",
 			"from",
 			"      :",
 			"error",
@@ -462,10 +484,9 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
-			"./images",
 			"k",
 			"@mixin \\2",
 			"\\1\\2",
@@ -481,24 +502,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/app/components/Footer/Footer.js",
+					"file": "src/server/routes.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4402,
+						"buffer_size": 1230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1275,
-								1275
+								956,
+								956
 							]
 						],
 						"settings":
@@ -508,71 +529,255 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 7.0,
-						"translation.y": 142.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/app/components/Contact/Contact.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1360,
+								1360
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 150.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/app/components/Contact/Contact.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1510,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1300,
+								1300
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1115.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/server/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1085,
+								1085
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "gulpfile.js",
-					"semi_transient": false,
+					"buffer": 4,
+					"file": "package.json",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 5350,
+						"buffer_size": 2126,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2274,
-								2274
+								485,
+								485
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
-							"syntax": "Packages/Seti_UI/Langs/Gulpfile JS.tmLanguage",
+							"syntax": "Packages/Seti_UI/Langs/npm JSON.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 1540.0,
+						"translation.x": 128.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "src/server/server.js",
+					"buffer": 5,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1449,
+						"buffer_size": 4720,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								983,
-								983
+								4720,
+								4720
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "/Users/mmcdermott/dev/mgmcdermott.com",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/app/components/App/App.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 874,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2068,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2067,
+								2067
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
+							"syntax": "Packages/Seti_UI/Langs/Git.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1889.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/server/config.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 94,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
+							"open_with_edit": true,
 							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 505.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -631,116 +836,44 @@
 		"selected_items":
 		[
 			[
-				"server",
-				"src/server/server.js"
+				"bas",
+				"src/app/_base.scss"
 			],
 			[
 				"base",
 				"src/app/_base.scss"
 			],
 			[
-				"experi",
+				"e",
 				"src/app/components/Experience/Experience.scss"
 			],
 			[
-				"aboutscs",
+				"abo",
 				"src/app/components/About/About.scss"
-			],
-			[
-				"landingscs",
-				"src/app/components/Landing/Landing.scss"
-			],
-			[
-				"gul",
-				"gulpfile.js"
-			],
-			[
-				"exper",
-				"src/app/components/Experience/Experience.scss"
-			],
-			[
-				"webpa",
-				"webpack.config.js"
-			],
-			[
-				"gulpfil",
-				"gulpfile.js"
-			],
-			[
-				"webp",
-				"webpack.config.js"
 			],
 			[
 				"gulp",
 				"gulpfile.js"
 			],
 			[
-				"pack",
-				"package.json"
+				"landing",
+				"src/app/components/Landing/Landing.scss"
 			],
 			[
-				"ulpfile",
-				"gulpfile.js"
+				"resum",
+				"src/app/components/Resume/Resume.js"
 			],
 			[
-				"contac",
-				"src/app/components/Contact/Contact.scss"
-			],
-			[
-				"app",
-				"src/app/components/App/App.js"
-			],
-			[
-				"appscs",
-				"src/app/components/App/App.scss"
-			],
-			[
-				"about",
-				"src/app/components/About/About.scss"
-			],
-			[
-				"coming",
-				"src/app/components/ComingSoon/ComingSoon.js"
-			],
-			[
-				"navjs",
-				"src/app/components/Nav/Nav.js"
-			],
-			[
-				"navsc",
-				"src/app/components/Nav/Nav.scss"
-			],
-			[
-				"nav",
-				"src/app/components/Nav/Nav.scss"
-			],
-			[
-				"headerscs",
-				"src/app/components/Header/Header.scss"
-			],
-			[
-				"skilss",
-				"src/app/components/Skills/Skills.scss"
-			],
-			[
-				"skills",
-				"src/app/components/Skills/Skills.js"
-			],
-			[
-				"expersc",
-				"src/app/components/Experience/Experience.scss"
-			],
-			[
-				"experien",
-				"src/app/components/Experience/Experience.js"
-			],
-			[
-				"contact",
-				"src/app/components/Contact/Contact.js"
+				"resuem",
+				"src/app/components/Resume/Resume.js"
 			],
 			[
 				"indexht",
 				"src/client/index.html"
+			],
+			[
+				"skills",
+				"src/app/components/Skills/Skills.scss"
 			],
 			[
 				"star",
@@ -751,8 +884,20 @@
 				"src/app/components/Header/Header.js"
 			],
 			[
+				"appscs",
+				"src/app/components/App/App.scss"
+			],
+			[
 				"abou",
 				"src/app/components/About/About.scss"
+			],
+			[
+				"about",
+				"src/app/components/About/About.js"
+			],
+			[
+				"nav",
+				"src/app/components/Nav/Nav.js"
 			],
 			[
 				"inde",
@@ -817,6 +962,10 @@
 			[
 				"cen",
 				"app/public/centers/centers.scss"
+			],
+			[
+				"app",
+				"app/public/app.js"
 			],
 			[
 				"foo",
@@ -884,48 +1033,20 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "ldr",
+		"last_filter": "bub",
 		"selected_items":
 		[
 			[
-				"ldr",
-				"~/Work/ldr/ldr.sublime-project"
-			],
-			[
-				"bump",
-				"~/dev/bumpp/bumpp.sublime-project"
-			],
-			[
-				"lincs",
-				"~/Work/wp-lincsproject/lincsproject.sublime-project"
-			],
-			[
-				"wp-lin",
-				"~/Work/wp-lincsproject/lincsproject.sublime-project"
-			],
-			[
-				"lincspr",
-				"~/Work/wp-lincsproject/lincsproject.sublime-project"
-			],
-			[
-				"lincsp",
-				"~/Work/wp-lincsproject/lincsproject.sublime-project"
-			],
-			[
-				"wp-l",
-				"~/Work/wp-lincsproject/lincsproject.sublime-project"
-			],
-			[
-				"wp",
-				"~/Work/wp-lincsproject/lincsproject.sublime-project"
-			],
-			[
-				"mgm",
-				"~/dev/mgmcdermott.com/mgmcdermott.sublime-project"
+				"bub",
+				"~/dev/bubble-shooter/bubble-shooter.sublime-project"
 			],
 			[
 				"",
 				"~/Work/lincs-milestones/lincsMilestones.sublime-project"
+			],
+			[
+				"ldr",
+				"~/Work/ldr/ldr.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -30,11 +30,6 @@ app.use(compress());
 
 var publicDir = __dirname;
 console.log('Serving static files from ' + publicDir);
-var equityzen = path.join(__dirname, 'equityzen', '/');
-app.get('/EquityZenQ1', function(req, res) {
-  res.status(200).sendFile(equityzen + 'index.html');
-});
-
 app.use('/', express.static(publicDir));
 
 require('./routes')(app, publicDir);
