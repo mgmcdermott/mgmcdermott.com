@@ -1,5 +1,6 @@
 var nodeMailer = require('nodemailer');
 var html = require('./staticHome');
+var User = require('./models').User;
 
 module.exports = function(app) {
   app.get('/', function(req, res) {
@@ -17,21 +18,38 @@ module.exports = function(app) {
   });
 
   app.post('/contact', function(req, res) {
-    var opts = {
-      from: req.body.from,
-      to: 'michael@mgmcdermott.com',
-      subject: req.body.subject,
-      text: req.body.content
-        // html: '<b>Hello world ✔</b>'
-    };
+    if (!req.body.email) {
+      res.status(400).send('Email required to contact');
+    } else {
+      var opts = {
+        from: req.body.from,
+        to: 'michael@mgmcdermott.com',
+        subject: req.body.subject,
+        text: req.body.content
+          // html: '<b>Hello world ✔</b>'
+      };
 
-    transporter.sendMail(opts, function(err, info) {
-      if (err) {
-        console.log(err);
-        res.status(500).send('An error occurred sending email');
-      } else {
-        res.status(200).send('Message sent: ' + info.response);
-      }
-    });
+      var user = {
+        name: req.body.name || '',
+        email: req.body.email,
+        addedFrom: 'Website Contact Form'
+      };
+
+      User.create(user, function(err) {
+        if (err) {
+          console.log(err);
+        }
+      });
+
+      transporter.sendMail(opts, function(err, info) {
+        if (err) {
+          console.log(err);
+          res.status(500).send('An error occurred sending email');
+        } else {
+          res.status(200).send('Message sent: ' + info.response);
+        }
+      });
+    }
+
   });
 };

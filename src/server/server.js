@@ -21,7 +21,13 @@ var port = process.env.PORT || 4224;
 app.set('port', port);
 
 var config = require('./config');
-mongoose.connect(config.db);
+mongoose.connect(config.dbUrl, function(err) {
+  if (err) {
+    console.log('ERROR connecting to: ' + config.dbUrl + '. ' + err);
+  } else {
+    console.log('Succeeded connected to: ' + config.dbUrl);
+  }
+});
 
 mongoose.set('debug', true);
 
@@ -29,7 +35,9 @@ app.use(cors());
 app.use(timeout('20s'));
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.json()); // get information from html forms
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(compress());
 
 var publicDir = __dirname;
@@ -44,6 +52,7 @@ app.use('/', express.static(publicDir));
 require('./routes')(app, publicDir);
 
 app.use(haltOnTimeout);
+
 function haltOnTimeout(req, res, next) {
   if (!req.timeout) {
     next();
