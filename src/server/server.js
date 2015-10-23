@@ -20,8 +20,8 @@ var app = express();
 var port = process.env.PORT || 4224;
 app.set('port', port);
 
-//var config = require('./config/base');
-//mongoose.connect(config.db);
+var config = require('./config');
+mongoose.connect(config.db);
 
 mongoose.set('debug', true);
 
