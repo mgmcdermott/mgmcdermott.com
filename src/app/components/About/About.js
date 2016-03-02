@@ -32,7 +32,7 @@ var About = React.createClass({
       fadeInRightBig: this.state.runAnimation
     });
     return (
-      <div id="about" className="mgm-container about">
+      <div id="about" className="about">
         <Header title="About" windowMult={0.25} />
           <div className="mgm-inner about-inner center">
             <div className={headshotClasses}>

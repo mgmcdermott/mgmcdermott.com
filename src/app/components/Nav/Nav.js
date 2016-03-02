@@ -30,7 +30,7 @@ var Nav = React.createClass({
           <div className="nav-right">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
+            <a href="#skills">Free Time</a>
             <a href="#contact">Contact</a>
             {/*<a href="http://blog.mgmcdermott.com*/}
           </div>
