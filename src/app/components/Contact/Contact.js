@@ -13,7 +13,7 @@ var Contact = React.createClass({
   },
   render: function() {
     return (
-      <div id="contact" className="contact center">
+      <div id="contact" className="mgm-container contact center">
         <Header title="Get In Touch" windowMult={3.25} />
         <div className="mgm-inner contact-inner center">
           <form className="contact-form" onSubmit={this.submit}>

@@ -30,9 +30,9 @@ var Experience = React.createClass({
         <div className="experience-inner">
           <div className={workClasses}>
             <h2>
-              I currently work as a Researcher Programmer/Analyst <br />
-              at the Icahn School of Medicine at Mount Sinai, developing <br />
-              websites and applications to help researchers be more productive.
+              I currently work as a Systems Analyst/Full-Stack Developer <br />
+              in the Ma'ayan Lab at the Icahn School of Medicine at Mount Sinai, <br />
+              developing websites and applications to help researchers be more productive.
             </h2>
           </div>
         </div>

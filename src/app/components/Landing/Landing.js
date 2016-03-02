@@ -25,7 +25,7 @@ if (ExecutionEnvironment.canUseDOM) {
       callback: function() {
         $('.typed-cursor').hide();
       }
-   });
+    });
   });
 }
 

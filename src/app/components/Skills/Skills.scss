@@ -1,85 +1,181 @@
-// Chessboard
 
-
-.under-construction {
-  background-color: $color-black;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-  opacity: .75;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $color-white;
-}
-
-.construction-banner {
-  opacity: 1;
-  position: relative;
-  z-index: 150;
-  h1 {
-    margin: 0;
-    text-shadow: 2px 2px $color-black;
-  }
-}
+// .under-construction {
+//   align-items: center;
+//   background-color: $color-black;
+//   color: $color-white;
+//   display: flex;
+//   height: 100%;
+//   justify-content: center;
+//   opacity: .75;
+//   position: absolute;
+//   width: 100%;
+//   z-index: 100;
+// }
+//
+// .construction-banner {
+//   opacity: 1;
+//   position: relative;
+//   z-index: 150;
+//
+//   h1 {
+//     margin: 0;
+//     text-shadow: 2px 2px $color-black;
+//   }
+// }
 
 .skills {
+  align-items: center;
   background-color: $color-off-white;
-  // flex-direction: column;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 
-  // Remove once not under construction
+  button {
+    background-color: $color-white;
+    border: 1px solid transparent;
+    border-color: darken($color-off-white, 10);
+    border-radius: .25rem;
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 5px;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:focus,
+    &.focus,
+    &:active:focus,
+    &:active.focus,
+    &.active:focus,
+    &.active.focus {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.focus {
+      text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+      background-image: none;
+      outline: 0;
+    }
+
+    &.disabled,
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .65;
+    }
+  }
+
   h2 {
-    padding-top: 96px;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
   }
 }
 
-.mgm-logos {
+.chess {
+  align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
-.mgm-logo {
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 180px;
-  width: 180px;
+.chess-opts {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-between;
+  padding-left: 10px;
+  width: 150px;
 }
 
-.docker-logo {
-  background-image: url('./images/docker-logo.png');
+.time-per-move {
+  input {
+    font-size: 16px;
+    height: 30px;
+    width: 20px;
+  }
 }
 
-.javascript-logo {
-  background-image: url('./images/javascript.png');
+.time-per-move,
+.player-color,
+.skill-level {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
-.mesos-logo {
-  background-image: url('./images/mesos.png');
+.below-board {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
-.reactjs-logo {
-  background-image: url('./images/reactjs.svg');
+.engine-status {
+  text-align: right;
 }
 
-.angularjs-logo {
-  background-image: url('./images/angularjs.png');
+.time {
+  font-size: 24px;
 }
 
-.marathon-logo {
-  background-image: url('./images/marathon.png');
-}
 
-.sass-logo {
-  background-image: url('./images/sass.png');
-}
-
-.nodejs-logo {
-  background-image: url('./images/nodejs.png');
-}
-
-.gulp-logo {
-  background-image: url('./images/gulp.png');
-}
+// .mgm-logos {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+//
+// .mgm-logo {
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   height: 180px;
+//   width: 180px;
+// }
+//
+// .docker-logo {
+//   background-image: url('./images/docker-logo.png');
+// }
+//
+// .javascript-logo {
+//   background-image: url('./images/javascript.png');
+// }
+//
+// .mesos-logo {
+//   background-image: url('./images/mesos.png');
+// }
+//
+// .reactjs-logo {
+//   background-image: url('./images/reactjs.svg');
+// }
+//
+// .angularjs-logo {
+//   background-image: url('./images/angularjs.png');
+// }
+//
+// .marathon-logo {
+//   background-image: url('./images/marathon.png');
+// }
+//
+// .sass-logo {
+//   background-image: url('./images/sass.png');
+// }
+//
+// .nodejs-logo {
+//   background-image: url('./images/nodejs.png');
+// }
+//
+// .gulp-logo {
+//   background-image: url('./images/gulp.png');
+// }
